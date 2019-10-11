@@ -1,0 +1,20 @@
+
+.full-size {
+  position: absolute;
+  background-image: url('../assets/iceland_header_pic.JPG');
+  width: 100vw;
+  height: 500px;
+  background-size: cover;
+  transition: .3s ease;
+}
+
+.small-size {
+  position: fixed;
+  top: 0;
+  background-image: url('../assets/iceland_header_pic.JPG');
+  width: 100vw;
+  height: 200px;
+  background-size: cover;
+  background-position-y: -83px;
+  transition: .3s ease;
+}

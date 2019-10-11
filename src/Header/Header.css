@@ -1,0 +1,29 @@
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  color: #fff;
+}
+
+.c-a {
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  margin: 30px auto 15px;
+}
+
+.b-a {
+  font-family: 'Dancing Script', cursive;
+  font-size: 80px;
+  margin: 0 auto 60px;
+}
+
+.holy-shit {
+  font-size: 40px;
+  margin: 80px auto 20px;
+}
+
+.holy-shit, .header-date {
+}
