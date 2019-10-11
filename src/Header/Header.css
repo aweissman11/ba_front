@@ -3,9 +3,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
   width: 100%;
   color: #fff;
+}
+
+.small-header {
+  height: 200px;
 }
 
 .c-a {
@@ -25,5 +30,8 @@
   margin: 80px auto 20px;
 }
 
-.holy-shit, .header-date {
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .3s, opacity .3s linear;
 }
