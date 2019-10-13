@@ -19,18 +19,19 @@ const NavButtons = (props) => {
     }
   }
   return (
-    <ul className={bigHeader ? 'nav-buttons' : 'stickied-buttons'} >
-      <li>Ceremony</li>
-      <li>Reception</li>
-      <li>After Party</li>
-      <li>Camping Info</li>
-      <li>
-        <a href='https://www.rei.com/' target='_blank'>
-          Registry
-        </a>
-      </li>
-      <li>RSVP</li>
-    </ul >
+    <div className={bigHeader ? 'low-nav-box' : 'high-nav-box'} >
+      <header className={bigHeader ? 'header low' : 'header high'} >
+        <a href="" class="logo">Our Adventure</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+          <li><a href="#events">Events</a></li>
+          <li><a href="#campaing">Camping</a></li>
+          <li><a href='https://www.rei.com/' target='_blank'>Registry</a></li>
+          <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+      </header>
+    </div>
   );
 }
 

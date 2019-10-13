@@ -13,8 +13,14 @@
   top: 0;
   background-image: url('../assets/iceland_header_pic.JPG');
   width: 100vw;
-  height: 200px;
+  height: 100px;
   background-size: cover;
-  background-position-y: -83px;
+  background-position-y: 26%;
   transition: .3s ease;
+}
+
+@media (min-width: 48em) {
+  .small-size {
+    height: 200px;
+  }
 }
