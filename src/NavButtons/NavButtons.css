@@ -2,7 +2,6 @@
   width: 100%;
   background: #cecece;
   display: flex;
-  height: 50px;
   align-items: center;
   justify-content: center;
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
@@ -32,7 +31,6 @@
 .high {
   position: fixed;
   top: 100px;
-  
 }
 
 .header a {
@@ -62,7 +60,7 @@
 .header .logo {
   display: block;
   float: left;
-  font-size: 2em;
+  font-size: 16px;
   padding: 10px 20px;
   text-decoration: none;
 }
@@ -81,7 +79,7 @@
   cursor: pointer;
   display: inline-block;
   float: right;
-  padding: 28px 20px;
+  padding: 20px 20px;
   position: relative;
   user-select: none;
 }
@@ -145,6 +143,10 @@
 
 @media (min-width: 48em) {
   .high-nav-box {
+    top: 200px;
+  }
+
+  .high {
     top: 200px;
   }
 
