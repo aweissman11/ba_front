@@ -14,7 +14,7 @@ const Ceremony = () => {
         className='windy-map'
         style={{
           border: 0,
-          height: '450px',
+          height: '600px',
           width: window.innerWidth < 768 ? '90%' : '75%',
           borderRadius: '12px'
         }}
