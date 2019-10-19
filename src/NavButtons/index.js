@@ -1,23 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 // CSS
 import './NavButtons.css';
 
 const NavButtons = (props) => {
-  const [bigHeader, setBigHeader] = useState(true);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-  }, [])
-
-  const handleScroll = (e) => {
-    // console.log('e:', window.scrollY);
-    if (window.scrollY > 136) {
-      setBigHeader(false);
-    } else {
-      setBigHeader(true);
-    }
-  }
   return (<>
     <div className='header-image'>
     </div>
@@ -26,16 +12,16 @@ const NavButtons = (props) => {
         <a href="/">
           <div className='logo-icon'></div>
         </a>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-        <ul class="menu">
+        <input className="menu-btn" type="checkbox" id="menu-btn" />
+        <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
+        <ul className="menu">
           <li><a href="/schedule">Schedule</a></li>
           <li><a href="/story">Our Story</a></li>
           <li><a href="/logistics">Logistics</a></li>
           <li><a href="/stuff">What to bring</a></li>
           <li><a href="/todo">Things to do</a></li>
-          <li><a href='https://www.rei.com/' target='_blank'>Registry</a></li>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHs8Szep3Kau7LPRj1DhhYNgDSUi0xtVSfcjOq8l3ibyy-A/viewform?usp=sf_link" target='_blank'><b>RSVP</b></a></li>
+          <li><a href='https://www.rei.com/' target='_blank' rel="noopener noreferrer">Registry</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHs8Szep3Kau7LPRj1DhhYNgDSUi0xtVSfcjOq8l3ibyy-A/viewform?usp=sf_link" target='_blank' rel="noopener noreferrer"><b>RSVP</b></a></li>
         </ul>
       </header>
     </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 // CSS
 import './EventsPage.css';
@@ -66,8 +66,8 @@ const EventsPage = () => {
       <h1 className='invited'>Everyone is invited to all events</h1>
       <div className='name-outline'>
         <div className='inner-outline'>
-          {events.map(thing => (
-            <div className='event-box'>
+          {events.map((thing, i) => (
+            <div className='event-box' key={i}>
               <h3 className='event-event'>{thing.event}</h3>
               <p className='info-type'>When:</p>
               <p className='info-info'>{thing.time}</p>
