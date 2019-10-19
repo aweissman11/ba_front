@@ -12,7 +12,9 @@ import NavButtons from './NavButtons';
 import OtherInfo from './OtherInfo';
 import PicturePage from './PicturePage';
 import EventsPage from './EventsPage';
-import Homepage from './HomePage';
+import HomePage from './HomePage';
+import WhatToBring from './WhatToBring';
+import WhatToDo from './WhatToDo';
 
 function App() {
   return (
@@ -30,13 +32,13 @@ function App() {
             <OtherInfo />
           </Route>
           <Route path='/stuff'>
-            <EventsPage />
+            <WhatToBring />
           </Route>
           <Route path='/todo'>
-            <EventsPage />
+            <WhatToDo />
           </Route>
           <Route path='/'>
-            <Homepage />
+            <HomePage />
           </Route>
         </Switch>
       </div>
