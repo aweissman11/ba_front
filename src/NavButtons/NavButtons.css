@@ -22,6 +22,10 @@
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
   width: 100%;
   z-index: 3;
+  transition: .5s ease;
+  display: block;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .low {
@@ -31,6 +35,14 @@
 .high {
   position: fixed;
   top: 100px;
+}
+
+.logo-icon {
+  width: 35px;
+  height: 35px;
+  background-image: url('../assets/camping-icon-tpbg.jpg');
+  background-size: contain;
+  margin-left: 20px;
 }
 
 .header a {
@@ -47,7 +59,7 @@
 
 .header li a {
   display: block;
-  padding: 20px 20px;
+  padding: 10px 15px;
   border-right: 1px solid #f4f4f4;
   text-decoration: none;
 }
@@ -57,11 +69,11 @@
   background-color: #f4f4f4;
 }
 
-.header .logo {
+.header .logo-icon {
   display: block;
   float: left;
   font-size: 16px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   text-decoration: none;
 }
 
@@ -70,7 +82,7 @@
 .header .menu {
   clear: both;
   max-height: 0;
-  transition: max-height .2s ease-out;
+  transition: max-height .2s ease-in-out-out;
 }
 
 /* menu icon */
@@ -89,7 +101,7 @@
   display: block;
   height: 2px;
   position: relative;
-  transition: background .2s ease-out;
+  transition: background .2s ease-in-out-out;
   width: 18px;
 }
 
@@ -142,19 +154,14 @@
 /* 48em = 768px */
 
 @media (min-width: 48em) {
-  .high-nav-box {
-    top: 200px;
+  .header {
+    display: flex;
   }
-
-  .high {
-    top: 200px;
-  }
-
   .header li {
     float: left;
   }
   .header li a {
-    padding: 20px 30px;
+    padding: 10px 15px;
   }
   .header .menu {
     clear: none;

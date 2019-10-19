@@ -1,0 +1,23 @@
+.picture-page {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  color: #fff;
+  padding-top: 580px;
+  text-align: center;
+}
+
+.google-album {
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jx-carousel-title {
+  display: none !important;
+}
+
+.jx-carousel-arrow {
+  opacity: 1 !important;
+}

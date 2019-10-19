@@ -21,14 +21,19 @@ const NavButtons = (props) => {
   return (
     <div className={bigHeader ? 'low-nav-box' : 'high-nav-box'} >
       <header className={bigHeader ? 'header low' : 'header high'} >
-        <a href="" class="logo">Our Adventure</a>
+        <a href="/">
+          <div className='logo-icon'></div>
+        </a>
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
-          <li><a href="#events">Events</a></li>
-          <li><a href="#campaing">Camping</a></li>
+          <li><a href="/schedule">Schedule</a></li>
+          <li><a href="/story">Our Story</a></li>
+          <li><a href="/logistics">Logistics</a></li>
+          <li><a href="/stuff">What to bring</a></li>
+          <li><a href="/todo">Things to do</a></li>
           <li><a href='https://www.rei.com/' target='_blank'>Registry</a></li>
-          <li><a href="#rsvp">RSVP</a></li>
+          <li><a href="#rsvp"><b>RSVP</b></a></li>
         </ul>
       </header>
     </div>
