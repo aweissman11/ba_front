@@ -8,55 +8,55 @@ const events = [
     event: 'Friday Setup',
     time: 'Friday, July 3rd from 10a - 2p',
     location: 'Windy Point Campground',
-    dress: 'super casual'
+    dress: 'camping casual'
   },
   {
     event: 'Friday BBQ',
     time: 'Friday, July 3rd from 5p - 730p',
     location: 'Windy Point Campground',
-    dress: 'super casual'
+    dress: 'camping casual'
   },
   {
     event: 'Saturday Bagel Brunch',
-    time: 'Friday, July 3rd from 10a - 2p',
+    time: 'Saturday, July 4th from 8a - 11a',
     location: 'Windy Point Campground',
-    dress: 'super casual'
+    dress: 'camping casual'
   },
   {
     event: 'Saturday PB&J bar',
-    time: 'Friday, July 3rd from 10a - 2p',
+    time: 'Saturday, July 4th from 12p - 2p',
     location: 'Windy Point Campground',
-    dress: 'super casual'
+    dress: 'camping casual'
   },
   {
     event: 'Ceremony',
-    time: 'Friday, July 3rd from 10a - 2p',
+    time: 'Saturday, July 4th 230p SHARP',
     location: 'Windy Point Campground',
-    dress: 'super casual'
-  },
-  {
-    event: 'Dinner',
-    time: 'Friday, July 3rd from 10a - 2p',
-    location: 'Windy Point Campground',
-    dress: 'super casual'
+    dress: 'Black tie/campground formal (hiking boots encouraged)'
   },
   {
     event: 'Reception',
-    time: 'Friday, July 3rd from 10a - 2p',
+    time: 'Saturday, July 4th from 3p - Sunday',
     location: 'Windy Point Campground',
-    dress: 'super casual'
+    dress: 'campground formal'
+  },
+  {
+    event: 'Dinner',
+    time: 'Saturday, July 4th from 5p - 730p',
+    location: 'Windy Point Campground',
+    dress: 'warmer clothes'
   },
   {
     event: 'Sunday Breakfast',
-    time: 'Friday, July 3rd from 10a - 2p',
+    time: 'Friday, July 3rd from 8a - 12p',
     location: 'Windy Point Campground',
-    dress: 'super casual'
+    dress: 'camping casual'
   },
   {
     event: 'Cleanup',
-    time: 'Friday, July 3rd from 10a - 2p',
+    time: 'Friday, July 3rd from 12p on',
     location: 'Windy Point Campground',
-    dress: 'super casual'
+    dress: 'camping casual'
   },
 ]
 
