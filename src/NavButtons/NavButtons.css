@@ -1,4 +1,15 @@
-.low-nav-box, .high-nav-box {
+.header-image {
+  position: fixed;
+  top: 0;
+  background-image: url('../assets/iceland_header_pic.JPG');
+  width: 100vw;
+  height: 100px;
+  background-size: cover;
+  background-position-y: 29%;
+  transition: .5s ease-in-out;
+}
+
+.nav-box {
   width: 100%;
   background: #cecece;
   display: flex;
@@ -6,14 +17,6 @@
   justify-content: center;
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
   z-index: 3;
-}
-
-.low-nav-box {
-  top: 500px;
-  position: relative;
-}
-
-.high-nav-box {
   top: 100px;
 }
 
@@ -26,13 +29,6 @@
   display: block;
   align-items: center;
   justify-content: space-between;
-}
-
-.low {
-  top: 500px;
-}
-
-.high {
   position: fixed;
   top: 100px;
 }

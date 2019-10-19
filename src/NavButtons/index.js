@@ -18,9 +18,11 @@ const NavButtons = (props) => {
       setBigHeader(true);
     }
   }
-  return (
-    <div className={bigHeader ? 'low-nav-box' : 'high-nav-box'} >
-      <header className={bigHeader ? 'header low' : 'header high'} >
+  return (<>
+    <div className='header-image'>
+    </div>
+    <div className='nav-box'>
+      <header className='header high'>
         <a href="/">
           <div className='logo-icon'></div>
         </a>
@@ -37,7 +39,7 @@ const NavButtons = (props) => {
         </ul>
       </header>
     </div>
-  );
+  </>);
 }
 
 export default NavButtons;

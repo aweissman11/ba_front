@@ -8,8 +8,6 @@ import {
 } from 'react-router-dom';
 
 // components
-import Header from './Header';
-import BackgroundImage from './BackgroundImage';
 import NavButtons from './NavButtons';
 import OtherInfo from './OtherInfo';
 import PicturePage from './PicturePage';
@@ -20,8 +18,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <BackgroundImage />
-        <Header />
         <NavButtons />
         <Switch>
           <Route path='/schedule'>
@@ -44,7 +40,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <div className='footer'></div>
+      {/* <div className='footer'></div> */}
     </BrowserRouter>
   );
 }
