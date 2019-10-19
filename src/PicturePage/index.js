@@ -25,8 +25,6 @@ const PicturePage = () => {
           data-description="102 new photos added to shared album"
         >
           <object data="https://lh3.googleusercontent.com/1Qq7CLnPeD5MywxXh25q3bH23Zt_2vqpUld0Ze000qQV_yF2lzsRMWhOoTsxwOXOZgAkrB9QSyQrV3BxO-g2MKHMF8ay1JNBXlbShYBqlqkfgmMhaRU4YzbGZr8eq42dmH0Y1Vp0-w=w1920-h1080"></object>
-          <object data="https://lh3.googleusercontent.com/o0Hzz3JZ1aIemSyL7zTR2EaAogysgKI79S8NKEq-iRBip8tbmqNksAwb34V7cOOtEX3z_mteBdLlm1euvhZdbakTd8Vhw-_SHdZfvqZs_rcjw3nr_MsdyustMkuuuhvzXB3Cjr-trg=m18" type="video/mp4"></object>
-          <object data="https://lh3.googleusercontent.com/QF4tZXdB67Vog471prDtZ-dNeIqujvVSoO8YuxdTdA32xN2okp_O71ju2BuPRqqwhrJhQiNf0oMQZdoyC2sXVLADyaqEapHAl_QHg2HgwKnYGBd8A5XuWQsEp8ezuMw7Xw4ZLnoGZg=w1920-h1080"></object>
           <object data="https://lh3.googleusercontent.com/7AUPFK8dQQBgZumTNastUheP29KVV5-wezwPhMbpELYY3qBh3Pvdkj7c28PSPUnYS5VPExsvOhryr4sVKdjT5DoTvQuk3FI5oXduP0imj1DMZs3fkJnA81uJyi13Z-qqIUYKaSe4Nw=w1920-h1080"></object>
           <object data="https://lh3.googleusercontent.com/9Ipr-8U9CurtmKGoj_hUlx3f2P7LjZs3VoeqVyaDMZOMJGxofkSIgRuobrr8-vUplDvIBCqB0ozRwAFZPBOk1OypsxFjCbvMbZ1klMXTI9iBImqiDHLUKCs0JF16MNc9PBULW0qigw=w1920-h1080"></object>
           <object data="https://lh3.googleusercontent.com/WJSDvNsoFherbMdZhKTFeKPZAUMd75au8I_iUEoh4FbExqL22QRlcGbccgOf1mu1JwGV7nB2h4JS7IvPRYF1XNYnM3uk1DZVLdUCWtjJ4kH9yNqy6P0SCXZHX4D9WyJxpctSNmxDGw=w1920-h1080"></object>
@@ -72,6 +70,8 @@ const PicturePage = () => {
           <object data="https://lh3.googleusercontent.com/qsWCu8Fbo2OO15Rh2YWsywzPWPHW6ol_uC9PeLliap0woLpS9QvU3VO7J1t9ad-EmiB-0ZeBHN-Iu0eviq1YSsVbbpzdZ1t5ZbE_E_kayvPpnMs8M4TKGmUICaOIrpYqLa8vBFwmGg=w1920-h1080"></object>
           <object data="https://lh3.googleusercontent.com/nV_MB8v-2XgSZK4Icx9le96_k6ekh8dRFimeHC7A64YKJTm8Wg9Y9aKs3facNZ5BtkqyJDo7J7h8OrbfgxPKH_KIYgNrRGyxGi-Ido6T6fVBmAyykGy8T7raxyx9CLiVoOLFas3cHA=w1920-h1080"></object>
           <object data="https://lh3.googleusercontent.com/yQ8wsY5fjqOUxC9dyVsbOxv2H3E3Lj3vzxSLU6sp36U5LNaS45ZSaQ1fijYBATPL5-cKShtnj51glpa3I7NK_6uEit7TN8fPXIiJTbaMaeKOpCc8FLwH1zf5gjCeN_OeKdlHT2A1Og=w1920-h1080"></object>
+          <object data="https://lh3.googleusercontent.com/o0Hzz3JZ1aIemSyL7zTR2EaAogysgKI79S8NKEq-iRBip8tbmqNksAwb34V7cOOtEX3z_mteBdLlm1euvhZdbakTd8Vhw-_SHdZfvqZs_rcjw3nr_MsdyustMkuuuhvzXB3Cjr-trg=m18" type="video/mp4"></object>
+          <object data="https://lh3.googleusercontent.com/QF4tZXdB67Vog471prDtZ-dNeIqujvVSoO8YuxdTdA32xN2okp_O71ju2BuPRqqwhrJhQiNf0oMQZdoyC2sXVLADyaqEapHAl_QHg2HgwKnYGBd8A5XuWQsEp8ezuMw7Xw4ZLnoGZg=w1920-h1080"></object>
           <object data="https://lh3.googleusercontent.com/A8grIUVEWBbViOy4XFNIwUJ9uEeQYPp-8ZU4pCq1CU3clHn_CT7jSaC_MMzd31bNDc9Q7NOEkcpBytQsvEoJ2TZ0shuk8BhOycIFrn174kA_sRi3hJxBZVzHkTURCQZwmRxTxwpIag=w1920-h1080"></object>
           <object data="https://lh3.googleusercontent.com/dqAbWXoP8sHaDyPKIAoQfM9Ak-DFl9iN2hyrFi5-p2qntZCsUvqOPUtNWpzVIEkMlrN_K0GHd5PVCEDxsONz03xdNUOSnHFXa9OqVHsuWLjIRe90XWIHGqTIJPhdSn7KzeDBo49Syg=w1920-h1080"></object>
           <object data="https://lh3.googleusercontent.com/kHz9J_wc7HpzaM3-4YCurU59iHWE4E-mpX1DTBxDgzNn-G3xIJ-zBUc8a82y5sA3lP1NwKBxG0_8e4Y6J-nnOANerZebbK1nh4a_PYt3FSX5JripmzNIFOvv4bMotGLbvSykZp90wg=w1920-h1080"></object>

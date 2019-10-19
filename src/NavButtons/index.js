@@ -35,7 +35,7 @@ const NavButtons = (props) => {
           <li><a href="/stuff">What to bring</a></li>
           <li><a href="/todo">Things to do</a></li>
           <li><a href='https://www.rei.com/' target='_blank'>Registry</a></li>
-          <li><a href="#rsvp"><b>RSVP</b></a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHs8Szep3Kau7LPRj1DhhYNgDSUi0xtVSfcjOq8l3ibyy-A/viewform?usp=sf_link" target='_blank'><b>RSVP</b></a></li>
         </ul>
       </header>
     </div>

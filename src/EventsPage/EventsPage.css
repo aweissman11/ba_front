@@ -3,6 +3,29 @@
   height: 100%;
   background: #000000;
   color: #fff;
-  padding-top: 180px;
+  padding-top: 165px;
+  padding-bottom: 165px;
   text-align: center;
+}
+
+.invited {
+  width: 80%;
+  margin: 0 auto 20px;
+  font-style: italic;
+}
+
+.event-box {
+  margin: 20px auto 50px;
+}
+
+.event-event {
+  text-decoration: underline;
+}
+
+.info-type {
+  
+}
+
+.info-info {
+  font-weight: 700;
 }

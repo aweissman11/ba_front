@@ -5,7 +5,6 @@
   color: #fff;
   padding-top: 165px;
   text-align: center;
-  font-family: 'Crimson Text', serif;
 }
 
 .name-outline {
@@ -18,7 +17,6 @@
 .inner-outline {
   border: solid 1px;
   width: 100%;
-
 }
 
 .date {
