@@ -6,7 +6,7 @@ import './Ceremony.css';
 const Ceremony = () => {
   return (
     <div className='ceremony-container'>
-      <h1 className='ceremony-title'>Ceremony</h1>
+      <h1 className='ceremony-title'>The Campground</h1>
       <p className='ceremony-info'>The ceremony will be held on July 4th at <a href='https://www.google.com/maps/place/Windy+Point+Group+Campground/@39.6078137,-106.0454653,15z/data=!4m2!3m1!1s0x0:0xb5c6b7ae8c358e23?sa=X&ved=2ahUKEwjtnM_Aq5XlAhXMsJ4KHQmpA6kQ_BIwDHoECA0QCA' target='_blank' rel="noopener noreferrer">Windy Point Campground</a> in Dillon, CO</p>
       <iframe
         title='windy-point-map'
