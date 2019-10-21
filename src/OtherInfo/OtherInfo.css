@@ -1,3 +1,15 @@
+.ceremony-title {
+  margin: 30px auto;
+}
+
+.ceremony-info {
+  margin: 20px auto;
+}
+
+.windy-map {
+  width: 80%;
+}
+
 .other-info {
   width: 100%;
   height: 100%;
@@ -8,3 +20,17 @@
   text-align: center;
 }
 
+.circle-div {
+  border-radius: 100%;
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+.tent-pic {
+  background: url('../assets/half-dome-tent.jpg');
+  width: 100%;
+  height: 100%;
+  background-size: 133%;
+}
