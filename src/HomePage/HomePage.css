@@ -89,3 +89,10 @@
     font-size: .7em;
   }
 }
+
+
+@media (max-width: 48em) {
+  .events-page {
+    padding-top: 75px;
+  }
+}

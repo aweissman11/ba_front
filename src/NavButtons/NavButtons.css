@@ -1,5 +1,8 @@
-.header-image {
+.whole-header {
   position: fixed;
+}
+
+.header-image {
   top: 0;
   background-image: url('../assets/iceland_header_pic.JPG');
   width: 100vw;
@@ -11,7 +14,6 @@
 
 .nav-box {
   width: 100%;
-  background: #cecece;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,28 +23,33 @@
 }
 
 .header {
-  background-color: #fff;
+  background-color: #000000;
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
   width: 100%;
+  display: flex;
   z-index: 3;
   transition: .5s ease;
-  display: block;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  top: 100px;
+  padding: 10px 0;
 }
 
 .logo-icon {
-  width: 35px;
-  height: 35px;
-  background-image: url('../assets/camping-icon-tpbg.jpg');
+  display: block;
+  float: left;
+  font-size: 16px;
+  padding: 4px;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
   background-size: contain;
   margin-left: 20px;
+  border-radius: 100%;
+  background: white;
 }
 
 .header a {
-  color: #000000;
+  color: #cecece;
 }
 
 .header ul {
@@ -50,13 +57,13 @@
   padding: 0;
   list-style: none;
   overflow: hidden;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .header li a {
   display: block;
   padding: 10px 15px;
-  border-right: 1px solid #f4f4f4;
+  border-right: 1px solid #6f6d6d;
   text-decoration: none;
 }
 
@@ -65,32 +72,24 @@
   background-color: #f4f4f4;
 }
 
-.header .logo-icon {
-  display: block;
+.header li {
   float: left;
-  font-size: 16px;
-  padding: 10px 15px;
-  text-decoration: none;
 }
-
-/* menu */
 
 .header .menu {
-  clear: both;
-  max-height: 0;
-  transition: max-height .2s ease-in-out-out;
-}
-
-/* menu icon */
-
-.header .menu-icon {
-  cursor: pointer;
-  display: inline-block;
+  clear: none;
   float: right;
-  padding: 20px 20px;
-  position: relative;
-  user-select: none;
+  max-height: none;
 }
+.header .menu-icon {
+  display: none;
+}
+
+
+
+
+
+
 
 .header .menu-icon .navicon {
   background: #333;
@@ -147,24 +146,68 @@
   top: 0;
 }
 
-/* 48em = 768px */
 
-@media (min-width: 48em) {
-  .header {
-    display: flex;
+
+@media (max-width: 48em) {
+  .whole-header {
+    height: 300px;
+    z-index: 10;
+    position: static;
   }
-  .header li {
-    float: left;
+  .header-image {
+    width: 100%;
+    height: 300px;
   }
-  .header li a {
-    padding: 10px 15px;
+
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
-  .header .menu {
-    clear: none;
-    float: right;
-    max-height: none;
+
+  .nav-box {
+    width: 100%;
+    postion: fixed;
+    z-index: 10;
   }
-  .header .menu-icon {
-    display: none;
-  }
+
+
+
+.header {
+  display: block;
+}
+
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-in-out-out;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.header li a {
+  border-bottom: 1px solid #6f6d6d;
+  border-right: none;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 20px 20px;
+  position: relative;
+  user-select: none;
+}
 }

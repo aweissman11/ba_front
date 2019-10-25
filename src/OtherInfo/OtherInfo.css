@@ -15,7 +15,7 @@
   height: 100%;
   background: #000000;
   color: #fff;
-  padding-top: 180px;
+  padding-top: 165px;
   padding-bottom: 180px;
   text-align: center;
 }
@@ -33,4 +33,11 @@
   width: 100%;
   height: 100%;
   background-size: 133%;
+}
+
+
+@media (max-width: 48em) {
+  .events-page {
+    padding-top: 75px;
+  }
 }

@@ -4,7 +4,7 @@
   background: #000000;
   color: #fff;
   padding-top: 165px;
-  padding-bottom: 165px;
+  padding-bottom: 75px;
   text-align: center;
 }
 
@@ -22,10 +22,12 @@
   text-decoration: underline;
 }
 
-.info-type {
-  
-}
-
 .info-info {
   font-weight: 700;
+}
+
+@media (max-width: 48em) {
+  .events-page {
+    padding-top: 75px;
+  }
 }
