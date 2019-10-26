@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import './NavButtons.css';
 
 const NavButtons = (props) => {
-  const [imageClass, setImageClass] = useState('');
+  let [fixedHeader, setFixedHeader] = useState('');
+  let [isChecked, toggleIsChecked] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -13,16 +14,30 @@ const NavButtons = (props) => {
   const handleScroll = (e) => {
     // console.log('e:', window.scrollY);
     if (window.scrollY > 300) {
-      setImageClass('fixed-header');
+      setFixedHeader('fixed-header');
     } else {
-      setImageClass('');
+      setFixedHeader('');
+    }
+  }
+
+  const toggleScroll = () => {
+    toggleIsChecked(!isChecked)
+
+    const noScroll = () => {
+      window.scrollTo(0, 0);
+    }
+
+    if (isChecked) {
+      window.removeEventListener('scroll', noScroll);
+    } else {
+      window.addEventListener('scroll', noScroll);
     }
   }
 
   return (<div className={'whole-header'}>
-    <div className='header-image'>
+    <div className={isChecked ? 'hidden-header' : 'header-image'}>
     </div>
-    <div className={'nav-box ' + imageClass}>
+    <div className={'nav-box ' + fixedHeader}>
       <header className={'header'}>
         <a className='logo-link' href="/">
           <img
@@ -31,7 +46,13 @@ const NavButtons = (props) => {
             src={require('../assets/camping-icon-tpbg.jpg')}
           />
         </a>
-        <input className="menu-btn" type="checkbox" id="menu-btn" />
+        <input
+          className="menu-btn"
+          type="checkbox"
+          id="menu-btn"
+          checked={isChecked}
+          onChange={toggleScroll}
+        />
         <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
         <ul className="menu">
           <li><Link to={{ pathname: "/schedule" }}>Schedule</Link></li>

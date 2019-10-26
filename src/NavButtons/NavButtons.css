@@ -81,15 +81,10 @@
   float: right;
   max-height: none;
 }
+
 .header .menu-icon {
   display: none;
 }
-
-
-
-
-
-
 
 .header .menu-icon .navicon {
   background: #333;
@@ -127,6 +122,8 @@
 
 .header .menu-btn:checked ~ .menu {
   max-height: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -172,42 +169,42 @@
     z-index: 10;
   }
 
+  .header {
+    display: block;
+  }
 
+  .hidden-header {
+    display: none;
+  }
+  /* menu */
 
-.header {
-  display: block;
-}
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-in-out-out;
+  }
 
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
 
-/* menu */
+  .header li a {
+    border-bottom: 1px solid #6f6d6d;
+    border-right: none;
+  }
 
-.header .menu {
-  clear: both;
-  max-height: 0;
-  transition: max-height .2s ease-in-out-out;
-}
+  /* menu icon */
 
-.menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-}
-
-.header li a {
-  border-bottom: 1px solid #6f6d6d;
-  border-right: none;
-}
-
-/* menu icon */
-
-.header .menu-icon {
-  cursor: pointer;
-  display: inline-block;
-  float: right;
-  padding: 20px 20px;
-  position: relative;
-  user-select: none;
-}
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 20px 20px;
+    position: relative;
+    user-select: none;
+  }
 }
