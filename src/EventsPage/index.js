@@ -48,13 +48,13 @@ const events = [
   },
   {
     event: 'Sunday Breakfast',
-    time: 'Friday, July 3rd from 8a - 12p',
+    time: 'Sunday, July 5th from 8a - 12p',
     location: 'Windy Point Campground',
     dress: 'camping casual'
   },
   {
     event: 'Cleanup',
-    time: 'Friday, July 3rd from 12p on',
+    time: 'Sunday, July 5th from 12p on',
     location: 'Windy Point Campground',
     dress: 'camping casual'
   },
@@ -68,13 +68,15 @@ const EventsPage = () => {
         <div className='inner-outline'>
           {events.map((thing, i) => (
             <div className='event-box' key={i}>
-              <h3 className='event-event'>{thing.event}</h3>
-              <p className='info-type'>When:</p>
-              <p className='info-info'>{thing.time}</p>
-              <p className='info-type'>Location:</p>
-              <p className='info-info'>{thing.location}</p>
-              <p className='info-type'>Dress:</p>
-              <p className='info-info'>{thing.dress}</p>
+              <div className='event-circle'>
+                <h3 className='event-event'>{thing.event}</h3>
+                <p className='info-type'>When:</p>
+                <p className='info-info'>{thing.time}</p>
+                <p className='info-type'>Location:</p>
+                <p className='info-info'>{thing.location}</p>
+                <p className='info-type'>Dress:</p>
+                <p className='info-info'>{thing.dress}</p>
+              </div>
             </div>
           ))}
         </div>
