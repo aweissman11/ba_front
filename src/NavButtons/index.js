@@ -16,6 +16,7 @@ const NavButtons = (props) => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   }, [])
+
   const handleScroll = (e) => {
     // console.log('e:', window.scrollY);
     if (window.scrollY > 300) {
@@ -27,13 +28,15 @@ const NavButtons = (props) => {
 
   const toggleScroll = () => {
     if (isChecked) {
-      console.log('allowed to scroll');
-      window.removeEventListener('scroll', noScroll);
-      toggleIsChecked(false)
+      if (window.screen.width < 770) {
+        toggleIsChecked(false)
+        window.removeEventListener('scroll', noScroll);
+      }
     } else {
-      console.log('NO scroll');
-      window.addEventListener('scroll', noScroll);
-      toggleIsChecked(true)
+      if (window.screen.width < 770) {
+        toggleIsChecked(true)
+        window.addEventListener('scroll', noScroll);
+      }
     }
 
   }
