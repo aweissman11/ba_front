@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 // CSS
 import './NavButtons.css';
 
+
+const noScroll = () => {
+  window.scrollTo(0, 0);
+}
+
 const NavButtons = (props) => {
   let [fixedHeader, setFixedHeader] = useState('');
   let [isChecked, toggleIsChecked] = useState(false);
@@ -21,17 +26,16 @@ const NavButtons = (props) => {
   }
 
   const toggleScroll = () => {
-    toggleIsChecked(!isChecked)
-
-    const noScroll = () => {
-      window.scrollTo(0, 0);
-    }
-
     if (isChecked) {
+      console.log('allowed to scroll');
       window.removeEventListener('scroll', noScroll);
+      toggleIsChecked(false)
     } else {
+      console.log('NO scroll');
       window.addEventListener('scroll', noScroll);
+      toggleIsChecked(true)
     }
+
   }
 
   return (<div className={'whole-header'}>
@@ -55,13 +59,13 @@ const NavButtons = (props) => {
         />
         <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
         <ul className="menu">
-          <li><Link to={{ pathname: "/schedule" }}>Schedule</Link></li>
-          <li><Link to={{ pathname: "/story" }}>Our Story</Link></li>
-          <li><Link to={{ pathname: "/logistics" }}>Logistics</Link></li>
-          <li><Link to={{ pathname: "/stuff" }}>What to bring</Link></li>
-          <li><Link to={{ pathname: "/todo" }}>Things to do</Link></li>
-          <li><a href='https://www.rei.com/' target='_blank' rel="noopener noreferrer">Registry</a></li>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHs8Szep3Kau7LPRj1DhhYNgDSUi0xtVSfcjOq8l3ibyy-A/viewform?usp=sf_link" target='_blank' rel="noopener noreferrer"><b>RSVP</b></a></li>
+          <li onClick={toggleScroll}><Link to={{ pathname: "/schedule" }}>Schedule</Link></li>
+          <li onClick={toggleScroll}><Link to={{ pathname: "/story" }}>Our Story</Link></li>
+          <li onClick={toggleScroll}><Link to={{ pathname: "/logistics" }}>Logistics</Link></li>
+          <li onClick={toggleScroll}><Link to={{ pathname: "/stuff" }}>What to bring</Link></li>
+          <li onClick={toggleScroll}><Link to={{ pathname: "/todo" }}>Things to do</Link></li>
+          <li onClick={toggleScroll}><a href='https://www.rei.com/' target='_blank' rel="noopener noreferrer">Registry</a></li>
+          <li onClick={toggleScroll}><a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHs8Szep3Kau7LPRj1DhhYNgDSUi0xtVSfcjOq8l3ibyy-A/viewform?usp=sf_link" target='_blank' rel="noopener noreferrer"><b>RSVP</b></a></li>
         </ul>
       </header>
     </div>

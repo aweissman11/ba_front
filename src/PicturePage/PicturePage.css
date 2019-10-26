@@ -25,7 +25,7 @@
 
 
 @media (max-width: 48em) {
-  .events-page {
-    padding-top: 75px;
+  .picture-page {
+    padding: 0;
   }
 }

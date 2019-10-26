@@ -192,6 +192,12 @@
     width: 100%;
   }
 
+  .header li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
   .header li a {
     border-bottom: 1px solid #6f6d6d;
     border-right: none;
