@@ -30,7 +30,7 @@ const events = [
   },
   {
     event: 'Ceremony',
-    time: 'Saturday, July 4th 230p SHARP',
+    time: 'Saturday, July 4th 230p',
     location: 'Windy Point Campground',
     dress: 'Black tie/campground formal (hiking boots encouraged)'
   },
