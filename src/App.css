@@ -6,12 +6,12 @@
 
 .footer {
   height: 300px;
-  background: #000000;
+  background: #0c1b23;
 }
 
 a {
   font-weight: bold;
-  color: #fff;
+  color: #d1e6e6;
   transition: .2s;
   text-decoration: none;
 }

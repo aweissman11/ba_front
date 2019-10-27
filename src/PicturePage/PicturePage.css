@@ -2,8 +2,8 @@
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  background: #000000;
-  color: #fff;
+  background: #0c1b23;
+  color: #d1e6e6;
   padding-top: 165px;
   padding-bottom: 200px;
   text-align: center;
@@ -11,28 +11,42 @@
 
 .our-story {
   width: 80%;
-  margin: 0 auto 20px;
+  margin: 20px auto;
   font-family: 'Playfair Display', serif;
 }
 
-.google-album {
-  /* width: 100%; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.test-pic-div {
+  margin: 100px auto
 }
 
-.jx-carousel-title {
-  display: none !important;
+.li-0 {
+  height: auto;
+  /* max-height: 600px; */
+  margin: 0 10px;
 }
 
-.jx-carousel-arrow {
-  opacity: 1 !important;
+.slide-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  /* max-height: 600px; */
+}
+
+.awssld__content {
+  background-color: #0c1b23;
 }
 
 
 @media (max-width: 48em) {
   .picture-page {
     padding: 0;
+  }
+
+  .slides-holder {
+    overflow: scroll;
+  }
+
+  .slide-nav-btn {
+    display: none;
   }
 }

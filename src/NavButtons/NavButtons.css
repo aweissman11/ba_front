@@ -1,5 +1,6 @@
 .whole-header {
   position: fixed;
+  z-index: 20;
 }
 
 .header-image {
@@ -23,7 +24,7 @@
 }
 
 .header {
-  background-color: #000000;
+  background-color: #0c1b23;
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
   width: 100%;
   display: flex;
@@ -49,7 +50,7 @@
   background-size: contain;
   margin-left: 20px;
   border-radius: 100%;
-  background: white;
+  background: #d1e6e6;
 }
 
 .logo-icon:hover {
@@ -57,7 +58,7 @@
 }
 
 .header a {
-  color: #cecece;
+  color: #d1e6e6;
 }
 
 .header ul {
@@ -65,7 +66,6 @@
   padding: 0;
   list-style: none;
   overflow: hidden;
-  /* background-color: #fff; */
 }
 
 .header li a {
