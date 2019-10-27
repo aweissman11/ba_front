@@ -5,25 +5,25 @@ import './EventsPage.css';
 
 const events = [
   {
-    event: 'Friday Setup',
+    event: 'Setup and Beers',
     time: 'Friday, July 3rd from 10a - 2p',
     location: 'Windy Point Campground',
     dress: 'camping casual'
   },
   {
-    event: 'Friday BBQ',
+    event: 'Barbacue',
     time: 'Friday, July 3rd from 5p - 730p',
     location: 'Windy Point Campground',
     dress: 'camping casual'
   },
   {
-    event: 'Saturday Bagel Brunch',
+    event: 'Bagel Brunch',
     time: 'Saturday, July 4th from 8a - 11a',
     location: 'Windy Point Campground',
     dress: 'camping casual'
   },
   {
-    event: 'Saturday PB&J bar',
+    event: 'PB&J bar',
     time: 'Saturday, July 4th from 12p - 2p',
     location: 'Windy Point Campground',
     dress: 'camping casual'
@@ -47,13 +47,13 @@ const events = [
     dress: 'warmer clothes'
   },
   {
-    event: 'Sunday Breakfast',
+    event: 'Breakfast Burritos',
     time: 'Sunday, July 5th from 8a - 12p',
     location: 'Windy Point Campground',
     dress: 'camping casual'
   },
   {
-    event: 'Cleanup',
+    event: 'Cleanup/Breakdown',
     time: 'Sunday, July 5th from 12p on',
     location: 'Windy Point Campground',
     dress: 'camping casual'

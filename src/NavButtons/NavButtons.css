@@ -34,6 +34,10 @@
   padding: 10px 0;
 }
 
+.logo-link {
+  cursor: pointer;
+}
+
 .logo-icon {
   display: block;
   float: left;
@@ -46,6 +50,10 @@
   margin-left: 20px;
   border-radius: 100%;
   background: white;
+}
+
+.logo-icon:hover {
+  background: #cecece;
 }
 
 .header a {

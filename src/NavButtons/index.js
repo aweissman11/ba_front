@@ -46,13 +46,13 @@ const NavButtons = (props) => {
     </div>
     <div className={'nav-box ' + fixedHeader}>
       <header className={'header'}>
-        <a className='logo-link' href="/">
+        <span className='logo-link' href="/">
           <img
             alt='logo'
             className='logo-icon'
             src={require('../assets/camping-icon-tpbg.jpg')}
           />
-        </a>
+        </span>
         <input
           className="menu-btn"
           type="checkbox"

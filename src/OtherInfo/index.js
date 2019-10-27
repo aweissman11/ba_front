@@ -27,12 +27,42 @@ const OtherInfo = () => {
       <div className='circle-div'>
         <div className='tent-pic'></div>
       </div>
-      <h1>Camping Resources</h1>
-      <h3>Kit Rentals:</h3>
-      <p><a target='_blank' rel="noopener noreferrer" href='www.rei.com' >REI</a></p>
-      <p><a target='_blank' rel="noopener noreferrer" href='www.mountainsidegearrental.com' >Mountain Side Gear Rental</a></p>
-      <p><a target='_blank' rel="noopener noreferrer" href='www.vitaloutdoors.com' >Vital Outdoors</a></p>
-      <p><a target='_blank' rel="noopener noreferrer" href='https://www.outdoorsgeek.com/product-category/camping-packages/' >Outdoors Geek</a></p>
+      <div className='name-outline'>
+        <div className='inner-outline'>
+          <div className='kit-circle'>
+            <h1 className='resource-title'>Camping Resources</h1>
+            <h3>Kit Rental Links:</h3>
+            <p className='kit-link'>
+              <a
+                target='_blank'
+                rel="noopener noreferrer"
+                href='www.rei.com'
+              >REI</a>
+            </p>
+            <p className='kit-link'>
+              <a
+                target='_blank'
+                rel="noopener noreferrer"
+                href='www.mountainsidegearrental.com'
+              >Mountain Side Gear Rental</a>
+            </p>
+            <p className='kit-link'>
+              <a
+                target='_blank'
+                rel="noopener noreferrer"
+                href='www.vitaloutdoors.com'
+              >Vital Outdoors</a>
+            </p>
+            <p className='kit-link'>
+              <a
+                target='_blank'
+                rel="noopener noreferrer"
+                href='https://www.outdoorsgeek.com/product-category/camping-packages/'
+              >Outdoors Geek</a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
