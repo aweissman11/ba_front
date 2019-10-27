@@ -46,13 +46,13 @@ const NavButtons = (props) => {
     </div>
     <div className={'nav-box ' + fixedHeader}>
       <header className={'header'}>
-        <span className='logo-link' href="/">
+        <Link className='logo-link' to="/">
           <img
             alt='logo'
             className='logo-icon'
             src={require('../assets/camping-icon-tpbg.jpg')}
           />
-        </span>
+        </Link>
         <input
           className="menu-btn"
           type="checkbox"
@@ -62,12 +62,12 @@ const NavButtons = (props) => {
         />
         <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
         <ul className="menu">
-          <li onClick={toggleScroll}><Link to={{ pathname: "/schedule" }}>Schedule</Link></li>
-          <li onClick={toggleScroll}><Link to={{ pathname: "/story" }}>Our Story</Link></li>
-          <li onClick={toggleScroll}><Link to={{ pathname: "/logistics" }}>Logistics</Link></li>
-          <li onClick={toggleScroll}><Link to={{ pathname: "/stuff" }}>What to bring</Link></li>
-          <li onClick={toggleScroll}><Link to={{ pathname: "/todo" }}>Things to do</Link></li>
-          <li onClick={toggleScroll}><a href='https://www.rei.com/' target='_blank' rel="noopener noreferrer">Registry</a></li>
+          <li onClick={toggleScroll}><Link to={{ pathname: "/schedule" }}>SCHEDULE</Link></li>
+          <li onClick={toggleScroll}><Link to={{ pathname: "/story" }}>OUR STORY</Link></li>
+          <li onClick={toggleScroll}><Link to={{ pathname: "/logistics" }}>LOGISTICS</Link></li>
+          <li onClick={toggleScroll}><Link to={{ pathname: "/stuff" }}>WHAT TO BRING</Link></li>
+          <li onClick={toggleScroll}><Link to={{ pathname: "/todo" }}>THINGS TO DO</Link></li>
+          <li onClick={toggleScroll}><a href='https://www.rei.com/' target='_blank' rel="noopener noreferrer">REGISTRY</a></li>
           <li onClick={toggleScroll}><a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHs8Szep3Kau7LPRj1DhhYNgDSUi0xtVSfcjOq8l3ibyy-A/viewform?usp=sf_link" target='_blank' rel="noopener noreferrer"><b>RSVP</b></a></li>
         </ul>
       </header>

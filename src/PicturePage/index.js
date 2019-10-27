@@ -22,6 +22,7 @@ const PicturePage = () => {
 
   return (
     <div className='picture-page'>
+      <h1 className='our-story'>This is Our Story</h1>
       <div className='google-album'>
         <div className="pa-carousel-widget" style={{ width: '100%', height: '600px', display: 'none', margin: '0 30px', opacity: '1' }}
           data-link="https://photos.app.goo.gl/P3WWa8364TfrKVc67"
@@ -130,6 +131,22 @@ const PicturePage = () => {
           <object aria-label='chelsey and aaron' data="https://lh3.googleusercontent.com/_X5kHHMcpmA2giChB058dvTpLoJ9eR4QDBRkCiIqDc1ciZnEoq39jR4mY081yqyIfPfwNkw0B7joFFxTsMNMYUojEakp9O6OzJ8hf1O0BiEkEOrIQTpFs4AQT96zhdxUmhOcdmc2Lw=w1920-h1080"></object>
           <object aria-label='chelsey and aaron' data="https://lh3.googleusercontent.com/BwvCdv-DK9gneI7nmyqpDnsbwNmYBf58zCfixnr5bW3Rgt4Jh9Jkc91HPakGxkW_w46H7rYBEgrVn4RrR8IdnkOrAYeahuZg5OzvRQ8F8fFTa4T20elH9JzNF3-4neIzYlusTOWdSw=w1920-h1080"></object>
         </div>
+      </div>
+      <div className='stories'>
+        <article className='his-story'>
+          It was quite a Friday. That afternoon, while delivering ice cream for Toscanini's, I got the call from EF offering me a job as an Educational Tour Consultant.
+          It was to be my first real job, so I was, understandably, pretty pumped up about it. So I hit up Nina and said "let's celebrate!".
+          That night, she hit was hanging out with Helen, a friend of hers and a fellow Rindge grad, so she invited me to tag along.
+          I guess Helen reached out to Jen Bogle, who brought along her roommate. So the five of us started the night at Miracle of Science,
+          a bar located in the sweet sweet Coast (Central Square, Cambridge for the uninitiated). We were having some drinks and I guess I just
+          couldn't bring myself to leave the roommate alone. What can I say but I was in a good mood and thought this girl was pretty cute.
+          I started chatting her up and thought we had a bit of a connection, but suddenly, the bartender started offering her FREE DRINKS! Needless to say,
+          I knew I had to get us all out of there before someone else swooped in. So I gathered the other girls and offered up something I
+          knew no one would be able to resist, free ice cream. We were gonna head to this house party across town anyway and didn't have any beers
+          so I said, let's just bring some ice cream. Given my new job offer, I figured this gravy train wouldn't last forever anyway.
+          So, just as this roommate lady got offered a brand new, full to the brim, free beer from the bartender, we dragged her out of the bar and
+          headed over to Toscis. There we grabbed a few pints and hopped in an uber.
+        </article>
       </div>
     </div>
   );
