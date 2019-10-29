@@ -36,6 +36,14 @@
   background-color: #0c1b23;
 }
 
+.his-story {
+  max-width: 650px;
+  margin: auto;
+  text-align: justify;
+  font-size: 1.1em;
+  line-height: 1.3em;
+}
+
 
 @media (max-width: 48em) {
   .picture-page {
