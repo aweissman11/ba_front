@@ -53,13 +53,13 @@ const NavButtons = (props) => {
         toggleIsChecked(true)
         window.addEventListener('scroll', noScroll);
         setNav1('nav-item-in-place');
-        window.setTimeout(() => setNav2('nav-item-in-place'), 100);
-        window.setTimeout(() => setNav3('nav-item-in-place'), 200);
-        window.setTimeout(() => setNav4('nav-item-in-place'), 300);
-        window.setTimeout(() => setNav5('nav-item-in-place'), 400);
-        window.setTimeout(() => setNav6('nav-item-in-place'), 500);
-        window.setTimeout(() => setNav7('nav-item-in-place'), 600);
-        window.setTimeout(() => setNav8('nav-item-in-place'), 700);
+        window.setTimeout(() => setNav2('nav-item-in-place'), 50);
+        window.setTimeout(() => setNav3('nav-item-in-place'), 100);
+        window.setTimeout(() => setNav4('nav-item-in-place'), 150);
+        window.setTimeout(() => setNav5('nav-item-in-place'), 200);
+        window.setTimeout(() => setNav6('nav-item-in-place'), 250);
+        window.setTimeout(() => setNav7('nav-item-in-place'), 300);
+        window.setTimeout(() => setNav8('nav-item-in-place'), 350);
       }
     }
 
