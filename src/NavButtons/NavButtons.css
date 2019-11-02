@@ -225,6 +225,7 @@
   .navver {
     position: relative;
     transition: .4s;
+    margin-bottom: 25px;
   }
 
   .nav-out {
