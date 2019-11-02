@@ -28,24 +28,7 @@ const WhatToDo = () => {
             </section>
           </div>
 
-          <div className='info-section'>
-            <div className='small-circle-div'>
-              <div className='fishing-pic circle-pic'></div>
-            </div>
-            <section className='to-do-event-box'>
-              <h3 className='event-event'>Fishing</h3>
-              <p className='info-detail'>1 day fishing license - $17 for non resident:</p>
-              <p className='to-do-info'>
-                <a target='_blank' rel="noopener noreferrer" href='https://www.cpwshop.com/licensing.page'>Get a license <LinkIcon /></a>
-              </p>
-              <p className='to-do-info'>
-                <a target='_blank' rel="noopener noreferrer" href='https://www.townoffrisco.com/play/dillon-reservoir/fishing/'>Fishing pole rentals <LinkIcon /></a>
-              </p>
-              <p className='to-do-info'>
-                <a target='_blank' rel="noopener noreferrer" href='https://bigedsfishing.com'>Fishing tour <LinkIcon /></a>
-              </p>
-            </section>
-          </div>
+          <hr className='event-break' />
 
           <div className='info-section'>
             <div className='small-circle-div'>
@@ -101,6 +84,50 @@ const WhatToDo = () => {
               </article>
             </section>
           </div>
+
+          <hr className='event-break' />
+
+          <div className='info-section'>
+            <div className='small-circle-div'>
+              <div className='fishing-pic circle-pic'></div>
+            </div>
+            <section className='to-do-event-box'>
+              <h3 className='event-event'>Fishing</h3>
+              <p className='info-detail'>1 day fishing license - $17 for non resident:</p>
+              <p className='to-do-info'>
+                <a target='_blank' rel="noopener noreferrer" href='https://www.cpwshop.com/licensing.page'>Get a license <LinkIcon /></a>
+              </p>
+              <p className='to-do-info'>
+                <a target='_blank' rel="noopener noreferrer" href='https://www.townoffrisco.com/play/dillon-reservoir/fishing/'>Fishing pole rentals <LinkIcon /></a>
+              </p>
+              <p className='to-do-info'>
+                <a target='_blank' rel="noopener noreferrer" href='https://bigedsfishing.com'>Fishing tour <LinkIcon /></a>
+              </p>
+            </section>
+          </div>
+
+          <hr className='event-break' />
+
+          <div className='info-section'>
+            <div className='small-circle-div'>
+              <div className='mountain-hiking circle-pic'></div>
+            </div>
+            <section className='to-do-event-box'>
+              <h3 className='event-event'>Hiking - Welcome to Colorado!</h3>
+              <p className='info-detail'>Everywhere nearby is a beautiful hike</p>
+              <p className='to-do-info'>
+                <a target='_blank' rel="noopener noreferrer" href='https://www.alltrails.com/us/colorado/dillon'>All Trails <LinkIcon /></a>
+              </p>
+              <p className='to-do-info'>
+                <a target='_blank' rel="noopener noreferrer" href='https://www.hikingproject.com/directory/8017985/silverthorne-dillon'>Hiking Project <LinkIcon /></a>
+              </p>
+              <p className='to-do-info'>
+                <a target='_blank' rel="noopener noreferrer" href='https://cpw.state.co.us/CTS'>CoTrex <LinkIcon /></a>
+              </p>
+            </section>
+          </div>
+
+          <hr className='event-break' />
 
           <div className='info-section'>
             <div className='small-circle-div'>
@@ -159,24 +186,7 @@ const WhatToDo = () => {
             </section>
           </div>
 
-          <div className='info-section'>
-            <div className='small-circle-div'>
-              <div className='mountain-hiking circle-pic'></div>
-            </div>
-            <section className='to-do-event-box'>
-              <h3 className='event-event'>Hiking - Welcome to Colorado!</h3>
-              <p className='info-detail'>Everywhere nearby is a beautiful hike</p>
-              <p className='to-do-info'>
-                <a target='_blank' rel="noopener noreferrer" href='https://www.alltrails.com/us/colorado/dillon'>All Trails <LinkIcon /></a>
-              </p>
-              <p className='to-do-info'>
-                <a target='_blank' rel="noopener noreferrer" href='https://www.hikingproject.com/directory/8017985/silverthorne-dillon'>Hiking Project <LinkIcon /></a>
-              </p>
-              <p className='to-do-info'>
-                <a target='_blank' rel="noopener noreferrer" href='https://cpw.state.co.us/CTS'>CoTrex <LinkIcon /></a>
-              </p>
-            </section>
-          </div>
+          <hr className='event-break' />
 
           <div className='info-section'>
             <div className='small-circle-div'>
@@ -196,6 +206,8 @@ const WhatToDo = () => {
             </section>
           </div>
 
+          <hr className='event-break' />
+
           <div className='info-section'>
             <div className='small-circle-div'>
               <div className='frisco-food circle-pic'></div>
@@ -213,6 +225,8 @@ const WhatToDo = () => {
               </p>
             </section>
           </div>
+
+          <hr className='event-break' />
 
           <div className='info-section'>
             <div className='small-circle-div'>

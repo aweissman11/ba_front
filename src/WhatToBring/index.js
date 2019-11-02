@@ -10,7 +10,14 @@ const lists = [
       'Headlamp/flashlight',
       'Bug Spray',
       'Sunscreen',
-      'Warm clothes'
+      'Water Bottle',
+      'Rain coat',
+      'Warm clothes',
+      'Sandals',
+      'Sun glasses',
+      'Hiking boots',
+      'Beer coozie',
+      'Grit'
     ]
   },
   {
@@ -23,7 +30,10 @@ const lists = [
       'Sleeping pad',
       '(unless you are renting this through Outdoors Geek)',
       'Extra flashlight/lantern',
-      'Extra batteries'
+      'Extra batteries',
+      'Phone battery pack',
+      'Pillow',
+      "Don't forget to bring a towel"
     ]
   },
   {
@@ -32,7 +42,9 @@ const lists = [
       'RV',
       'Generator/power source (if needed)',
       'Extra flashlight/lantern',
-      'Extra batteries'
+      'Extra batteries',
+      'Double check with the rental place to see if they reccomend anything else',
+      'Phone batter pack'
     ]
   },
 ];

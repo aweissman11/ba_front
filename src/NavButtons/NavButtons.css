@@ -211,8 +211,6 @@
     border-right: none;
   }
 
-  /* menu icon */
-
   .header .menu-icon {
     cursor: pointer;
     display: inline-block;
@@ -224,8 +222,8 @@
 
   .navver {
     position: relative;
-    transition: .4s;
-    margin-bottom: 25px;
+    transition: .3s ease-out;
+    margin-bottom: 20px;
   }
 
   .nav-out {

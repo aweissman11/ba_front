@@ -4,14 +4,6 @@
   margin-left: 3px;
 }
 
-.the-things {
-  /* display: grid;
-  grid-template-columns: repeat( auto-fill, minmax(375px, 1fr) );
-  grid-auto-rows: fill; */
-  /* display: flex;
-  flex-wrap: wrap; */
-}
-
 .info-section {
   display: flex;
   justify-content: space-around;
@@ -19,6 +11,12 @@
   width: min-content;
   margin: auto;
 
+}
+
+.event-break {
+  width: 330px;
+  margin: 30px auto;
+  border: .5px #d1e6e6 solid;
 }
 
 .small-circle-div {
@@ -103,6 +101,10 @@
   .info-section {
     width: 100%;
     flex-direction: column;
+  }
+
+  .event-break {
+    width: 160px;
   }
 
   .small-circle-div {

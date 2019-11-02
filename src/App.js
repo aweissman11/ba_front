@@ -15,6 +15,7 @@ import EventsPage from './EventsPage';
 import HomePage from './HomePage';
 import WhatToBring from './WhatToBring';
 import WhatToDo from './WhatToDo';
+import Clothes from './Clothes';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <div className="App">
         <NavButtons />
         <Switch>
-          <Route path='/schedule'>
+          <Route path='/events'>
             <EventsPage />
           </Route>
           <Route path='/story'>
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path='/todo'>
             <WhatToDo />
+          </Route>
+          <Route path='/clothes'>
+            <Clothes />
           </Route>
           <Route path='/'>
             <HomePage />

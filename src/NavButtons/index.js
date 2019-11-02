@@ -18,6 +18,9 @@ const NavButtons = (props) => {
   let [nav3, setNav3] = useState('nav-out')
   let [nav4, setNav4] = useState('nav-out')
   let [nav5, setNav5] = useState('nav-out')
+  let [nav6, setNav6] = useState('nav-out')
+  let [nav7, setNav7] = useState('nav-out')
+  let [nav8, setNav8] = useState('nav-out')
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -41,6 +44,9 @@ const NavButtons = (props) => {
         setNav3('nav-out')
         setNav4('nav-out')
         setNav5('nav-out')
+        setNav6('nav-out')
+        setNav7('nav-out')
+        setNav8('nav-out')
       }
     } else {
       if (window.screen.width < 770) {
@@ -51,6 +57,9 @@ const NavButtons = (props) => {
         window.setTimeout(() => setNav3('nav-item-in-place'), 200);
         window.setTimeout(() => setNav4('nav-item-in-place'), 300);
         window.setTimeout(() => setNav5('nav-item-in-place'), 400);
+        window.setTimeout(() => setNav6('nav-item-in-place'), 500);
+        window.setTimeout(() => setNav7('nav-item-in-place'), 600);
+        window.setTimeout(() => setNav8('nav-item-in-place'), 700);
       }
     }
 
@@ -81,7 +90,7 @@ const NavButtons = (props) => {
             className={'navver ' + nav1}
             onClick={toggleScroll}
           >
-            <Link to={{ pathname: "/schedule" }}>SCHEDULE</Link>
+            <Link to={{ pathname: "/events" }}>EVENTS</Link>
           </li>
           <li
             className={'navver ' + nav2}
@@ -107,8 +116,26 @@ const NavButtons = (props) => {
           >
             <Link to={{ pathname: "/todo" }}>THINGS TO DO</Link>
           </li>
-          {/* <li onClick={toggleScroll}><a href='https://www.rei.com/' target='_blank' rel="noopener noreferrer">REGISTRY</a></li>
-          <li onClick={toggleScroll}><a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHs8Szep3Kau7LPRj1DhhYNgDSUi0xtVSfcjOq8l3ibyy-A/viewform?usp=sf_link" target='_blank' rel="noopener noreferrer"><b>RSVP</b></a></li> */}
+          <li
+            className={'navver ' + nav6}
+            onClick={toggleScroll}
+          >
+            <Link to={{ pathname: "/clothes" }}>CLOTHES</Link>
+          </li>
+          <li
+            className={'navver ' + nav7}
+            onClick={toggleScroll}
+          >
+            <a href='https://www.rei.com/' target='_blank' rel="noopener noreferrer">REGISTRY</a>
+          </li>
+          <li
+            className={'navver ' + nav8}
+            onClick={toggleScroll}
+          >
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHs8Szep3Kau7LPRj1DhhYNgDSUi0xtVSfcjOq8l3ibyy-A/viewform?usp=sf_link" target='_blank' rel="noopener noreferrer">
+              <b>RSVP</b>
+            </a>
+          </li>
         </ul>
       </header>
     </div>

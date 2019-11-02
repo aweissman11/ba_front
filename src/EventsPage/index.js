@@ -5,16 +5,22 @@ import './EventsPage.css';
 
 const events = [
   {
-    event: 'Setup and Beers',
+    event: 'Setup and Drinks',
     time: 'Friday, July 3rd from 10a - 2p',
     location: 'Windy Point Campground',
     dress: 'camping casual'
   },
   {
-    event: 'Barbacue',
+    event: 'Rehearsal BBQ',
     time: 'Friday, July 3rd from 5p - 730p',
     location: 'Windy Point Campground',
     dress: 'camping casual'
+  },
+  {
+    event: 'Morning Yoga',
+    time: 'Saturday, July 4th from 7a - 8a',
+    location: 'Windy Point Beach',
+    dress: 'warm yoga casual'
   },
   {
     event: 'Bagel Brunch',

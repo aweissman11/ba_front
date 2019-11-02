@@ -11,7 +11,7 @@ import './OurStory.css';
 
 const OurStory = () => {
   return (
-    <div className='picture-page'>
+    <div className='story-page'>
       <h1 className='our-story'>This is Our Story</h1>
 
       <div className='pic-div'>

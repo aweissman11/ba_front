@@ -35,6 +35,10 @@
   background-size: 133%;
 }
 
+.info-block {
+  margin: 10px auto;
+}
+
 .resource-title {
   font-size: 2.1em;
   text-decoration: underline;
@@ -51,6 +55,31 @@
 
 .kit-link {
   font-size: 1.5em;
+}
+
+.shuttle-pic {
+  background: url('https://www.summitexpress.com/denver-airport-shuttle/files/uploads/2019/05/dillon-ampitheater-summer.jpg');
+}
+
+.other-tent {
+  background: url('https://www.nps.gov/cato/planyourvisit/images/owcc-small.jpg');
+}
+
+.tent-pack-pic {
+  background: url('../assets/half-dome-tent.jpg');
+}
+
+.rv-pic {
+  background: url('https://www.visitwisecounty.com/wp-content/uploads/2018/07/rv-camping-in-woods.jpg');
+  background-position-x: -75px;
+}
+
+.camper-van {
+  background: url('https://images.squarespace-cdn.com/content/v1/5575b615e4b09fc993261f99/1572231938275-RZ2XRM2DKWGB42XZ8IFJ/ke17ZwdGBToddI8pDm48kEpVg-ILAPna1wRh-xAJ9fRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwEv36x-EUL2-BSQ5feDhwGCbXuJBFqZ-erYzVouT8yOb9TwqchglLQOCYTRn7ZGxI/image-asset.jpeg?format=500w');
+}
+
+.soviet-hotel {
+  background: url('https://www.hotelbusiness.com/wp-content/uploads/2018/07/crop-Motel6.jpg');
 }
 
 
