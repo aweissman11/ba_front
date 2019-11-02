@@ -13,12 +13,17 @@ const NavButtons = (props) => {
   let [fixedHeader, setFixedHeader] = useState('');
   let [isChecked, toggleIsChecked] = useState(false);
 
+  let [nav1, setNav1] = useState('nav-out')
+  let [nav2, setNav2] = useState('nav-out')
+  let [nav3, setNav3] = useState('nav-out')
+  let [nav4, setNav4] = useState('nav-out')
+  let [nav5, setNav5] = useState('nav-out')
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   }, [])
 
   const handleScroll = (e) => {
-    // console.log('e:', window.scrollY);
     if (window.scrollY > 300) {
       setFixedHeader('fixed-header');
     } else {
@@ -31,11 +36,21 @@ const NavButtons = (props) => {
       if (window.screen.width < 770) {
         toggleIsChecked(false)
         window.removeEventListener('scroll', noScroll);
+        setNav1('nav-out')
+        setNav2('nav-out')
+        setNav3('nav-out')
+        setNav4('nav-out')
+        setNav5('nav-out')
       }
     } else {
       if (window.screen.width < 770) {
         toggleIsChecked(true)
         window.addEventListener('scroll', noScroll);
+        setNav1('nav-item-in-place');
+        window.setTimeout(() => setNav2('nav-item-in-place'), 100);
+        window.setTimeout(() => setNav3('nav-item-in-place'), 200);
+        window.setTimeout(() => setNav4('nav-item-in-place'), 300);
+        window.setTimeout(() => setNav5('nav-item-in-place'), 400);
       }
     }
 
@@ -62,13 +77,38 @@ const NavButtons = (props) => {
         />
         <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
         <ul className="menu">
-          <li onClick={toggleScroll}><Link to={{ pathname: "/schedule" }}>SCHEDULE</Link></li>
-          <li onClick={toggleScroll}><Link to={{ pathname: "/story" }}>OUR STORY</Link></li>
-          <li onClick={toggleScroll}><Link to={{ pathname: "/logistics" }}>LOGISTICS</Link></li>
-          <li onClick={toggleScroll}><Link to={{ pathname: "/stuff" }}>WHAT TO BRING</Link></li>
-          <li onClick={toggleScroll}><Link to={{ pathname: "/todo" }}>THINGS TO DO</Link></li>
-          <li onClick={toggleScroll}><a href='https://www.rei.com/' target='_blank' rel="noopener noreferrer">REGISTRY</a></li>
-          <li onClick={toggleScroll}><a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHs8Szep3Kau7LPRj1DhhYNgDSUi0xtVSfcjOq8l3ibyy-A/viewform?usp=sf_link" target='_blank' rel="noopener noreferrer"><b>RSVP</b></a></li>
+          <li
+            className={'navver ' + nav1}
+            onClick={toggleScroll}
+          >
+            <Link to={{ pathname: "/schedule" }}>SCHEDULE</Link>
+          </li>
+          <li
+            className={'navver ' + nav2}
+            onClick={toggleScroll}
+          >
+            <Link to={{ pathname: "/story" }}>OUR STORY</Link>
+          </li>
+          <li
+            className={'navver ' + nav3}
+            onClick={toggleScroll}
+          >
+            <Link to={{ pathname: "/logistics" }}>LOGISTICS</Link>
+          </li>
+          <li
+            className={'navver ' + nav4}
+            onClick={toggleScroll}
+          >
+            <Link to={{ pathname: "/stuff" }}>WHAT TO BRING</Link>
+          </li>
+          <li
+            className={'navver ' + nav5}
+            onClick={toggleScroll}
+          >
+            <Link to={{ pathname: "/todo" }}>THINGS TO DO</Link>
+          </li>
+          {/* <li onClick={toggleScroll}><a href='https://www.rei.com/' target='_blank' rel="noopener noreferrer">REGISTRY</a></li>
+          <li onClick={toggleScroll}><a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHs8Szep3Kau7LPRj1DhhYNgDSUi0xtVSfcjOq8l3ibyy-A/viewform?usp=sf_link" target='_blank' rel="noopener noreferrer"><b>RSVP</b></a></li> */}
         </ul>
       </header>
     </div>

@@ -1,0 +1,118 @@
+.link-icon {
+  position: relative;
+  top: 3px;
+  margin-left: 3px;
+}
+
+.the-things {
+  /* display: grid;
+  grid-template-columns: repeat( auto-fill, minmax(375px, 1fr) );
+  grid-auto-rows: fill; */
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
+.info-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: min-content;
+  margin: auto;
+
+}
+
+.small-circle-div {
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  margin: 50px;
+  overflow: hidden;
+}
+
+.circle-pic {
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+}
+
+.paddle-boarders {
+  background: url('https://www.townoffrisco.com/wp-content/uploads/2014/06/Marina-Morning-SUP-with-Sun-Slider-904x452.png');
+  background-size: 133%;
+}
+
+.fishing-pic {
+  background: url('https://media-cdn.tripadvisor.com/media/photo-s/10/6e/6a/26/gorgeous-fishing-on-lake.jpg');
+}
+
+.sapphire-point {
+  background: url('https://images.discerningassets.com/image/upload/c_fit,h_1000,w_1000/c_fit,fl_relative,h_1.0,l_ammaidtawnihnrcdopqc,o_40,w_1.0/v1480042898/colorado-photosDSC_0142-Edit_tv04dl.jpg');
+}
+
+.mountain-biking {
+  background: url('https://mountain.realestate/application/files/8714/6498/6822/dillon-activity.jpg');
+}
+
+.mountain-hiking {
+  background: url('https://i.pinimg.com/originals/f2/7f/af/f27faf4d2c589e220cf33b5e7e24a680.jpg');
+}
+
+.frisco-co {
+  background: url('https://www.friscogov.com/wp-content/uploads/2017/07/Frisco-Main-Street-Winter-1200x600.jpg');
+}
+
+.frisco-food {
+  background: url('https://i.pinimg.com/originals/3e/8c/11/3e8c112420edae2eac9c154842997543.jpg');
+}
+
+.croquet {
+  background: url('https://media-cdn.tripadvisor.com/media/photo-s/11/64/22/d8/play-croquet-on-the-front.jpg');
+}
+
+.to-do-event-box {
+  width: 375px;
+  margin: 30px auto;
+  height: min-content;
+}
+
+.info-article {
+  margin: 20px auto;
+}
+
+.info-detail {
+  font-style: italic;
+  font-size: 1.2em;
+  margin-bottom: 3px;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+}
+
+.info-list li {
+  margin-bottom: 20px;
+}
+
+.to-do-info:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+
+@media (max-width: 48em) {
+  .info-section {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .small-circle-div {
+    margin: 5px 0;
+    height: 125px;
+    width: 125px;
+  }
+
+  .to-do-event-box {
+    width: 100%;
+    padding: 0 10px;
+  }
+}

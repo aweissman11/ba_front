@@ -9,8 +9,8 @@ import {
 
 // components
 import NavButtons from './NavButtons';
-import OtherInfo from './OtherInfo';
-import PicturePage from './PicturePage';
+import Logistics from './Logistics';
+import OurStory from './OurStory';
 import EventsPage from './EventsPage';
 import HomePage from './HomePage';
 import WhatToBring from './WhatToBring';
@@ -26,10 +26,10 @@ function App() {
             <EventsPage />
           </Route>
           <Route path='/story'>
-            <PicturePage />
+            <OurStory />
           </Route>
           <Route path='/logistics'>
-            <OtherInfo />
+            <Logistics />
           </Route>
           <Route path='/stuff'>
             <WhatToBring />

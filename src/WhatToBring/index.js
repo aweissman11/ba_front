@@ -17,8 +17,11 @@ const lists = [
     who: 'For Tenters',
     what: [
       'Tent',
+      '(unless you are renting this through Outdoors Geek)',
       'Sleeping bag',
+      '(unless you are renting this through Outdoors Geek)',
       'Sleeping pad',
+      '(unless you are renting this through Outdoors Geek)',
       'Extra flashlight/lantern',
       'Extra batteries'
     ]
