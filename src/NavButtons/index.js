@@ -36,7 +36,7 @@ const NavButtons = (props) => {
 
   const toggleScroll = () => {
     if (isChecked) {
-      if (window.screen.width < 770) {
+      if (window.screen.width < 970) {
         toggleIsChecked(false)
         window.removeEventListener('scroll', noScroll);
         setNav1('nav-out')
@@ -49,7 +49,7 @@ const NavButtons = (props) => {
         setNav8('nav-out')
       }
     } else {
-      if (window.screen.width < 770) {
+      if (window.screen.width < 970) {
         toggleIsChecked(true)
         window.addEventListener('scroll', noScroll);
         setNav1('nav-item-in-place');

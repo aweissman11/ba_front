@@ -44,7 +44,7 @@ const lists = [
       'Extra flashlight/lantern',
       'Extra batteries',
       'Double check with the rental place to see if they reccomend anything else',
-      'Phone batter pack'
+      'Phone battery pack'
     ]
   },
 ];
@@ -56,7 +56,7 @@ const WhatToBring = () => {
       <div className='name-outline'>
         <div className='inner-outline'>
           {lists.map(list => (
-            <div className='event-box'>
+            <div className='what-box'>
               <h3 className='event-event'>{list.who}</h3>
               <p className='info-type'>Don't forget the following:</p>
               {list.what.map(item => (<>

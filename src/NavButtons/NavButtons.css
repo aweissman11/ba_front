@@ -87,6 +87,7 @@
   clear: none;
   float: right;
   max-height: none;
+  /* margin-right: 15px; */
 }
 
 .header .menu-icon {
@@ -152,7 +153,7 @@
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 970px) {
   .whole-header {
     height: 300px;
     z-index: 10;

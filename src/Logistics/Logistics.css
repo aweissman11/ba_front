@@ -82,8 +82,18 @@
   background: url('https://www.hotelbusiness.com/wp-content/uploads/2018/07/crop-Motel6.jpg');
 }
 
+.campground-info {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
 
-@media (max-width: 768px) {
+.campground-hr {
+  width: 60%;
+  margin: 20px auto;
+}
+
+@media (max-width: 970px) {
   .other-info {
     padding-top: 75px;
   }

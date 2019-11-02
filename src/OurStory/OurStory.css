@@ -81,7 +81,7 @@
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 970px) {
   .slider-box {
     width: 100vw;
   }
@@ -175,7 +175,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 970px) {
 
   .slider-box {
     width: 300px;
