@@ -126,7 +126,8 @@ const NavButtons = (props) => {
             className={'navver ' + nav7}
             onClick={toggleScroll}
           >
-            <a href='https://www.rei.com/' target='_blank' rel="noopener noreferrer">REGISTRY</a>
+            <Link to={{ pathname: "/registry" }}>REGISTRY</Link>
+            {/* <a href='https://www.rei.com/' target='_blank' rel="noopener noreferrer">REGISTRY</a> */}
           </li>
           <li
             className={'navver ' + nav8}

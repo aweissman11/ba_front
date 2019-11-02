@@ -44,7 +44,7 @@ const events = [
     food: '',
     time: 'Saturday, July 4th 230p',
     location: 'Windy Point Campground',
-    dress: 'Black tie/campground formal (hiking boots encouraged)'
+    dress: 'campground formal (hiking boots encouraged)'
   },
   {
     event: 'Dinner',

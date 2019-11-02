@@ -16,6 +16,7 @@ import HomePage from './HomePage';
 import WhatToBring from './WhatToBring';
 import WhatToDo from './WhatToDo';
 import Clothes from './Clothes';
+import Registry from './Registry';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route path='/clothes'>
             <Clothes />
+          </Route>
+          <Route path='/registry'>
+            <Registry />
           </Route>
           <Route path='/'>
             <HomePage />

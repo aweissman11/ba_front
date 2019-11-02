@@ -228,6 +228,9 @@ const Logistics = () => {
           <h2>Facilities</h2>
           <p>Windy Point Group Campground has two group campsites available for the use; the Lake Loop and the Forest Loop. Both loops are able to accommodate tents, trailers and RV's. Electrical hook-ups are not available. Each loop is equipped with picnic tables, campfire rings, and vault toilets and both are pet friendly. Additionally, the Lake Loop has a handicap-accessible group picnic shelter available for use. Boat ramp access is available in the marinas located in the nearby towns of Frisco and Dillion.</p>
           <hr className='campground-hr' />
+          <h2> <a target='_blank' rel="noopener noreferrer" href='https://www.silverthorne.org/town-services/recreation-center'>Showers <LinkIcon /></a></h2>
+          <p>Showers can be accessed at Sliverthorne Rec Center. $12 daily admission.</p>
+          <hr className='campground-hr' />
           <h2>Natural Features</h2>
           <p>In the heart of the Rocky Mountains, the 2.3 million acre White River National Forest is a place of serenity and adventure, boasting 8 wilderness areas, 4 defined seasons, and 10 peaks surpassing 14,000 feet in elevation. Described as being more vertical than horizontal, the nearby Eagles Nest Wilderness, designated in 1976, is a playground of craggy cliffs, sheer rock faces, alpine lakes, and deep, forested valleys. Visitors will find foot travel across this pristine area challenging and often strenuous, but will be rewarded with spectacular scenery. Wildlife in the area abounds. Bighorn sheep navigate rocky ridges and bull elk bugle at dusk. Scenic rivers sustain populations of cutthroat, rainbow, and brown trout. Alpine regions provide habitat for pika and ptarmigan. These species, along with many others, depend on surrounding undeveloped wilderness, clean streams, and diverse forests to live.</p>
           <hr className='campground-hr' />
