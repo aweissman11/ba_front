@@ -13,15 +13,15 @@ const HomePage = () => {
     window.setTimeout(() => {
       setAaronClass('aaron-move');
       setChelsClass('chels-move');
-    }, 1500);
+    }, 500);
 
     window.setTimeout(() => {
       setDateClass('date-move');
-    }, 1800);
+    }, 800);
 
     window.setTimeout(() => {
       setCoordsClass('coords-move');
-    }, 2000);
+    }, 1000);
 
   }, [])
 
