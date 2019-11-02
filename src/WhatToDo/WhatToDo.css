@@ -97,7 +97,7 @@
 }
 
 
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   .info-section {
     width: 100%;
     flex-direction: column;

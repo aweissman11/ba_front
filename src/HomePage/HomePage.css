@@ -144,7 +144,7 @@
 }
 
 
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   .home-page {
     padding-top: 75px;
   }

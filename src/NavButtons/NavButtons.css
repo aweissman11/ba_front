@@ -153,7 +153,7 @@
 
 
 
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   .whole-header {
     height: 300px;
     z-index: 10;

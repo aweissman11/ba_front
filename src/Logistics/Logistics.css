@@ -83,7 +83,7 @@
 }
 
 
-@media (max-width: 48em) {
+@media (max-width: 768px) {
   .other-info {
     padding-top: 75px;
   }
