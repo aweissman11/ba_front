@@ -61,6 +61,13 @@ const events = [
     dress: 'campground formal'
   },
   {
+    event: 'Fire',
+    food: 'Fireworks, Bonfires, and Fire dance moves',
+    time: 'Saturday, July 4th from 10p - Sunday',
+    location: 'Windy Point firepit',
+    dress: 'Very warm clothes'
+  },
+  {
     event: 'Breakfast Burritos',
     food: 'Breakfast and coffee provided',
     time: 'Sunday, July 5th from 8a - 12p',
@@ -79,7 +86,10 @@ const events = [
 const EventsPage = () => {
   return (
     <div className='events-page'>
-      <h1 className='invited'>Everyone is invited to all events</h1>
+      <h1 className='invited'>Everyone is welcome to all events</h1>
+      <h2 className='events-invite'>The campground is reserved from June 26th to July 6th</h2>
+      <h2 className='events-invite'>You are invited to stay for as long as you'd like!</h2>
+
       <div className='name-outline'>
         <div className='inner-outline'>
           {events.map((thing, i) => (
@@ -87,9 +97,7 @@ const EventsPage = () => {
               <div className='event-circle'>
                 <h3 className='event-event'>{thing.event}</h3>
                 <h3 className='info-type'>{thing.food}</h3>
-                <p className='info-type'>When:</p>
                 <p className='info-info'>{thing.time}</p>
-                <p className='info-type'>Location:</p>
                 <p className='info-info'>{thing.location}</p>
                 <p className='info-type'>Dress:</p>
                 <p className='info-info'>{thing.dress}</p>

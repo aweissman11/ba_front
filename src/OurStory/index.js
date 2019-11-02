@@ -75,43 +75,7 @@ const OurStory = () => {
               </div>
             </div>
           ))}
-
         </div>
-
-      </div>
-
-
-
-
-      <div className='pic-div'>
-
-        {/* <AwesomeSlider cssModule={AwesomeSliderStyles} style={{ backgroundColor: '#0c1b23' }}>
-          {photoUrls && photoUrls.map((item, i) => (
-
-            <div className='li-0' key={i}>
-              <div className='li-contents'>
-                {item.type === 'image' ?
-                  <img
-                    className='slide-image'
-                    aria-label='chelsey and aaron'
-                    alt='chelsey and aaron'
-                    src={item.photoUrl}
-                  ></img>
-                  :
-                  <video
-                    controls
-                    autoPlay
-                    muted
-                    className='slide-image'
-                    aria-label='chelsey and aaron'
-                    src={item.photoUrl}
-                    type="video/mp4"
-                  ></video>
-                }
-              </div>
-            </div>
-          ))}
-        </AwesomeSlider> */}
       </div>
       <div className='stories'>
         <section className='story'>
