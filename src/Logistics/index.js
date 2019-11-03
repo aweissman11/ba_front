@@ -206,7 +206,7 @@ const Logistics = () => {
               <article className='info-article'>
                 <p className='info-detail'>Hotels</p>
                 <p className='info-block'>Hotels are not as fun as camping.</p>
-                <p className='info-block'>But, if you insist, here's a hotel nearby you can stay at:</p>
+                <p className='info-block'>But, if you insist, here's a hotel ten minutes away where you can stay:</p>
                 <p className='to-do-info'>
                   <a target='_blank' rel="noopener noreferrer" href='https://www.keystoneresort.com/plan-your-trip/stay/keystone-lodging.aspx?code=keystone-lodge-hotel'>Check it out <LinkIcon /></a>
                 </p>

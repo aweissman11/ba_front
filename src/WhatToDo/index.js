@@ -203,6 +203,9 @@ const WhatToDo = () => {
               <p className='to-do-info'>
                 <a target='_blank' rel="noopener noreferrer" href='https://www.townoffrisco.com/play/concert-in-the-park-series/'>Concerts in the Park <LinkIcon /></a>
               </p>
+              <p className='to-do-info'>
+                <a target='_blank' rel="noopener noreferrer" href='https://www.gobreck.com/'>Breckenridge <LinkIcon /></a>
+              </p>
             </section>
           </div>
 

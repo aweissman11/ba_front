@@ -51,7 +51,7 @@ const events = [
     food: 'Taco taco burrito burrito',
     time: 'Saturday, July 4th from 5p - 730p',
     location: 'Windy Point Campground',
-    dress: 'warmer clothes'
+    dress: 'Campground formal + warm clothes'
   },
   {
     event: 'Reception',
@@ -86,9 +86,9 @@ const events = [
 const EventsPage = () => {
   return (
     <div className='events-page'>
-      <h1 className='invited'>Everyone is welcome to all events</h1>
+      <h1 className='invited'>Everyone and their dogs are welcome to all events</h1>
       <h2 className='events-invite'>The campground is reserved from June 26th to July 6th</h2>
-      <h2 className='events-invite'>You are invited to stay for as long as you'd like!</h2>
+      <h2 className='events-invite'>You and the pups are invited to stay for as long as you'd like!</h2>
 
       <div className='name-outline'>
         <div className='inner-outline'>

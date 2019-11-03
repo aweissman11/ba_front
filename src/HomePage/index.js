@@ -46,6 +46,7 @@ const HomePage = () => {
           <div className={'location-info ' + coordsClass}>
             <div className='coordinates' >39°36'31.4"N, &nbsp; &nbsp; 106°02'43.7"W</div>
             <div className='windy'>DILLON, CO</div>
+            <div className='windy'>We're getting married and you're invited!</div>
           </div>
         </div>
       </div>

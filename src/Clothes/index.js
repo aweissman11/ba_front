@@ -11,7 +11,10 @@ const Clothes = () => {
       <div className='name-outline'>
         <div className='inner-outline'>
           <h1>More clothes Info Coming Soon...</h1>
-          <h3>Please check back in a few weeks</h3>
+          <h3>Average temperatures will be high 60s during the day and in the 30s at night</h3>
+          <h3>Please pack warm clothes</h3>
+          <br />
+          <br />
 
           <div className='info-section'>
             <div className='small-circle-div'>

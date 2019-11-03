@@ -33,7 +33,8 @@ const lists = [
       'Extra batteries',
       'Phone battery pack',
       'Pillow',
-      "Don't forget to bring a towel"
+      "Don't forget to bring a towel",
+      'Standard Camping Equipment'
     ]
   },
   {
