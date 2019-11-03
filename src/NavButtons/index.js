@@ -36,7 +36,7 @@ const NavButtons = (props) => {
 
   const toggleScroll = () => {
     if (isChecked) {
-      if (window.screen.width < 970) {
+      if (window.screen.width < 1040) {
         toggleIsChecked(false)
         window.removeEventListener('scroll', noScroll);
         setNav1('nav-out')
@@ -49,7 +49,7 @@ const NavButtons = (props) => {
         setNav8('nav-out')
       }
     } else {
-      if (window.screen.width < 970) {
+      if (window.screen.width < 1040) {
         toggleIsChecked(true)
         window.addEventListener('scroll', noScroll);
         setNav1('nav-item-in-place');
@@ -70,7 +70,7 @@ const NavButtons = (props) => {
     </div>
     <div className={'nav-box ' + fixedHeader}>
       <header className={'header'}>
-        <Link className='logo-link' to="/">
+        <Link className='logo-link' to="/" onClick={toggleScroll}>
           <img
             alt='logo'
             className='logo-icon'
