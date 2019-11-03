@@ -38,6 +38,10 @@
   cursor: pointer;
 }
 
+.logo-link:hover .logo-icon {
+  background: #cecece;
+}
+
 .logo-icon {
   display: block;
   float: left;
@@ -52,12 +56,14 @@
   background: #d1e6e6;
 }
 
-.logo-icon:hover {
-  background: #cecece;
-}
-
 .header a {
   color: #d1e6e6;
+  display: flex;
+  align-items: center;
+}
+
+.home-span {
+  margin-left: 10px;
 }
 
 .header ul {
@@ -154,6 +160,14 @@
 
 
 @media (max-width: 970px) {
+  .header a {
+    display: block;
+  }
+
+  .home-span {
+    display: none;
+  }
+
   .whole-header {
     height: 300px;
     z-index: 10;

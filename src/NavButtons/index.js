@@ -76,6 +76,7 @@ const NavButtons = (props) => {
             className='logo-icon'
             src={require('../assets/camping-icon-tpbg.jpg')}
           />
+          <span className='home-span'>HOME</span>
         </Link>
         <input
           className="menu-btn"
