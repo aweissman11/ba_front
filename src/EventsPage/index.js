@@ -93,8 +93,8 @@ const EventsPage = () => {
       <div className='name-outline'>
         <div className='inner-outline'>
           {events.map((thing, i) => (
-            <div className='event-box' key={i}>
-              <div className='event-circle'>
+            <div className={'event-box'} key={i}>
+              <div className={'event-circle ' + (thing.event === 'Ceremony' && 'stand-out')}>
                 <h3 className='event-event'>{thing.event}</h3>
                 <h3 className='info-type'>{thing.food}</h3>
                 <p className='info-info'>{thing.time}</p>

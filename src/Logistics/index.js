@@ -11,23 +11,75 @@ const Logistics = () => {
       <div className='circle-div'>
         <div className='tent-pic'></div>
       </div>
+      <div className='ceremony-container'>
+        <h1 className='ceremony-title'>The Campground</h1>
+        <p className='ceremony-info'>The ceremony will be held on July 4th at <a href='https://www.google.com/maps/place/Windy+Point+Group+Campground/@39.6078137,-106.0454653,15z/data=!4m2!3m1!1s0x0:0xb5c6b7ae8c358e23?sa=X&ved=2ahUKEwjtnM_Aq5XlAhXMsJ4KHQmpA6kQ_BIwDHoECA0QCA' target='_blank' rel="noopener noreferrer">Windy Point Campground</a> in Dillon, CO</p>
+
+        <div className='campground-info'>
+          <h2>Overview</h2>
+          <p>Windy Point is located near Dillon Reservoir at an elevation of 9,000 feet in the White River National Forest. The site consists of a group camp and a group picnic shelter that can accommodate up to 100 people each. With views to Dillon Reservoir and several mountain ranges, Windy Point is ideal for larger groups seeking recreation and relaxation. Due to the pine beetle infestation and removal of hazard trees, there is little or no shade at Windy Point.</p>
+          <hr className='campground-hr' />
+          <h2>Facilities</h2>
+          <p>Windy Point Group Campground has two group campsites available for the use; the Lake Loop and the Forest Loop. Both loops are able to accommodate tents, trailers and RV's. Electrical hook-ups are not available. Each loop is equipped with picnic tables, campfire rings, and vault toilets and both are pet friendly. Additionally, the Lake Loop has a handicap-accessible group picnic shelter available for use. Boat ramp access is available in the marinas located in the nearby towns of Frisco and Dillion.</p>
+          <hr className='campground-hr' />
+          <h2> <a target='_blank' rel="noopener noreferrer" href='https://www.silverthorne.org/town-services/recreation-center'>Showers <LinkIcon /></a></h2>
+          <p>Showers can be accessed at Sliverthorne Rec Center. $12 daily admission.</p>
+          <hr className='campground-hr' />
+          <h2>Natural Features</h2>
+          <p>In the heart of the Rocky Mountains, the 2.3 million acre White River National Forest is a place of serenity and adventure, boasting 8 wilderness areas, 4 defined seasons, and 10 peaks surpassing 14,000 feet in elevation. Described as being more vertical than horizontal, the nearby Eagles Nest Wilderness, designated in 1976, is a playground of craggy cliffs, sheer rock faces, alpine lakes, and deep, forested valleys. Visitors will find foot travel across this pristine area challenging and often strenuous, but will be rewarded with spectacular scenery. Wildlife in the area abounds. Bighorn sheep navigate rocky ridges and bull elk bugle at dusk. Scenic rivers sustain populations of cutthroat, rainbow, and brown trout. Alpine regions provide habitat for pika and ptarmigan. These species, along with many others, depend on surrounding undeveloped wilderness, clean streams, and diverse forests to live.</p>
+          <hr className='campground-hr' />
+          <h2>Recreation</h2>
+          <p>Dillon Reservoir, often referred to as Lake Dillon, is the greatest draw to Windy Point and an ideal spot for fishing, boating, and sailing. Anglers will find that the reservoir supports a healthy population of rainbow and brown trout, with an occasional cutthroat trout finding its way into the lake from feeder streams. Opportunities for hiking and biking include more than 7 paved miles of the 50-mile Summit County trail system. From the reservoir, the Old Dillon Reservoir Trail is a favorite. This short, easy trail has spectacular views of the Tenmile Range and the Continental Divide. The Old Dillon Reservoir was built in the 1930s to supply water to the original town of Dillon, which is now covered by the new Dillon Reservoir.</p>
+        </div>
+
+        <iframe
+          title='windy-point-map'
+          src="https://maps.google.com/maps?q=windy%20point%20campground%20co&t=k&z=13&ie=UTF8&iwloc=&output=embed"
+          frameBorder="0"
+          className='windy-map'
+          style={{
+            border: 0,
+            height: '600px',
+            width: window.innerWidth < 970 ? '90%' : '75%',
+            borderRadius: '12px'
+          }}
+          allowFullScreen=""
+        >
+        </iframe>
+      </div>
+
+
       <div className='name-outline'>
         <div className='inner-outline'>
-
           <div className='info-section'>
             <div className='small-circle-div'>
               <div className='shuttle-pic circle-pic'></div>
             </div>
             <section className='to-do-event-box'>
-              <h3 className='event-event'>Shuttle from the Airport to Dillon, CO</h3>
-              <p className='info-block'>2.5 hour trip from the Airport to Dillon</p>
-              <p className='info-block'>Picks up every 2 hours 9:30 am-9:30 pm</p>
-              <p className='info-block'>$59 for 2 passengers one way</p>
-              <p className='info-block'>Please let us know if you are planning to use the shuttle!  We will coordinate picking you up at the drop off in Dillon and getting you to the campground!</p>
-              <p className='to-do-info'>
-                <a target='_blank' rel="noopener noreferrer" href='https://www.summitexpress.com/scheduled-shuttle-service/denver-airport-to-silverthorne-and-dillon-shuttle/?gclid=CjwKCAjw0vTtBRBREiwA3URt7sPkf4ysuTga-Q9SXdNEncjgQcyT978cQWQ3_jyl1jjSe4751-nE6xoCPj4QAvD_BwE'>Book transport <LinkIcon /></a>
-              </p>
-              <p className='info-block'>Book in advance to secure availability!</p>
+              <h3 className='event-event'>Transportation Options</h3>
+              <article className='info-article'>
+                <p className='info-detail'>Shuttle Service from the Denver Airport</p>
+                <p className='info-block'>2.5 hour trip from the Airport to Dillon</p>
+                <p className='info-block'>Picks up every 2 hours 9:30 am-9:30 pm</p>
+                <p className='info-block'>$59 for 2 passengers one way</p>
+                <p className='info-block'>Please let us know if you are planning to use the shuttle!  We will coordinate picking you up at the drop off in Dillon and getting you to the campground!</p>
+                <p className='to-do-info'>
+                  <a target='_blank' rel="noopener noreferrer" href='https://www.summitexpress.com/scheduled-shuttle-service/denver-airport-to-silverthorne-and-dillon-shuttle/?gclid=CjwKCAjw0vTtBRBREiwA3URt7sPkf4ysuTga-Q9SXdNEncjgQcyT978cQWQ3_jyl1jjSe4751-nE6xoCPj4QAvD_BwE'>Book transport <LinkIcon /></a>
+                </p>
+                <p className='info-block'>Book in advance to secure availability!</p>
+              </article>
+              <article className='info-article'>
+                <p className='info-detail'>Rental Cars</p>
+                <p className='info-block'>We reccomend you rent your car from the Denver Airport</p>
+                <p className='to-do-info'>
+                  <a target='_blank' rel="noopener noreferrer" href='https://www.flydenver.com/'>Denver International <LinkIcon /></a>
+                </p>
+              </article>
+
+
+
+              <h3 className='event-event'></h3>
+
             </section>
           </div>
 
@@ -67,7 +119,7 @@ const Logistics = () => {
                 <p className='info-block'>$98 for tent camping packages, 1-3 days (Light backpacking equipment)</p>
                 <p className='info-block'>Pickup located in downtown Denver</p>
                 <p className='to-do-info'>
-                  <a target='_blank' rel="noopener noreferrer" href=''>Book here <LinkIcon /></a>
+                  <a target='_blank' rel="noopener noreferrer" href='https://www.vitaloutdoors.com/rentals/camping-packages/'>Book here <LinkIcon /></a>
                 </p>
               </article>
               <article className='info-article'>
@@ -201,12 +253,11 @@ const Logistics = () => {
               <div className='soviet-hotel circle-pic'></div>
             </div>
             <section className='to-do-event-box'>
-              <h3 className='event-event'>NOT reccomended</h3>
-
+              <h3 className='event-event'>NOT recommended because we hope you'll camp</h3>
               <article className='info-article'>
                 <p className='info-detail'>Hotels</p>
                 <p className='info-block'>Hotels are not as fun as camping.</p>
-                <p className='info-block'>But, if you insist, here's a hotel ten minutes away where you can stay:</p>
+                <p className='info-block'>But, if you insist, here's some nice lodging options ten minutes away (not an actual Motel 6):</p>
                 <p className='to-do-info'>
                   <a target='_blank' rel="noopener noreferrer" href='https://www.keystoneresort.com/plan-your-trip/stay/keystone-lodging.aspx?code=keystone-lodge-hotel'>Check it out <LinkIcon /></a>
                 </p>
@@ -217,42 +268,6 @@ const Logistics = () => {
         </div>
       </div>
 
-      <div className='ceremony-container'>
-        <h1 className='ceremony-title'>The Campground</h1>
-        <p className='ceremony-info'>The ceremony will be held on July 4th at <a href='https://www.google.com/maps/place/Windy+Point+Group+Campground/@39.6078137,-106.0454653,15z/data=!4m2!3m1!1s0x0:0xb5c6b7ae8c358e23?sa=X&ved=2ahUKEwjtnM_Aq5XlAhXMsJ4KHQmpA6kQ_BIwDHoECA0QCA' target='_blank' rel="noopener noreferrer">Windy Point Campground</a> in Dillon, CO</p>
-
-        <div className='campground-info'>
-          <h2>Overview</h2>
-          <p>Windy Point is located near Dillon Reservoir at an elevation of 9,000 feet in the White River National Forest. The site consists of a group camp and a group picnic shelter that can accommodate up to 100 people each. With views to Dillon Reservoir and several mountain ranges, Windy Point is ideal for larger groups seeking recreation and relaxation. Due to the pine beetle infestation and removal of hazard trees, there is little or no shade at Windy Point.</p>
-          <hr className='campground-hr' />
-          <h2>Facilities</h2>
-          <p>Windy Point Group Campground has two group campsites available for the use; the Lake Loop and the Forest Loop. Both loops are able to accommodate tents, trailers and RV's. Electrical hook-ups are not available. Each loop is equipped with picnic tables, campfire rings, and vault toilets and both are pet friendly. Additionally, the Lake Loop has a handicap-accessible group picnic shelter available for use. Boat ramp access is available in the marinas located in the nearby towns of Frisco and Dillion.</p>
-          <hr className='campground-hr' />
-          <h2> <a target='_blank' rel="noopener noreferrer" href='https://www.silverthorne.org/town-services/recreation-center'>Showers <LinkIcon /></a></h2>
-          <p>Showers can be accessed at Sliverthorne Rec Center. $12 daily admission.</p>
-          <hr className='campground-hr' />
-          <h2>Natural Features</h2>
-          <p>In the heart of the Rocky Mountains, the 2.3 million acre White River National Forest is a place of serenity and adventure, boasting 8 wilderness areas, 4 defined seasons, and 10 peaks surpassing 14,000 feet in elevation. Described as being more vertical than horizontal, the nearby Eagles Nest Wilderness, designated in 1976, is a playground of craggy cliffs, sheer rock faces, alpine lakes, and deep, forested valleys. Visitors will find foot travel across this pristine area challenging and often strenuous, but will be rewarded with spectacular scenery. Wildlife in the area abounds. Bighorn sheep navigate rocky ridges and bull elk bugle at dusk. Scenic rivers sustain populations of cutthroat, rainbow, and brown trout. Alpine regions provide habitat for pika and ptarmigan. These species, along with many others, depend on surrounding undeveloped wilderness, clean streams, and diverse forests to live.</p>
-          <hr className='campground-hr' />
-          <h2>Recreation</h2>
-          <p>Dillon Reservoir, often referred to as Lake Dillon, is the greatest draw to Windy Point and an ideal spot for fishing, boating, and sailing. Anglers will find that the reservoir supports a healthy population of rainbow and brown trout, with an occasional cutthroat trout finding its way into the lake from feeder streams. Opportunities for hiking and biking include more than 7 paved miles of the 50-mile Summit County trail system. From the reservoir, the Old Dillon Reservoir Trail is a favorite. This short, easy trail has spectacular views of the Tenmile Range and the Continental Divide. The Old Dillon Reservoir was built in the 1930s to supply water to the original town of Dillon, which is now covered by the new Dillon Reservoir.</p>
-        </div>
-
-        <iframe
-          title='windy-point-map'
-          src="https://maps.google.com/maps?q=windy%20point%20campground%20co&t=k&z=13&ie=UTF8&iwloc=&output=embed"
-          frameBorder="0"
-          className='windy-map'
-          style={{
-            border: 0,
-            height: '600px',
-            width: window.innerWidth < 970 ? '90%' : '75%',
-            borderRadius: '12px'
-          }}
-          allowFullScreen=""
-        >
-        </iframe>
-      </div>
     </div>
   );
 }

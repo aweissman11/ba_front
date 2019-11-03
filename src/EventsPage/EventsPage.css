@@ -23,6 +23,11 @@
   margin: 20px auto 50px;
 }
 
+.stand-out {
+  background: #d1e6e63b;
+  border: 3px solid !important;
+}
+
 .event-event {
   text-decoration: underline;
   font-family: 'Playfair Display', serif;

@@ -38,7 +38,7 @@ const Clothes = () => {
             </div>
             <section className='to-do-event-box'>
               <h3 className='event-event'>Campground Casual</h3>
-              <p className='info-block'>Things you don't mind getting muddy</p>
+              <p className='info-block'>Things you don't mind getting dusty</p>
               <p className='info-block'>Warm, comfy and soft</p>
               <p className='to-do-info'>
                 <a target='_blank' rel="noopener noreferrer" href='https://www.llbean.com'>Explore <LinkIcon /></a>

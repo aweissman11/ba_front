@@ -2,6 +2,10 @@
   margin: 30px auto;
 }
 
+.ceremony-container {
+  margin-bottom: 80px;
+}
+
 .ceremony-info {
   margin: 20px auto;
 }
@@ -89,7 +93,7 @@
 }
 
 .campground-hr {
-  width: 60%;
+  width: 40%;
   margin: 20px auto;
 }
 

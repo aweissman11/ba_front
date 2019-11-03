@@ -119,7 +119,7 @@
 
 @media (max-width: 1050px) {
   .date {
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
 
   .names {

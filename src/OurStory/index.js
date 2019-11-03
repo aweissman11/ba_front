@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import AwesomeSlider from 'react-awesome-slider';
-import AwesomeSliderStyles from 'react-awesome-slider/src/styled/scale-out-animation/scale-out-animation.scss';
 
 // Imports
 import { photoUrls } from './photoUrls';
@@ -13,15 +11,15 @@ import { PrevIcon } from './PrevIcon';
 
 const OurStory = () => {
   let [currentPosition, setPosition] = useState(0);
-  let [sliderWidth, setWidth] = useState(document.body.clientWidth);
+  let [sliderWidth, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     window.addEventListener('resize', setSliderWidth);
-    setWidth(document.body.clientWidth);
+    setWidth(window.innerWidth);
   }, []);
 
   const setSliderWidth = () => {
-    setWidth(document.body.clientWidth);
+    setWidth(window.innerWidth);
   }
 
   const nextPosition = () => {
