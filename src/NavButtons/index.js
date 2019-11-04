@@ -70,7 +70,7 @@ const NavButtons = (props) => {
     </div>
     <div className={'nav-box ' + fixedHeader}>
       <header className={'header'}>
-        <Link className='logo-link' to="/" onClick={toggleScroll}>
+        <Link className='logo-link' to="/" onClick={isChecked ? toggleScroll : () => { }}>
           <img
             alt='logo'
             className='logo-icon'
@@ -128,15 +128,12 @@ const NavButtons = (props) => {
             onClick={toggleScroll}
           >
             <Link to={{ pathname: "/registry" }}>REGISTRY</Link>
-            {/* <a href='https://www.rei.com/' target='_blank' rel="noopener noreferrer">REGISTRY</a> */}
           </li>
           <li
             className={'navver ' + nav8}
             onClick={toggleScroll}
           >
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHs8Szep3Kau7LPRj1DhhYNgDSUi0xtVSfcjOq8l3ibyy-A/viewform?usp=sf_link" target='_blank' rel="noopener noreferrer">
-              <b>RSVP</b>
-            </a>
+            <Link to={{ pathname: "/rsvp" }}>RSVP</Link>
           </li>
         </ul>
       </header>
