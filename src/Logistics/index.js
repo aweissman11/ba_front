@@ -85,7 +85,7 @@ const Logistics = () => {
 
           <hr className='event-break' />
 
-          <div className='info-section'>
+          <div className='info-section flex-switch'>
             <div className='small-circle-div'>
               <div className='tent-pack-pic circle-pic'></div>
             </div>
@@ -142,7 +142,7 @@ const Logistics = () => {
           </div>
           <hr className='event-break' />
 
-          <div className='info-section'>
+          <div className='info-section flex-switch'>
             <div className='small-circle-div'>
               <div className='rv-pic circle-pic'></div>
             </div>
@@ -248,7 +248,7 @@ const Logistics = () => {
 
           <hr className='event-break' />
 
-          <div className='info-section'>
+          <div className='info-section flex-switch'>
             <div className='small-circle-div'>
               <div className='soviet-hotel circle-pic'></div>
             </div>

@@ -32,7 +32,7 @@ const Clothes = () => {
 
           <hr className='event-break' />
 
-          <div className='info-section'>
+          <div className='info-section flex-switch'>
             <div className='small-circle-div'>
               <div className='camp-casual circle-pic'></div>
             </div>
