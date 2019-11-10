@@ -6,7 +6,7 @@ import './Contact.css';
 const Contact = () => {
   return (
     <div className='events-page'>
-      <h1 className='invited'>We're just not ready to make these kinds of decisions yet!</h1>
+      <h1 className='invited'>Please let us know if you have any questions</h1>
       <div className='name-outline'>
         <div className='inner-outline'>
           <br />
