@@ -106,6 +106,13 @@ const NavButtons = (props) => {
             onClick={toggleScroll}
           >
             <Link to={{ pathname: "/logistics" }}>LOGISTICS</Link>
+            <ul class="dropdown">
+              <li>
+                <Link to={{ pathname: "/stuff" }}>WHAT TO BRING</Link>
+              </li>
+              <li><a href="#">Sub-2</a></li>
+              <li><a href="#">Sub-3</a></li>
+            </ul>
           </li>
           <li
             className={'navver ' + nav4}

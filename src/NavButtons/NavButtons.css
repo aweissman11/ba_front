@@ -70,7 +70,6 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  overflow: hidden;
 }
 
 .header li a {
@@ -87,7 +86,55 @@
 
 .header li {
   float: left;
+  position: relative;
 }
+
+
+
+
+
+
+
+
+ul li ul {
+	visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+	position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+	left: 0;
+  display: none;
+}
+
+ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #6f6d6d;
+  background: #0c1b23;
+}
+
+ul li ul li {
+  clear: both;
+  width: 100%;
+}
+
+ul li ul li > a {
+  border-right: none !important;
+}
+
+
+
+
+
+
+
+
+
+
 
 .header .menu {
   clear: none;
@@ -216,6 +263,10 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+  }
+
+  .header ul {
+    overflow: hidden;
   }
 
   .header li {
