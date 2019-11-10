@@ -21,6 +21,7 @@ const NavButtons = (props) => {
   let [nav6, setNav6] = useState('nav-out')
   let [nav7, setNav7] = useState('nav-out')
   let [nav8, setNav8] = useState('nav-out')
+  let [nav9, setNav9] = useState('nav-out')
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -60,6 +61,7 @@ const NavButtons = (props) => {
         window.setTimeout(() => setNav6('nav-item-in-place'), 250);
         window.setTimeout(() => setNav7('nav-item-in-place'), 300);
         window.setTimeout(() => setNav8('nav-item-in-place'), 350);
+        window.setTimeout(() => setNav9('nav-item-in-place'), 400);
       }
     }
 
@@ -131,6 +133,12 @@ const NavButtons = (props) => {
           </li>
           <li
             className={'navver ' + nav8}
+            onClick={toggleScroll}
+          >
+            <Link to={{ pathname: "/contact" }}>CONTACT</Link>
+          </li>
+          <li
+            className={'navver ' + nav9}
             onClick={toggleScroll}
           >
             <Link to={{ pathname: "/rsvp" }}>RSVP</Link>

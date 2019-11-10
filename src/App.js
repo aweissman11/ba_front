@@ -17,6 +17,7 @@ import WhatToBring from './WhatToBring';
 import WhatToDo from './WhatToDo';
 import Clothes from './Clothes';
 import Registry from './Registry';
+import Contact from './Contact';
 import Rsvp from './Rsvp';
 
 function App() {
@@ -45,6 +46,9 @@ function App() {
           </Route>
           <Route path='/registry'>
             <Registry />
+          </Route>
+          <Route path='/contact'>
+            <Contact />
           </Route>
           <Route path='/rsvp'>
             <Rsvp />

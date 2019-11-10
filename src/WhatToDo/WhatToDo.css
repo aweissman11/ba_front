@@ -10,7 +10,10 @@
   align-items: center;
   width: min-content;
   margin: auto;
+}
 
+.flex-switch {
+  flex-direction: row-reverse;
 }
 
 .event-break {

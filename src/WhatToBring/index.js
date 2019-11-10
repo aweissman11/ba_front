@@ -56,13 +56,13 @@ const WhatToBring = () => {
       <h1 className='invited'>Please come prepared with the following</h1>
       <div className='name-outline'>
         <div className='inner-outline'>
-          {lists.map(list => (
-            <div className='what-box'>
+          {lists.map((list, i) => (
+            <div className='what-box' key={i}>
               <h3 className='event-event'>{list.who}</h3>
               <p className='info-type'>Don't forget the following:</p>
-              {list.what.map(item => (<>
-                <p>{item}</p>
-              </>))}
+              {list.what.map((item, i) => (
+                <p key={'item-' + i}>{item}</p>
+              ))}
             </div>
           ))}
         </div>

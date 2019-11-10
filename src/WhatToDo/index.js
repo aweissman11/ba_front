@@ -30,7 +30,7 @@ const WhatToDo = () => {
 
           <hr className='event-break' />
 
-          <div className='info-section'>
+          <div className='info-section flex-switch'>
             <div className='small-circle-div'>
               <div className='sapphire-point circle-pic'></div>
             </div>
@@ -108,7 +108,7 @@ const WhatToDo = () => {
 
           <hr className='event-break' />
 
-          <div className='info-section'>
+          <div className='info-section flex-switch'>
             <div className='small-circle-div'>
               <div className='mountain-hiking circle-pic'></div>
             </div>
@@ -188,7 +188,7 @@ const WhatToDo = () => {
 
           <hr className='event-break' />
 
-          <div className='info-section'>
+          <div className='info-section flex-switch'>
             <div className='small-circle-div'>
               <div className='frisco-co circle-pic'></div>
             </div>
@@ -231,7 +231,7 @@ const WhatToDo = () => {
 
           <hr className='event-break' />
 
-          <div className='info-section'>
+          <div className='info-section flex-switch'>
             <div className='small-circle-div'>
               <div className='croquet circle-pic'></div>
             </div>
