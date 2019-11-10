@@ -1,5 +1,7 @@
 import React from 'react';
 
+// CSS
+import './Contact.css';
 
 const Contact = () => {
   return (
@@ -14,6 +16,7 @@ const Contact = () => {
           <p><a
             href="mailto:chelseyandaaronsbigadventure@gmail.com?subject=I%20Have%20A%20Question"
             target='_blank'
+            className='email-address'
           >chelseyandaaronsbigadventure@gmail.com</a></p>
           <br />
           <h3>Phone:</h3>

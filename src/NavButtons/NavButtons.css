@@ -164,6 +164,10 @@
     display: block;
   }
 
+  .header .menu {
+    margin-right: 0;
+  }
+
   .home-span {
     display: none;
   }
