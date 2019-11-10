@@ -253,11 +253,11 @@ const Logistics = () => {
               <div className='soviet-hotel circle-pic'></div>
             </div>
             <section className='to-do-event-box'>
-              <h3 className='event-event'>NOT recommended because we hope you'll camp</h3>
+              <h3 className='event-event'>We hope as many of you as possible will camp with us</h3>
               <article className='info-article'>
                 <p className='info-detail'>Hotels</p>
-                <p className='info-block'>Hotels are not as fun as camping.</p>
-                <p className='info-block'>But, if you insist, here's some nice lodging options ten minutes away (not an actual Motel 6):</p>
+                <p className='info-block'>Hotels are not as fun as camping. But... if you're over the age of 50, or have young kids, we understand.</p>
+                <p className='info-block'>Here's some nice lodging options ten minutes away (not an actual Motel 6):</p>
                 <p className='to-do-info'>
                   <a target='_blank' rel="noopener noreferrer" href='https://www.keystoneresort.com/plan-your-trip/stay/keystone-lodging.aspx?code=keystone-lodge-hotel'>Check it out <LinkIcon /></a>
                 </p>
