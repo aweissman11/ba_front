@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 // CSS
 import './NavButtons.css';
+import { NavChevIcon } from './NavChevIcon';
 
 
 const noScroll = () => {
@@ -36,8 +37,8 @@ const NavButtons = (props) => {
   }
 
   const toggleScroll = () => {
-    if (isChecked) {
-      if (window.screen.width < 1040) {
+    if (window.innerWidth < 1040) {
+      if (isChecked) {
         toggleIsChecked(false)
         window.removeEventListener('scroll', noScroll);
         setNav1('nav-out')
@@ -48,9 +49,8 @@ const NavButtons = (props) => {
         setNav6('nav-out')
         setNav7('nav-out')
         setNav8('nav-out')
-      }
-    } else {
-      if (window.screen.width < 1040) {
+        setNav9('nav-out')
+      } else {
         toggleIsChecked(true)
         window.addEventListener('scroll', noScroll);
         setNav1('nav-item-in-place');
@@ -64,7 +64,24 @@ const NavButtons = (props) => {
         window.setTimeout(() => setNav9('nav-item-in-place'), 400);
       }
     }
+  }
 
+  let [dropperClass, setDropperClass] = useState('undrop-ul');
+  let [dropPosition, setDropPosition] = useState('undropped');
+  let [chevPos, setChevPos] = useState('chev-up');
+
+  const dropperClick = () => {
+    if (window.innerWidth < 1040) {
+      console.log('mobile screen');
+      let newDropper = dropperClass === 'undrop-ul' ? 'drop-ul' : 'undrop-ul';
+      setDropperClass(newDropper);
+      let newDropPos = dropPosition === 'undropped' ? 'drop-it' : 'undropped';
+      setDropPosition(newDropPos);
+      let newChevPos = chevPos === 'chev-up' ? 'chev-down' : 'chev-up';
+      setChevPos(newChevPos);
+    } else {
+      toggleScroll();
+    }
   }
 
   return (<div className={'whole-header'}>
@@ -91,64 +108,120 @@ const NavButtons = (props) => {
         <ul className="menu">
           <li
             className={'navver ' + nav1}
-            onClick={toggleScroll}
           >
-            <Link to={{ pathname: "/events" }}>EVENTS</Link>
+            <Link
+              onClick={toggleScroll}
+              to={{ pathname: "/events" }}
+            >
+              EVENTS
+            </Link>
           </li>
           <li
             className={'navver ' + nav2}
-            onClick={toggleScroll}
           >
-            <Link to={{ pathname: "/story" }}>OUR STORY</Link>
+            <Link
+              onClick={toggleScroll}
+              to={{ pathname: "/story" }}
+            >
+              OUR STORY
+            </Link>
           </li>
           <li
-            className={'navver ' + nav3}
-            onClick={toggleScroll}
+            className={`navver ${nav3} dropper ${dropperClass}`}
+            onClick={dropperClick}
           >
-            <Link to={{ pathname: "/logistics" }}>LOGISTICS</Link>
-            <ul class="dropdown">
-              <li>
-                <Link to={{ pathname: "/stuff" }}>WHAT TO BRING</Link>
+            <a className='dropper-link'>Need to know <NavChevIcon classProp={`chev ${chevPos}`} /> </a>
+            <ul className={`${dropPosition} dropdown`}>
+              <li className='dropped-link'>
+                <Link
+                  className='no-border'
+                  onClick={toggleScroll}
+                  to={{ pathname: "/stuff" }}
+                >
+                  WHAT TO BRING
+                </Link>
               </li>
-              <li><a href="#">Sub-2</a></li>
-              <li><a href="#">Sub-3</a></li>
+
+              <li className='dropped-link'>
+                <Link
+                  className='no-border'
+                  onClick={toggleScroll}
+                  to={{ pathname: "/logistics" }}
+                >
+                  LOGISTICS
+                </Link>
+              </li>
+
+              <li className='dropped-link'>
+              </li>
+
+              <li className='dropped-link'>
+              </li>
+
+              <li className='dropped-link'>
+              </li>
+
             </ul>
           </li>
           <li
             className={'navver ' + nav4}
-            onClick={toggleScroll}
           >
-            <Link to={{ pathname: "/stuff" }}>WHAT TO BRING</Link>
+            <Link
+              onClick={toggleScroll}
+              to={{ pathname: "/stuff" }}
+            >
+              WHAT TO BRING
+            </Link>
           </li>
           <li
             className={'navver ' + nav5}
-            onClick={toggleScroll}
           >
-            <Link to={{ pathname: "/todo" }}>THINGS TO DO</Link>
+            <Link
+              onClick={toggleScroll}
+              to={{ pathname: "/todo" }}
+            >
+              THINGS TO DO
+            </Link>
           </li>
           <li
             className={'navver ' + nav6}
-            onClick={toggleScroll}
           >
-            <Link to={{ pathname: "/clothes" }}>CLOTHES</Link>
+            <Link
+              onClick={toggleScroll}
+              to={{ pathname: "/clothes" }}
+            >
+              CLOTHES
+            </Link>
           </li>
           <li
             className={'navver ' + nav7}
-            onClick={toggleScroll}
           >
-            <Link to={{ pathname: "/registry" }}>REGISTRY</Link>
+            <Link
+              onClick={toggleScroll}
+              to={{ pathname: "/registry" }}
+            >
+              REGISTRY
+            </Link>
           </li>
           <li
             className={'navver ' + nav8}
-            onClick={toggleScroll}
           >
-            <Link to={{ pathname: "/contact" }}>CONTACT</Link>
+            <Link
+              onClick={toggleScroll}
+              to={{ pathname: "/contact" }}
+            >
+              CONTACT
+            </Link>
           </li>
           <li
             className={'navver ' + nav9}
-            onClick={toggleScroll}
           >
-            <Link to={{ pathname: "/rsvp" }}>RSVP</Link>
+            <Link
+              onClick={toggleScroll}
+              to={{ pathname: "/rsvp" }}
+            >
+              RSVP
+            </Link>
           </li>
         </ul>
       </header>
