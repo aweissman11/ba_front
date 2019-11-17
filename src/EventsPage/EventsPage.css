@@ -24,8 +24,9 @@
 }
 
 .stand-out {
-  background: #d1e6e63b;
-  border: 3px solid !important;
+  color: #0c1b23;
+  background: #d1e6e6;
+  font-weight: bold;
 }
 
 .event-event {
@@ -55,7 +56,6 @@
   .events-page {
     padding-top: 75px;
   }
-
   .event-circle {
     height: 280px;
     width: 280px;

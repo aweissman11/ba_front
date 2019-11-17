@@ -66,21 +66,71 @@ const NavButtons = (props) => {
     }
   }
 
-  let [dropperClass, setDropperClass] = useState('undrop-ul');
-  let [dropPosition, setDropPosition] = useState('undropped');
-  let [chevPos, setChevPos] = useState('chev-up');
+  let [dropperClass1, setDropperClass1] = useState('undrop-ul');
+  let [dropPosition1, setDropPosition1] = useState('undropped');
+  let [chevPos1, setChevPos1] = useState('chev-up');
 
-  const dropperClick = () => {
+  let [dropperClass2, setDropperClass2] = useState('undrop-ul');
+  let [dropPosition2, setDropPosition2] = useState('undropped');
+  let [chevPos2, setChevPos2] = useState('chev-up');
+
+  let [dropperClass3, setDropperClass3] = useState('undrop-ul');
+  let [dropPosition3, setDropPosition3] = useState('undropped');
+  let [chevPos3, setChevPos3] = useState('chev-up');
+
+  const dropperClick = (dropperNum) => {
     if (window.innerWidth < 1040) {
-      console.log('mobile screen');
-      let newDropper = dropperClass === 'undrop-ul' ? 'drop-ul' : 'undrop-ul';
-      setDropperClass(newDropper);
-      let newDropPos = dropPosition === 'undropped' ? 'drop-it' : 'undropped';
-      setDropPosition(newDropPos);
-      let newChevPos = chevPos === 'chev-up' ? 'chev-down' : 'chev-up';
-      setChevPos(newChevPos);
-    } else {
-      toggleScroll();
+      let newDropper;
+      let newDropPos;
+      let newChevPos;
+
+      switch (dropperNum) {
+        case 1:
+          newDropper = dropperClass1 === 'undrop-ul' ? 'drop-ul1' : 'undrop-ul';
+          newDropPos = dropPosition1 === 'undropped' ? 'drop-it' : 'undropped';
+          newChevPos = chevPos1 === 'chev-up' ? 'chev-down' : 'chev-up';
+          setDropperClass1(newDropper);
+          setDropPosition1(newDropPos);
+          setChevPos1(newChevPos);
+          setDropperClass2('undrop-ul');
+          setDropPosition2('undropped');
+          setChevPos2('chev-up');
+          setDropperClass3('undrop-ul');
+          setDropPosition3('undropped');
+          setChevPos3('chev-up');
+          break;
+        case 2:
+          newDropper = dropperClass2 === 'undrop-ul' ? 'drop-ul2' : 'undrop-ul';
+          newDropPos = dropPosition2 === 'undropped' ? 'drop-it' : 'undropped';
+          newChevPos = chevPos2 === 'chev-up' ? 'chev-down' : 'chev-up';
+          setDropperClass2(newDropper);
+          setDropPosition2(newDropPos);
+          setChevPos2(newChevPos);
+          setDropperClass1('undrop-ul');
+          setDropPosition1('undropped');
+          setChevPos1('chev-up');
+          setDropperClass3('undrop-ul');
+          setDropPosition3('undropped');
+          setChevPos3('chev-up');
+          break;
+        case 3:
+          newDropper = dropperClass3 === 'undrop-ul' ? 'drop-ul3' : 'undrop-ul';
+          newDropPos = dropPosition3 === 'undropped' ? 'drop-it' : 'undropped';
+          newChevPos = chevPos3 === 'chev-up' ? 'chev-down' : 'chev-up';
+          setDropperClass3(newDropper);
+          setDropPosition3(newDropPos);
+          setChevPos3(newChevPos);
+          setDropperClass1('undrop-ul');
+          setDropPosition1('undropped');
+          setChevPos1('chev-up');
+          setDropperClass2('undrop-ul');
+          setDropPosition2('undropped');
+          setChevPos2('chev-up');
+          break;
+        default:
+          break;
+
+      }
     }
   }
 
@@ -107,16 +157,6 @@ const NavButtons = (props) => {
         <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
         <ul className="menu">
           <li
-            className={'navver ' + nav1}
-          >
-            <Link
-              onClick={toggleScroll}
-              to={{ pathname: "/events" }}
-            >
-              EVENTS
-            </Link>
-          </li>
-          <li
             className={'navver ' + nav2}
           >
             <Link
@@ -127,71 +167,104 @@ const NavButtons = (props) => {
             </Link>
           </li>
           <li
-            className={`navver ${nav3} dropper ${dropperClass}`}
-            onClick={dropperClick}
+            className={`navver ${nav3} dropper ${dropperClass1}`}
+            onClick={() => dropperClick(1)}
           >
-            <a className='dropper-link'>Need to know <NavChevIcon classProp={`chev ${chevPos}`} /> </a>
-            <ul className={`${dropPosition} dropdown`}>
+            <a className='dropper-link'>LOGISTICS <NavChevIcon classProp={`chev ${chevPos1}`} /> </a>
+            <ul className={`${dropPosition1} dropdown`}>
+              <li className='dropped-link'>
+                <Link
+                  className='no-border'
+                  onClick={toggleScroll}
+                  to={{ pathname: "/transportation" }}
+                >
+                  GETTING THERE
+                </Link>
+              </li>
+
+              <li className='dropped-link'>
+                <Link
+                  className='no-border'
+                  onClick={toggleScroll}
+                  to={{ pathname: "/lodging" }}
+                >
+                  LODGING
+                </Link>
+              </li>
+
+              <li className='dropped-link'>
+                <Link
+                  className='no-border'
+                  onClick={toggleScroll}
+                  to={{ pathname: "/campground" }}
+                >
+                  CAMPGROUND
+                </Link>
+              </li>
+
+            </ul>
+          </li>
+          <li
+            className={`navver  ${nav4} dropper ${dropperClass2}`}
+            onClick={() => dropperClick(2)}
+          >
+            <a className='dropper-link'>WHAT TO BRING <NavChevIcon classProp={`chev ${chevPos2}`} /> </a>
+            <ul className={`${dropPosition2} dropdown`}>
               <li className='dropped-link'>
                 <Link
                   className='no-border'
                   onClick={toggleScroll}
                   to={{ pathname: "/stuff" }}
                 >
-                  WHAT TO BRING
+                  GEAR
                 </Link>
               </li>
-
               <li className='dropped-link'>
                 <Link
                   className='no-border'
                   onClick={toggleScroll}
-                  to={{ pathname: "/logistics" }}
+                  to={{ pathname: "/clothes" }}
                 >
-                  LOGISTICS
+                  CLOTHES
                 </Link>
               </li>
-
               <li className='dropped-link'>
+                <Link
+                  className='no-border'
+                  onClick={toggleScroll}
+                  to={{ pathname: "/dogs" }}
+                >
+                  BRIDAL PARTY
+                </Link>
               </li>
-
-              <li className='dropped-link'>
-              </li>
-
-              <li className='dropped-link'>
-              </li>
-
             </ul>
           </li>
+
           <li
-            className={'navver ' + nav4}
+            className={`navver  ${nav4} dropper ${dropperClass3}`}
+            onClick={() => dropperClick(3)}
           >
-            <Link
-              onClick={toggleScroll}
-              to={{ pathname: "/stuff" }}
-            >
-              WHAT TO BRING
-            </Link>
-          </li>
-          <li
-            className={'navver ' + nav5}
-          >
-            <Link
-              onClick={toggleScroll}
-              to={{ pathname: "/todo" }}
-            >
-              THINGS TO DO
-            </Link>
-          </li>
-          <li
-            className={'navver ' + nav6}
-          >
-            <Link
-              onClick={toggleScroll}
-              to={{ pathname: "/clothes" }}
-            >
-              CLOTHES
-            </Link>
+            <a className='dropper-link'>HAPPENINGS <NavChevIcon classProp={`chev ${chevPos3}`} /> </a>
+            <ul className={`${dropPosition3} dropdown`}>
+              <li className='dropped-link'>
+                <Link
+                  className='no-border'
+                  onClick={toggleScroll}
+                  to={{ pathname: "/events" }}
+                >
+                  EVENT SCHEDULE
+                </Link>
+              </li>
+              <li className='dropped-link'>
+                <Link
+                  className='no-border'
+                  onClick={toggleScroll}
+                  to={{ pathname: "/todo" }}
+                >
+                  THINGS TO DO
+                </Link>
+              </li>
+            </ul>
           </li>
           <li
             className={'navver ' + nav7}
