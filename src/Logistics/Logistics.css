@@ -65,6 +65,14 @@
   background: url('https://www.summitexpress.com/denver-airport-shuttle/files/uploads/2019/05/dillon-ampitheater-summer.jpg');
 }
 
+.rental-cars {
+  background: url('https://media3.s-nbcnews.com/j/newscms/2019_13/2798361/190325-rental-cars-cs-229p_9f30034b54ca5e3246b9cdfa3eb6dbb8.fit-760w.jpg');
+}
+
+.carpool {
+  background: url('http://theparlourri.com/wp-content/uploads/a-clown-car-1.jpg');
+}
+
 .hitchhiker {
   background: url('https://www.snopes.com/tachyon/2018/05/vanishing_hitchhiker.jpg?resize=865,452');
   background-size: cover;
