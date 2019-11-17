@@ -65,6 +65,18 @@
   background: url('https://www.summitexpress.com/denver-airport-shuttle/files/uploads/2019/05/dillon-ampitheater-summer.jpg');
 }
 
+.hitchhiker {
+  background: url('https://www.snopes.com/tachyon/2018/05/vanishing_hitchhiker.jpg?resize=865,452');
+  background-size: cover;
+  background-position-x: -170px;
+}
+
+.tent-out {
+  background: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
+  background-size: cover;
+  background-position-x: -80px;
+}
+
 .other-tent {
   background: url('https://www.nps.gov/cato/planyourvisit/images/owcc-small.jpg');
 }
@@ -101,7 +113,6 @@
   .other-info {
     padding-top: 75px;
   }
-
   .kit-circle {
     padding: 15px 10px 0;
     width: 300px;
