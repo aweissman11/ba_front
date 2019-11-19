@@ -6,3 +6,9 @@
 .camp-casual {
   background: url('https://images-na.ssl-images-amazon.com/images/I/81oxDPSstjL._AC_UY879_.jpg');
 }
+
+@media (max-width: 970px) {
+  .flower-boots {
+    background-position-y: -60px;
+  }
+}
