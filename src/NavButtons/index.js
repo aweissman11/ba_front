@@ -241,7 +241,7 @@ const NavButtons = (props) => {
           </li>
 
           <li
-            className={`navver  ${nav4} dropper ${dropperClass3}`}
+            className={`navver  ${nav5} dropper ${dropperClass3}`}
             onClick={() => dropperClick(3)}
           >
             <a className='dropper-link'>HAPPENINGS <NavChevIcon classProp={`chev ${chevPos3}`} /> </a>
@@ -267,7 +267,7 @@ const NavButtons = (props) => {
             </ul>
           </li>
           <li
-            className={'navver ' + nav7}
+            className={'navver ' + nav6}
           >
             <Link
               onClick={toggleScroll}
@@ -277,7 +277,7 @@ const NavButtons = (props) => {
             </Link>
           </li>
           <li
-            className={'navver ' + nav8}
+            className={'navver ' + nav7}
           >
             <Link
               onClick={toggleScroll}
@@ -287,7 +287,7 @@ const NavButtons = (props) => {
             </Link>
           </li>
           <li
-            className={'navver ' + nav9}
+            className={'navver ' + nav8}
           >
             <Link
               onClick={toggleScroll}
