@@ -8,21 +8,21 @@ import {
 } from 'react-router-dom';
 
 // components
-import NavButtons from './NavButtons';
-import Logistics from './Logistics';
-import Campground from './Campground';
-import Transportation from './Transportation';
-import Lodging from './Lodging';
-import OurStory from './OurStory';
-import EventsPage from './EventsPage';
-import HomePage from './HomePage';
-import WhatToBring from './WhatToBring';
-import WhatToDo from './WhatToDo';
-import Clothes from './Clothes';
-import Dogs from './Dogs';
-import Registry from './Registry';
-import Contact from './Contact';
-import Rsvp from './Rsvp';
+import NavButtons from './Components/NavButtons';
+import Logistics from './Components/Logistics';
+import Campground from './Components/Campground';
+import Transportation from './Components/Transportation';
+import Lodging from './Components/Lodging';
+import OurStory from './Components/OurStory';
+import EventsPage from './Components/EventsPage';
+import HomePage from './Components/HomePage';
+import WhatToBring from './Components/WhatToBring';
+import WhatToDo from './Components/WhatToDo';
+import Clothes from './Components/Clothes/Clothes.react';
+import Dogs from './Components/Dogs';
+import Registry from './Components/Registry';
+import Contact from './Components/Contact';
+import Rsvp from './Components/Rsvp';
 
 function App() {
   return (

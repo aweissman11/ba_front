@@ -143,7 +143,7 @@ const NavButtons = (props) => {
           <img
             alt='logo'
             className='logo-icon'
-            src={require('../assets/camping-icon-tpbg.jpg')}
+            src={require('../../assets/camping-icon-tpbg.jpg')}
           />
           <span className='home-span'>HOME</span>
         </Link>
