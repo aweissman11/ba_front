@@ -22,7 +22,7 @@ import Clothes from './Components/Clothes/Clothes.react';
 import Dogs from './Components/Dogs';
 import Registry from './Components/Registry';
 import Contact from './Components/Contact';
-import Rsvp from './Components/Rsvp';
+import Rsvp from './Components/Rsvp/RSVP.react';
 
 function App() {
   return (
