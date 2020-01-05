@@ -4,6 +4,7 @@ import FancyInput from '../Shared/Elements/FancyInput.react';
 import FancyCheckbox from '../Shared/Elements/FancyCheckbox.react';
 import { FancyButton } from '../Shared/Elements/FancyButton.react';
 import { BasicText } from '../Shared/Styles/Shared.styled';
+import { LinkIcon } from '../NavButtons/LinkIcon.react';
 
 const Attendee = ({
   i,
@@ -44,8 +45,7 @@ const Attendee = ({
       />
       <FancyCheckbox
         id={'hair-check-' + i}
-        // TODO: add linkIcon
-        label={<>Do you want yo hair did? <a href='google.com' target='_blank'>Details</a></>}
+        label={<>Do you want yo hair did? <a href='hair' target='_blank'>Details <LinkIcon /></a></>}
         propertyValue='hairApt'
         checkHandler={handleCheck}
         isChecked={person.hairApt}

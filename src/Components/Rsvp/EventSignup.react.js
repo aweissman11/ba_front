@@ -17,7 +17,7 @@ const EventSignup = ({ allEvents, updateEvents }) => {
         label={event.label}
         noBottom
         checkHandler={handleCheck}
-        isChecked={allEvents.includes(event.id)}
+        isChecked={allEvents && allEvents.includes(event.id)}
         propertyValue={event.id}
       />
       <BasicText leftText >{event.when}</BasicText>

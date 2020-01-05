@@ -21,7 +21,7 @@ import Dogs from './Components/Dogs/Dogs.react';
 import Registry from './Components/Registry/Registry.react';
 import Contact from './Components/Contact/Contact.react';
 import Clothes from './Components/Clothes/Clothes.react';
-import Rsvp from './Components/Rsvp/RSVP.react';
+import { RSVP } from './Components/Rsvp/RSVP.react';
 
 function App() {
   return (
@@ -63,7 +63,7 @@ function App() {
             <Contact />
           </Route>
           <Route path='/rsvp'>
-            <Rsvp />
+            <RSVP />
           </Route>
           <Route path='/'>
             <HomePage />

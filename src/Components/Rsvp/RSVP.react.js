@@ -14,14 +14,13 @@ import Attendee from './Attendee.react';
 import ModalContainer from '../Shared/Elements/ModalContainer.react';
 import HelpSignup from './HelpSignup.react';
 import EventSignup from './EventSignup.react';
+import Song from './Song.react';
 
 // TODO: Logout button
-// TODO: change handlers
-// TODO: hook up backend
-// TODO: handleSubmit
+// TODO: hook up backend and handleSubmit
 
 
-const RSVP = (props) => {
+export const RSVP = (props) => {
   const forceUpdate = useForceUpdate();
 
   let blankInfo = {
@@ -36,15 +35,15 @@ const RSVP = (props) => {
     chores: [],
     driving: 'full',
     spots: '',
-    song: ''
+    songs: []
   }
 
   useEffect(() => {
     window.addEventListener('keypress', submitOnEnter);
 
-    return (() => {
-      window.removeEventListener('keypress');
-    })
+    return () => {
+      window.removeEventListener('keypress', submitOnEnter);
+    }
   }, []);
 
   const submitOnEnter = (e) => {
@@ -119,7 +118,8 @@ const RSVP = (props) => {
     if (checked) {
       rsvpInfo.events = [...rsvpInfo.events, eventName]
     } else {
-      rsvpInfo.events.filter((event) => event !== eventName);
+      let updatedEvents = rsvpInfo.events.filter((event) => event !== eventName);
+      rsvpInfo.events = updatedEvents;
     }
     forceUpdate();
   }
@@ -128,8 +128,35 @@ const RSVP = (props) => {
     if (checked) {
       rsvpInfo.chores = [...rsvpInfo.chores, eventName]
     } else {
-      rsvpInfo.chores.filter((event) => event !== eventName);
+      let updatedChores = rsvpInfo.chores.filter((event) => event !== eventName);
+      rsvpInfo.chores = updatedChores;
     }
+    forceUpdate();
+  }
+
+  const addSong = () => {
+    let newSong = {
+      song: '',
+      artist: ''
+    };
+
+    rsvpInfo.songs = [...rsvpInfo.songs, newSong];
+    changeRsvpInfo(rsvpInfo);
+    forceUpdate();
+  }
+
+  const removeSong = (index) => {
+    rsvpInfo.songs.splice(index, 1);
+    rsvpInfo.songs = [...rsvpInfo.songs];
+    console.log('rsvpInfo.songs :', rsvpInfo.songs);
+    changeRsvpInfo(rsvpInfo);
+    forceUpdate();
+  }
+
+  const updateSong = (song, index) => {
+    rsvpInfo.songs[index] = song;
+
+    changeRsvpInfo(rsvpInfo);
     forceUpdate();
   }
 
@@ -152,7 +179,7 @@ const RSVP = (props) => {
                 hint='Your name'
                 inputName='name'
                 inputChangeHandler={inputChangeHandler}
-                inputValue={rsvpInfo.name}
+              // inputValue={rsvpInfo.name}
               />
               <FancyInput
                 hint='Email Address'
@@ -230,13 +257,13 @@ const RSVP = (props) => {
                 <BasicH3>Please let us know who is coming</BasicH3>
                 <BasicText>(you included)</BasicText>
               </CenterIt>
-              {rsvpInfo.people && rsvpInfo.people.length ? rsvpInfo.people.map((person, i) => (
+              {rsvpInfo && rsvpInfo.people && rsvpInfo.people.length ? rsvpInfo.people.map((person, i) => (
                 <Attendee
                   i={i}
                   removePerson={removePerson}
                   updateAttendee={updateAttendee}
                   person={person}
-                  key={i}
+                  key={person.fullName + '-' + i}
                 />
               ))
                 : null}
@@ -276,7 +303,7 @@ const RSVP = (props) => {
                   checkHandler={groupBoxesCheck}
                 />
 
-                {rsvpInfo.driving === 'spots' || rsvpInfo.driving === 'rider' ?
+                {rsvpInfo && rsvpInfo.driving === 'spots' || rsvpInfo.driving === 'rider' ?
                   <FancyInput
                     hint={getCarpoolText()}
                     inputName='spots'
@@ -331,18 +358,22 @@ const RSVP = (props) => {
                 <SpacerDots />
 
                 <BasicH3>We are our own DJs, please help us curate the perfect playlist</BasicH3>
-                {/* // TODO: create object list */}
+
+
+                {rsvpInfo.songs && rsvpInfo.songs.map((song, i) => (
+                  <Song
+                    i={i}
+                    removeSong={removeSong}
+                    updateSong={updateSong}
+                    song={song}
+                    key={song.song + '-' + i}
+                  />
+                ))}
                 <FancyButton
                   handleClick={addSong}
                   btnLabel='Add Song'
                 />
-                <FancyInput
-                  hint="What's your favorite dance  song?"
-                  inputName='song'
-                  inputChangeHandler={inputChangeHandler}
-                  inputValue={rsvpInfo.song}
-                />
-                <BasicText>(unlimited submissions)</BasicText>
+                <BasicText>(Unlimited submissions!)</BasicText>
 
                 <SpacerDots />
                 <FancyButton

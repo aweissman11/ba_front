@@ -23,7 +23,7 @@ const FancyInput = ({
         type={inputType || 'text'}
         className="form__field"
         placeholder={hint}
-        name={inputName}
+        // name={inputName}
         id={inputName}
         required
         value={currentValue}
