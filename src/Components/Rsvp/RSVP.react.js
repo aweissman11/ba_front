@@ -4,7 +4,7 @@ import DatePicker from 'react-datepicker';
 
 import "react-datepicker/dist/react-datepicker.css";
 
-import { LoginButton, NewPerson, RsvpForm, DateHolder, BoxIt } from './RSVP.styled';
+import { LoginButton, RsvpForm, DateHolder, BoxIt } from './RSVP.styled';
 import FancyInput from '../Shared/Elements/FancyInput.react';
 import FancyCheckbox from '../Shared/Elements/FancyCheckbox.react';
 import { FancyButton } from '../Shared/Elements/FancyButton.react';
@@ -53,7 +53,6 @@ export const RSVP = (props) => {
   }
 
   let [loggedIn, setLogin] = useState(true);
-  let [peopleList, setPeople] = useState([]);
   let [rsvpInfo, changeRsvpInfo] = useState(blankInfo);
   let [eventsVisible, makeEventsVisible] = useState(false);
   let [helpVisible, makeHelpVisible] = useState(false);
@@ -174,7 +173,7 @@ export const RSVP = (props) => {
           {!loggedIn ?
             <LoginButton onClick={() => setLogin(true)}>LOGIN</LoginButton>
             :
-            <RsvpForm key={peopleList.length} onSubmit={submitRSVPInfo}>
+            <RsvpForm onSubmit={submitRSVPInfo}>
               <FancyInput
                 hint='Your name'
                 inputName='name'
@@ -303,7 +302,7 @@ export const RSVP = (props) => {
                   checkHandler={groupBoxesCheck}
                 />
 
-                {rsvpInfo && rsvpInfo.driving === 'spots' || rsvpInfo.driving === 'rider' ?
+                {rsvpInfo.driving === 'spots' || rsvpInfo.driving === 'rider' ?
                   <FancyInput
                     hint={getCarpoolText()}
                     inputName='spots'

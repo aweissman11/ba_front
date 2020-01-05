@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import { Colors } from './Colors';
-import { Devices } from './Devices';
-
 
 export const OuterOutline = styled.div`
   border: solid 1px ${Colors.Text};

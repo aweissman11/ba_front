@@ -10,7 +10,7 @@ const EventSignup = ({ allEvents, updateEvents }) => {
     updateEvents(checked, propName);
   }
   return (<>
-    {EventSignupList && EventSignupList.map((event, i) => (<>
+    {EventSignupList && EventSignupList.map((event, i) => (<span key={event.id}>
       <FancyCheckbox
         marginLeft={'20px'}
         id={event.id}
@@ -22,7 +22,7 @@ const EventSignup = ({ allEvents, updateEvents }) => {
       />
       <BasicText leftText >{event.when}</BasicText>
       <SpacerDots />
-    </>))}
+    </span>))}
   </>)
 }
 

@@ -11,7 +11,7 @@ const HelpSignup = ({ allChores, updateChores }) => {
   }
 
   return (<>
-    {ChoresList && ChoresList.map((day, i) => (<>
+    {ChoresList && ChoresList.map((day, i) => (<span key={day.Day}>
       <BasicText centerText>{day.Day}</BasicText>
       {day && day.List ? day.List.map(chore => (
         <FancyCheckbox
@@ -21,11 +21,12 @@ const HelpSignup = ({ allChores, updateChores }) => {
           checkHandler={handleCheck}
           isChecked={allChores.includes(chore.id)}
           propertyValue={chore.id}
+          key={chore.id}
         />
       ))
         : null}
       <SpacerDots />
-    </>
+    </span>
     ))}
   </>)
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NewPerson } from './RSVP.styled';
 import FancyInput from '../Shared/Elements/FancyInput.react';
 import FancyCheckbox from '../Shared/Elements/FancyCheckbox.react';

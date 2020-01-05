@@ -2,7 +2,6 @@ import React from 'react'
 import { NewPerson } from './RSVP.styled';
 import FancyInput from '../Shared/Elements/FancyInput.react';
 import { FancyButton } from '../Shared/Elements/FancyButton.react';
-import { BasicText } from '../Shared/Styles/Shared.styled';
 
 const Song = ({
   i,
