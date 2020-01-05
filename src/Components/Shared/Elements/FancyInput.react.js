@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FancyInputWrapper, FancyInputLabel, StyledInput } from './FancyInput.styled';
+import { FancyInputWrapper, FancyInputLabel, StyledInput } from '../Styles/FancyInput.styled';
 
 
 const FancyInput = ({ hint, inputName }) => {

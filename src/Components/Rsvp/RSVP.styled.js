@@ -9,15 +9,33 @@ export const LoginButton = styled.div`
 `;
 LoginButton.displayName = 'LoginButton';
 
+export const FormWrapper = styled.div`
+  max-width: 350px;
+  margin: 40px auto;
+`;
+FormWrapper.displayName = 'FormWrapper';
+
 export const RsvpForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 350px;
+  width: 95%;
+  max-width: 350px;
   margin: 40px auto;
 `;
 RsvpForm.displayName = 'RsvpForm';
+
+export const OtherForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 95%;
+  max-width: 350px;
+  margin: 40px auto;
+`;
+OtherForm.displayName = 'OtherForm';
 
 export const StyledInput = styled.input`
   margin: 40px auto;
@@ -46,11 +64,4 @@ export const NewPerson = styled.div`
   padding: 10px;
 `;
 NewPerson.displayName = 'NewPerson';
-
-
-export const SpaceBlock = styled.div`
-  margin: 100px auto;
-  width: 100%;
-`;
-SpaceBlock.displayName = 'SpaceBlock';
 

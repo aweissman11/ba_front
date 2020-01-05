@@ -8,26 +8,26 @@ import {
 } from 'react-router-dom';
 
 // components
-import NavButtons from './Components/NavButtons';
-import Logistics from './Components/Logistics';
-import Campground from './Components/Campground';
-import Transportation from './Components/Transportation';
-import Lodging from './Components/Lodging';
-import OurStory from './Components/OurStory';
-import EventsPage from './Components/EventsPage';
-import HomePage from './Components/HomePage';
-import WhatToBring from './Components/WhatToBring';
-import WhatToDo from './Components/WhatToDo';
+import NavButtons from './Components/NavButtons/NavButtons.react';
+import Logistics from './Components/Logistics/Logistics.react';
+import Campground from './Components/Campground/Campground.react';
+import Transportation from './Components/Transportation/Transportation.react';
+import Lodging from './Components/Lodging/Lodging.react';
+import OurStory from './Components/OurStory/OurStory.react';
+import EventsPage from './Components/EventsPage/EventsPage.react';
+import HomePage from './Components/HomePage/HomePage.react';
+import WhatToBring from './Components/WhatToBring/WhatToBring.react';
+import WhatToDo from './Components/WhatToDo/WhatToDo.react';
+import Dogs from './Components/Dogs/Dogs.react';
+import Registry from './Components/Registry/Registry.react';
+import Contact from './Components/Contact/Contact.react';
 import Clothes from './Components/Clothes/Clothes.react';
-import Dogs from './Components/Dogs';
-import Registry from './Components/Registry';
-import Contact from './Components/Contact';
 import Rsvp from './Components/Rsvp/RSVP.react';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App" id='app-root'>
         <NavButtons />
         <Switch>
           <Route path='/events'>

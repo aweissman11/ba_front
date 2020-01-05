@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FancyCheckWrapper, FancyCheckLabel, FancyCheckboxCheck } from './FancyCheckbox.styled';
+import { FancyCheckWrapper, FancyCheckLabel, FancyCheckboxCheck } from '../Styles/FancyCheckbox.styled';
 
 
 const FancyCheckbox = ({ id, label }) => {

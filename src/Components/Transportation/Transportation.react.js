@@ -1,7 +1,8 @@
 import React from 'react';
 
 // CSS
-import { LinkIcon } from '../NavButtons/LinkIcon';
+import { LinkIcon } from '../NavButtons/LinkIcon.react';
+import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
 
 const Transportation = () => {
   return (
@@ -11,8 +12,8 @@ const Transportation = () => {
         <div className='tent-pic hitchhiker'></div>
       </div>
 
-      <div className='name-outline'>
-        <div className='inner-outline'>
+      <OuterOutline>
+        <InnerOutline>
 
           <br />
           <h3>We have a limited number of parking spaces onsite with more a mile away from the campground.</h3>
@@ -79,8 +80,8 @@ const Transportation = () => {
             </section>
           </div>
 
-        </div>
-      </div>
+        </InnerOutline>
+      </OuterOutline>
 
     </div>
   );

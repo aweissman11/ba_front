@@ -1,7 +1,7 @@
 import React from 'react';
 
 // CSS
-import { LinkIcon } from '../NavButtons/LinkIcon';
+import { LinkIcon } from '../NavButtons/LinkIcon.react';
 
 const Campground = () => {
   return (

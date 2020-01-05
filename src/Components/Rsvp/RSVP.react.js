@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { LoginButton, StyledInput, AddBtn, NewPerson, RsvpForm, SpaceBlock } from './RSVP.styled';
-import FancyInput from '../Shared/FancyInput.react';
-import { FancyCheckWrapper, FancyCheckLabel, FancyCheckboxCheck } from '../Shared/FancyCheckbox.styled';
-import FancyCheckbox from '../Shared/FancyCheckbox.react';
-import { AddButton, FancyButton } from '../Shared/FancyButton.react';
-import { CenterIt, BasicH3, BasicText } from '../Shared/Shared.styled';
+import { LoginButton, NewPerson, RsvpForm } from './RSVP.styled';
+import FancyInput from '../Shared/Elements/FancyInput.react';
+import FancyCheckbox from '../Shared/Elements/FancyCheckbox.react';
+import { FancyButton } from '../Shared/Elements/FancyButton.react';
+import { CenterIt, BasicH3, BasicText, InnerOutline, OuterOutline } from '../Shared/Styles/Shared.styled';
+import SpacerDots from '../Shared/Elements/SpacerDots.react';
+import Attendee from './Attendee.react';
+import ModalContainer from '../Shared/Elements/ModalContainer.react';
+import HelpSignup from './HelpSignup.react';
 
 // TODO: Logout button
 // TODO: delete person btn
@@ -12,6 +15,7 @@ import { CenterIt, BasicH3, BasicText } from '../Shared/Shared.styled';
 // TODO: change handlers
 // TODO: hook up backend
 // TODO: Create a modal
+// TODO: handleSubmit
 
 const RSVP = (props) => {
   let blankInfo = {
@@ -32,6 +36,8 @@ const RSVP = (props) => {
   let [loggedIn, setLogin] = useState(true);
   let [peopleList, setPeople] = useState([]);
   let [rsvpInfo, changeRsvpInfo] = useState(blankInfo);
+  let [eventsVisible, makeEventsVisible] = useState(false);
+  let [helpVisible, makeHelpVisible] = useState(false);
 
   const addPerson = () => {
     let newPerson = {
@@ -56,8 +62,8 @@ const RSVP = (props) => {
   return (
     <div className='events-page'>
       <h1 className='invited'>We can't wait to see you!</h1>
-      <div className='name-outline'>
-        <div className='inner-outline'>
+      <OuterOutline>
+        <InnerOutline>
           {!loggedIn ?
             <LoginButton onClick={() => setLogin(true)}>LOGIN</LoginButton>
             :
@@ -74,7 +80,8 @@ const RSVP = (props) => {
                 id='first'
                 label='Is this your first time camping?'
               />
-              <SpaceBlock>
+              <SpacerDots />
+              <div>
                 <BasicH3>What is your plan for lodging?</BasicH3>
                 <FancyCheckbox
                   id='tent-check'
@@ -88,11 +95,7 @@ const RSVP = (props) => {
                   id='offsite-check'
                   label='offsite?'
                 />
-              </SpaceBlock>
-              <FancyInput
-                hint='How many dogs are you bringing?'
-                inputName='dogs'
-              />
+              </div>
 
 
               {/* TODO: change this to a calendar input */}
@@ -101,34 +104,33 @@ const RSVP = (props) => {
                 inputName='nights'
               />
 
+              <FancyInput
+                hint='How many dogs are you bringing?'
+                inputName='dogs'
+              />
 
-              <CenterIt>
+              <SpacerDots />
+
+              <CenterIt
+                noBottom
+              >
                 <BasicH3>Please let us know who is coming</BasicH3>
                 <BasicText>(you included)</BasicText>
-                <FancyButton handleClick={addPerson} btnLabel='Add Attendee' />
               </CenterIt>
               {peopleList.map((person, i) => (
-                <NewPerson>
-                  <FancyInput
-                    hint='Full Name'
-                    inputName='fullName'
-                  />
-                  <FancyCheckbox
-                    id={'kid-check-' + i}
-                    label='Is this a kid under 10?'
-                  />
-                  <FancyInput
-                    hint='Alergies/dietary restrictions?'
-                    inputName='allergies'
-                  />
-                  <FancyCheckbox
-                    id={'hair-check-' + i}
-                    label='Do you want yo hair did?'
-                  />
-                  <div>P INdex: {person.personIndex}</div>
-                  <FancyButton handleClick={() => removePerson(i)} btnLabel='Remove Attendee' />
-                </NewPerson>
+                <Attendee
+                  i={i}
+                  removePerson={removePerson}
+                />
               ))}
+
+              <FancyButton
+                handleClick={addPerson}
+                btnLabel='Add Attendee'
+                centerIt
+              />
+
+              <SpacerDots />
 
               <BasicH3>Carpooling</BasicH3>
               <FancyCheckbox
@@ -144,20 +146,41 @@ const RSVP = (props) => {
                 inputName='number-of-riders'
               />
 
+              <SpacerDots />
+
               <CenterIt>
                 <FancyButton
-                  handleClick={() => console.log('Events Sign Up')}
+                  handleClick={() => makeEventsVisible(true)}
                   btnLabel='Events Attendance'
                 />
+
+                {eventsVisible ?
+                  <ModalContainer
+                    isVisible={eventsVisible}
+                    modalTitle='Register for Events'
+                    closeModal={() => makeEventsVisible(false)}
+                  />
+                  : null}
+
                 <FancyButton
-                  handleClick={() => console.log('Jobs Sign Up')}
+                  handleClick={() => makeHelpVisible(true)}
                   btnLabel='Help Sign Up'
                 />
+
+                {helpVisible ?
+                  <ModalContainer
+                    isVisible={helpVisible}
+                    modalTitle='Sign up to help us out please!'
+                    closeModal={() => makeHelpVisible(false)}
+                    modalContent={<HelpSignup />}
+                  />
+                  : null}
+
               </CenterIt>
             </RsvpForm>
           }
-        </div>
-      </div>
+        </InnerOutline>
+      </OuterOutline>
     </div>
   );
 }

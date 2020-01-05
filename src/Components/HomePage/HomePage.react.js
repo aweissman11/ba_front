@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // CSS
 import './HomePage.css';
+import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
 
 const HomePage = () => {
   let [aaronClass, setAaronClass] = useState('aaron-off');
@@ -27,8 +28,8 @@ const HomePage = () => {
 
   return (
     <div className='home-page'>
-      <div className='name-outline'>
-        <div className='inner-outline'>
+      <OuterOutline>
+        <InnerOutline>
           <div className={'date ' + dateClass}>
             <p>07</p>
             <p>04</p>
@@ -48,8 +49,8 @@ const HomePage = () => {
             <div className='windy'>DILLON, CO</div>
             <div className='windy'>We're getting married and you're invited!</div>
           </div>
-        </div>
-      </div>
+        </InnerOutline>
+      </OuterOutline>
     </div>
   );
 }

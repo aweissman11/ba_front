@@ -1,14 +1,15 @@
 import React from 'react';
 
-// CSS
+// Styles
 import './Contact.css';
+import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
 
 const Contact = () => {
   return (
     <div className='events-page'>
       <h1 className='invited'>Please let us know if you have any questions</h1>
-      <div className='name-outline'>
-        <div className='inner-outline'>
+      <OuterOutline>
+        <InnerOutline>
           <br />
           <h1>Contact Info</h1>
           <br />
@@ -22,8 +23,8 @@ const Contact = () => {
           <h3>Phone:</h3>
           <p>Aaron - (339) 221-1265</p>
           <p>Chelsey - (206) 992-6861</p>
-        </div>
-      </div>
+        </InnerOutline>
+      </OuterOutline>
     </div>
   );
 }

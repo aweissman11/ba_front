@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // CSS
 import './NavButtons.css';
-import { NavChevIcon } from './NavChevIcon';
+import { NavChevIcon } from './NavChevIcon.react';
 
 
 const noScroll = () => {

@@ -13,8 +13,9 @@ export const FancyBtn = styled.div`
   position: relative;
   bottom: 2px;
   right: 2px;
-  margin: 10px;
+  margin: ${({ centerIt }) => centerIt ? '10px auto' : '10px'};
   color: ${Colors.BG};
+  margin-left: ${({ hangLeft }) => hangLeft && 'auto'};
 
   &:hover {
     background: ${Colors.BG};

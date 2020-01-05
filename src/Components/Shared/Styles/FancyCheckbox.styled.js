@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { Colors } from './Colors';
 
 export const FancyCheckWrapper = styled.div`
-  display: table;
-  height: 100%;
   margin: 10px 0;
 
   .checkbox {
