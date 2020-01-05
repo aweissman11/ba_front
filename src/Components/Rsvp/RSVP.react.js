@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { LoginButton, NewPerson, RsvpForm } from './RSVP.styled';
+import useForceUpdate from 'use-force-update';
+import DatePicker from 'react-datepicker';
+
+import "react-datepicker/dist/react-datepicker.css";
+
+import { LoginButton, NewPerson, RsvpForm, DateHolder, BoxIt } from './RSVP.styled';
 import FancyInput from '../Shared/Elements/FancyInput.react';
 import FancyCheckbox from '../Shared/Elements/FancyCheckbox.react';
 import { FancyButton } from '../Shared/Elements/FancyButton.react';
@@ -11,27 +16,27 @@ import HelpSignup from './HelpSignup.react';
 import EventSignup from './EventSignup.react';
 
 // TODO: Logout button
-// TODO: delete person btn
-// TODO: clean up styles
 // TODO: change handlers
 // TODO: hook up backend
-// TODO: Create a modal
 // TODO: handleSubmit
 
+
 const RSVP = (props) => {
+  const forceUpdate = useForceUpdate();
+
   let blankInfo = {
     name: '',
     email: '',
     firstTime: false,
     people: [],
     lodging: 'tent',
-    dogs: 0,
-    nights: 2,
-    jobs: [],
-    carpool: {
-      driver: false,
-      spots: 0
-    }
+    dogs: '',
+    arrival: new Date('June 26, 2020'),
+    events: [],
+    chores: [],
+    driving: 'full',
+    spots: '',
+    song: ''
   }
 
   useEffect(() => {
@@ -44,7 +49,7 @@ const RSVP = (props) => {
 
   const submitOnEnter = (e) => {
     if (e.key === 'Enter' || e.keyCode === 13) {
-      submitRSVPInfo();
+      openSaveModal(true);
     }
   }
 
@@ -53,24 +58,31 @@ const RSVP = (props) => {
   let [rsvpInfo, changeRsvpInfo] = useState(blankInfo);
   let [eventsVisible, makeEventsVisible] = useState(false);
   let [helpVisible, makeHelpVisible] = useState(false);
+  let [saveModalVisible, openSaveModal] = useState(false);
 
   const addPerson = () => {
     let newPerson = {
-      name: '',
+      fullName: '',
       isKid: false,
       allergies: '',
       hairApt: false,
-      personIndex: peopleList.length
+      personIndex: rsvpInfo.people.length
     }
 
-    peopleList = [...peopleList, newPerson];
-    setPeople(peopleList);
+    rsvpInfo.people = [...rsvpInfo.people, newPerson];
+    changeRsvpInfo(rsvpInfo);
+    forceUpdate();
   }
 
   const removePerson = (index) => {
-    peopleList.splice(index, 1);
-    peopleList = [...peopleList];
-    setPeople(peopleList);
+    rsvpInfo.people.splice(index, 1);
+    rsvpInfo.people = [...rsvpInfo.people];
+    changeRsvpInfo(rsvpInfo);
+    forceUpdate();
+  }
+
+  const getCarpoolText = () => {
+    return rsvpInfo.driving === 'spots' ? 'I have this many spots available' : 'I need this meany seats';
   }
 
   const inputChangeHandler = (inputName, value) => {
@@ -78,7 +90,51 @@ const RSVP = (props) => {
     changeRsvpInfo(rsvpInfo);
   }
 
+  const standardCheckHandler = (checked, propName) => {
+    rsvpInfo[propName] = checked;
+    changeRsvpInfo(rsvpInfo);
+    forceUpdate();
+  }
+
+  const groupBoxesCheck = (checked, propValue, propName) => {
+    rsvpInfo[propName] = propValue;
+    changeRsvpInfo(rsvpInfo);
+    forceUpdate();
+  }
+
+  const handleDateChange = (date) => {
+    rsvpInfo.arrival = date;
+    changeRsvpInfo(rsvpInfo);
+    forceUpdate();
+  }
+
+  const updateAttendee = (attendee, index) => {
+    rsvpInfo.people[index] = attendee;
+
+    changeRsvpInfo(rsvpInfo);
+    forceUpdate();
+  }
+
+  const updateEvents = (checked, eventName) => {
+    if (checked) {
+      rsvpInfo.events = [...rsvpInfo.events, eventName]
+    } else {
+      rsvpInfo.events.filter((event) => event !== eventName);
+    }
+    forceUpdate();
+  }
+
+  const updateChores = (checked, eventName) => {
+    if (checked) {
+      rsvpInfo.chores = [...rsvpInfo.chores, eventName]
+    } else {
+      rsvpInfo.chores.filter((event) => event !== eventName);
+    }
+    forceUpdate();
+  }
+
   const submitRSVPInfo = () => {
+    // TODO: save animation
     console.log(JSON.stringify(rsvpInfo, null, 2));
   }
 
@@ -101,38 +157,69 @@ const RSVP = (props) => {
               <FancyInput
                 hint='Email Address'
                 inputName='email'
+                inputChangeHandler={inputChangeHandler}
+                inputValue={rsvpInfo.email}
               />
               <FancyCheckbox
                 id='first'
-                label='Is this your first time camping?'
+                label='Is this any of your first time camping?'
+                isChecked={rsvpInfo.firstTime}
+                propertyValue='firstTime'
+                checkHandler={standardCheckHandler}
               />
               <SpacerDots />
-              <div>
+              <BoxIt>
                 <BasicH3>What is your plan for lodging?</BasicH3>
                 <FancyCheckbox
                   id='tent-check'
-                  label='tent?'
+                  label='tent'
+                  isChecked={rsvpInfo.lodging === 'tent'}
+                  propertyValue='tent'
+                  propertyName='lodging'
+                  checkHandler={groupBoxesCheck}
                 />
                 <FancyCheckbox
                   id='rv-check'
-                  label='rv?'
+                  label='rv'
+                  isChecked={rsvpInfo.lodging === 'rv'}
+                  propertyValue='rv'
+                  propertyName='lodging'
+                  checkHandler={groupBoxesCheck}
                 />
                 <FancyCheckbox
                   id='offsite-check'
-                  label='offsite?'
+                  label='offsite'
+                  isChecked={rsvpInfo.lodging === 'offsite'}
+                  propertyValue='offsite'
+                  propertyName='lodging'
+                  checkHandler={groupBoxesCheck}
                 />
-              </div>
+              </BoxIt>
 
+              <SpacerDots />
 
-              {/* TODO: change this to a calendar input */}
-              <FancyInput
-                hint='How many nights will you be staying?'
-                inputName='nights'
-              />
+              <BasicH3>When will you arrive in Dillon?</BasicH3>
+              <BasicText>(Tent packages arrive on Thursday, July  2nd)</BasicText>
+              <DateHolder>
+                <DatePicker
+                  minDate={new Date('June 26, 2020')}
+                  maxDate={new Date('July 4, 2020')}
+                  selected={rsvpInfo.arrival}
+                  onChange={handleDateChange}
+                  showDisabledMonthNavigation
+                  inline
+                  dayClassName={() => 'date-day'}
+                />
+              </DateHolder>
+
+              <SpacerDots />
 
               <FancyInput
                 hint='How many dogs are you bringing?'
                 inputName='dogs'
+                inputChangeHandler={inputChangeHandler}
+                inputValue={rsvpInfo.dogs}
+                inputType='number'
               />
 
               <SpacerDots />
@@ -143,12 +230,16 @@ const RSVP = (props) => {
                 <BasicH3>Please let us know who is coming</BasicH3>
                 <BasicText>(you included)</BasicText>
               </CenterIt>
-              {peopleList.map((person, i) => (
+              {rsvpInfo.people && rsvpInfo.people.length ? rsvpInfo.people.map((person, i) => (
                 <Attendee
                   i={i}
                   removePerson={removePerson}
+                  updateAttendee={updateAttendee}
+                  person={person}
+                  key={i}
                 />
-              ))}
+              ))
+                : null}
 
               <FancyButton
                 handleClick={addPerson}
@@ -158,19 +249,43 @@ const RSVP = (props) => {
 
               <SpacerDots />
 
-              <BasicH3>Carpooling</BasicH3>
-              <FancyCheckbox
-                id='driving-check'
-                label='I have extra space in my car'
-              />
-              <FancyCheckbox
-                id='riding-check'
-                label='I need a ride'
-              />
-              <FancyInput
-                hint='This many people/spaces'
-                inputName='number-of-riders'
-              />
+              <BoxIt>
+                <BasicH3>Carpooling</BasicH3>
+                <FancyCheckbox
+                  id='no-spots'
+                  label='I am driving but my car is full'
+                  isChecked={rsvpInfo.driving === 'full'}
+                  propertyValue='full'
+                  propertyName='driving'
+                  checkHandler={groupBoxesCheck}
+                />
+                <FancyCheckbox
+                  id='driving-check'
+                  label='I have extra space in my car'
+                  isChecked={rsvpInfo.driving === 'spots'}
+                  propertyValue='spots'
+                  propertyName='driving'
+                  checkHandler={groupBoxesCheck}
+                />
+                <FancyCheckbox
+                  id='riding-check'
+                  label='I need a ride'
+                  isChecked={rsvpInfo.driving === 'rider'}
+                  propertyValue='rider'
+                  propertyName='driving'
+                  checkHandler={groupBoxesCheck}
+                />
+
+                {rsvpInfo.driving === 'spots' || rsvpInfo.driving === 'rider' ?
+                  <FancyInput
+                    hint={getCarpoolText()}
+                    inputName='spots'
+                    inputChangeHandler={inputChangeHandler}
+                    inputValue={rsvpInfo.spots}
+                    inputType='number'
+                  />
+                  : null}
+              </BoxIt>
 
               <SpacerDots />
 
@@ -184,9 +299,12 @@ const RSVP = (props) => {
                   <ModalContainer
                     isVisible={eventsVisible}
                     modalTitle='Register for Events'
-                    subTitle="Please select all events you'd like to attend"
+                    subTitle="When should we anticipate hosting you?"
                     closeModal={() => makeEventsVisible(false)}
-                    modalContent={<EventSignup />}
+                    modalContent={<EventSignup
+                      allEvents={rsvpInfo.events}
+                      updateEvents={updateEvents}
+                    />}
                   />
                   : null}
 
@@ -203,15 +321,47 @@ const RSVP = (props) => {
                     modalTitle='Sign up to help us out please!'
                     subTitle="please choose one or two (don't overdo it!)"
                     closeModal={() => makeHelpVisible(false)}
-                    modalContent={<HelpSignup />}
+                    modalContent={<HelpSignup
+                      allChores={rsvpInfo.chores}
+                      updateChores={updateChores}
+                    />}
                   />
                   : null}
 
                 <SpacerDots />
+
+                <BasicH3>We are our own DJs, please help us curate the perfect playlist</BasicH3>
+                {/* // TODO: create object list */}
                 <FancyButton
-                  handleClick={submitRSVPInfo}
+                  handleClick={addSong}
+                  btnLabel='Add Song'
+                />
+                <FancyInput
+                  hint="What's your favorite dance  song?"
+                  inputName='song'
+                  inputChangeHandler={inputChangeHandler}
+                  inputValue={rsvpInfo.song}
+                />
+                <BasicText>(unlimited submissions)</BasicText>
+
+                <SpacerDots />
+                <FancyButton
+                  handleClick={() => openSaveModal(true)}
                   btnLabel='Save Info'
                 />
+
+
+                {saveModalVisible ?
+                  <ModalContainer
+                    isVisible={saveModalVisible}
+                    modalTitle='Save RSVP Info'
+                    closeModal={() => openSaveModal(false)}
+                    doneText='Save Info'
+                    miniModal
+                    modalContent={<></>}
+                    extraCloseFunction={submitRSVPInfo}
+                  />
+                  : null}
 
               </CenterIt>
             </RsvpForm>
@@ -223,19 +373,3 @@ const RSVP = (props) => {
 }
 
 export default RSVP;
-
-
-            // user_id
-            // email
-            // name
-            // group_names(a)
-//   {name, isKid, dietary, hair }
-                                // lodging(s)
-//   {onsite: 'tent/rv/no', overnight_car }
-                                // dogs
-                                // nights
-                                // events
-                                // jobs
-                                // carpool
-//   {status: 'driver/rider', humans }
-                                // first

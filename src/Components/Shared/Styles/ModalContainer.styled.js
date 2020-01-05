@@ -33,9 +33,10 @@ export const ModalWrapper = styled.div`
     max-width: 40%;
     max-height: 80vh;
     position: absolute;
-    top: 10vh;
+    top: ${({ miniModal }) => miniModal ? '35vh' : '10vh'};
     left: 30%;
     border: solid 1px ${Colors.Text};
+    height: ${({ miniModal }) => miniModal && '170px'};
   }
 `;
 ModalWrapper.displayName = 'ModalWrapper';
@@ -54,6 +55,11 @@ export const ModalBtnWrapper = styled.div`
   display: flex;
   justify-content: center;
   background: ${Colors.BG};
+  height: 54%;
+
+  @media ${Devices.Laptop} {
+    height: 70px;
+  }
 `;
 ModalBtnWrapper.displayName = 'ModalBtnWrapper';
 

@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 import { FancyCheckWrapper, FancyCheckLabel, FancyCheckboxCheck } from '../Styles/FancyCheckbox.styled';
 
 
-const FancyCheckbox = ({ id, label, marginLeft, noBottom }) => {
-  let [loggedIn, setLogin] = useState(false);
-  let [peopleList, addPeople] = useState([]);
+const FancyCheckbox = ({
+  id,
+  label,
+  marginLeft,
+  noBottom,
+  isChecked,
+  checkHandler,
+  propertyName,
+  propertyValue
+}) => {
 
-  const addPerson = () => {
-    let newPerson = {
-      name: '',
-      isKid: false,
-      allergies: '',
-      hairApt: false
-    }
-
-    peopleList = [...peopleList, newPerson];
-    addPeople(peopleList);
+  const handleChange = (e) => {
+    let { checked } = e.target;
+    checkHandler(checked, propertyValue, propertyName);
   }
 
   return (
@@ -27,7 +29,13 @@ const FancyCheckbox = ({ id, label, marginLeft, noBottom }) => {
       <div className="checkbox">
         <div>
           <div>
-            <FancyCheckboxCheck type="checkbox" id={id} name={id} value="" />
+            <FancyCheckboxCheck
+              type="checkbox"
+              id={id}
+              name={id}
+              checked={isChecked}
+              onChange={handleChange}
+            />
             <FancyCheckLabel htmlFor={id}>
               <span></span>{label}
             </FancyCheckLabel>
@@ -39,3 +47,14 @@ const FancyCheckbox = ({ id, label, marginLeft, noBottom }) => {
 }
 
 export default FancyCheckbox;
+
+FancyCheckbox.propTypes = {
+  id: PropTypes.string.isRequired,
+  label: PropTypes.any.isRequired,
+  marginLeft: PropTypes.string,
+  noBottom: PropTypes.bool,
+  isChecked: PropTypes.bool.isRequired,
+  checkHandler: PropTypes.func.isRequired,
+  propertyName: PropTypes.string,
+  propertyValue: PropTypes.string
+}

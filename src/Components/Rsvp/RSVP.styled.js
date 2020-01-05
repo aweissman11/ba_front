@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Colors } from '../Shared/Styles/Colors';
 
 export const LoginButton = styled.div`
   width: 300px;
@@ -65,3 +66,27 @@ export const NewPerson = styled.div`
 `;
 NewPerson.displayName = 'NewPerson';
 
+
+export const DateHolder = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  .react-datepicker__day--selected {
+    background: ${Colors.BG};
+  }
+
+  .react-datepicker__day--selected:hover {
+    background: ${Colors.BG};
+    filter: brightness(2.2);
+  }
+`;
+DateHolder.displayName = 'DateHolder';
+
+
+export const BoxIt = styled.div`
+  border: solid 1px ${Colors.Text};
+  padding: 20px;
+  width: 100%;
+`;
+BoxIt.displayName = 'BoxIt';

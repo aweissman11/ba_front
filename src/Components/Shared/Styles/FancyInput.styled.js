@@ -20,6 +20,7 @@ export const StyledInput = styled.input`
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
+  font-size: 1em;
 
   &::placeholder {
     color: transparent;
