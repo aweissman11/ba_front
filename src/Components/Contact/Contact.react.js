@@ -17,6 +17,7 @@ const Contact = () => {
           <p><a
             href="mailto:chelseyandaaronsbigadventure@gmail.com?subject=I%20Have%20A%20Question"
             target='_blank'
+            rel="noopener noreferrer"
             className='email-address'
           >chelseyandaaronsbigadventure@gmail.com</a></p>
           <br />

@@ -45,9 +45,10 @@ export const CenteredH3 = styled.h3`
 CenteredH3.displayName = 'CenteredH3';
 
 export const BasicText = styled.h3`
-  margin: 10px auto;
+  margin: ${({ leftText }) => leftText ? '0px 0 10px 50px' : '10px auto'};
   font-size: .8em;
   color: ${Colors.Text};
+  text-align: ${({ centerText }) => centerText && 'center'};
 `;
 BasicText.displayName = 'BasicText';
 

@@ -14,7 +14,7 @@ const NavButtons = (props) => {
   let [fixedHeader, setFixedHeader] = useState('');
   let [isChecked, toggleIsChecked] = useState(false);
 
-  let [nav1, setNav1] = useState('nav-out')
+  // let [nav1, setNav1] = useState('nav-out')
   let [nav2, setNav2] = useState('nav-out')
   let [nav3, setNav3] = useState('nav-out')
   let [nav4, setNav4] = useState('nav-out')
@@ -22,7 +22,6 @@ const NavButtons = (props) => {
   let [nav6, setNav6] = useState('nav-out')
   let [nav7, setNav7] = useState('nav-out')
   let [nav8, setNav8] = useState('nav-out')
-  let [nav9, setNav9] = useState('nav-out')
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -41,7 +40,7 @@ const NavButtons = (props) => {
       if (isChecked) {
         toggleIsChecked(false)
         window.removeEventListener('scroll', noScroll);
-        setNav1('nav-out')
+        // setNav1('nav-out')
         setNav2('nav-out')
         setNav3('nav-out')
         setNav4('nav-out')
@@ -49,11 +48,10 @@ const NavButtons = (props) => {
         setNav6('nav-out')
         setNav7('nav-out')
         setNav8('nav-out')
-        setNav9('nav-out')
       } else {
         toggleIsChecked(true)
         window.addEventListener('scroll', noScroll);
-        setNav1('nav-item-in-place');
+        // setNav1('nav-item-in-place');
         window.setTimeout(() => setNav2('nav-item-in-place'), 50);
         window.setTimeout(() => setNav3('nav-item-in-place'), 100);
         window.setTimeout(() => setNav4('nav-item-in-place'), 150);
@@ -61,7 +59,6 @@ const NavButtons = (props) => {
         window.setTimeout(() => setNav6('nav-item-in-place'), 250);
         window.setTimeout(() => setNav7('nav-item-in-place'), 300);
         window.setTimeout(() => setNav8('nav-item-in-place'), 350);
-        window.setTimeout(() => setNav9('nav-item-in-place'), 400);
       }
     }
   }
@@ -170,7 +167,7 @@ const NavButtons = (props) => {
             className={`navver ${nav3} dropper ${dropperClass1}`}
             onClick={() => dropperClick(1)}
           >
-            <a className='dropper-link'>LOGISTICS <NavChevIcon classProp={`chev ${chevPos1}`} /> </a>
+            <span className='dropper-link'>LOGISTICS <NavChevIcon classProp={`chev ${chevPos1}`} /> </span>
             <ul className={`${dropPosition1} dropdown`}>
               <li className='dropped-link'>
                 <Link
@@ -208,7 +205,7 @@ const NavButtons = (props) => {
             className={`navver  ${nav4} dropper ${dropperClass2}`}
             onClick={() => dropperClick(2)}
           >
-            <a className='dropper-link'>WHAT TO BRING <NavChevIcon classProp={`chev ${chevPos2}`} /> </a>
+            <span className='dropper-link'>WHAT TO BRING <NavChevIcon classProp={`chev ${chevPos2}`} /> </span>
             <ul className={`${dropPosition2} dropdown`}>
               <li className='dropped-link'>
                 <Link
@@ -244,7 +241,7 @@ const NavButtons = (props) => {
             className={`navver  ${nav5} dropper ${dropperClass3}`}
             onClick={() => dropperClick(3)}
           >
-            <a className='dropper-link'>HAPPENINGS <NavChevIcon classProp={`chev ${chevPos3}`} /> </a>
+            <span className='dropper-link'>HAPPENINGS <NavChevIcon classProp={`chev ${chevPos3}`} /> </span>
             <ul className={`${dropPosition3} dropdown`}>
               <li className='dropped-link'>
                 <Link

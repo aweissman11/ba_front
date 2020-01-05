@@ -41,7 +41,7 @@ export const ModalWrapper = styled.div`
 ModalWrapper.displayName = 'ModalWrapper';
 
 export const ContentWrapper = styled.form`
-  padding: 60px 0 120px 20px;
+  padding: ${({ subTitle }) => subTitle ? '80px 0 80px' : '60px 0 80px'};
   overflow: scroll;
   height: 100%;
 `;
@@ -65,7 +65,9 @@ export const ModalTitle = styled.div`
   justify-content: center;
   background: ${Colors.BG};
   align-items: center;
-  height: 60px;
+  height: ${({ subTitle }) => subTitle ? '80px' : '60px'};
+  padding-top: ${({ subTitle }) => subTitle && '20px'};
   z-index: 1;
+  flex-direction: column;
 `;
 ModalTitle.displayName = 'ModalTitle';

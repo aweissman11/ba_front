@@ -9,7 +9,6 @@ import {
 
 // components
 import NavButtons from './Components/NavButtons/NavButtons.react';
-import Logistics from './Components/Logistics/Logistics.react';
 import Campground from './Components/Campground/Campground.react';
 import Transportation from './Components/Transportation/Transportation.react';
 import Lodging from './Components/Lodging/Lodging.react';

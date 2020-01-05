@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { Colors } from './Colors';
 
 export const FancyCheckWrapper = styled.div`
-  margin: 10px 0;
+  margin: ${({ noBottom }) => noBottom ? '10px 0 0' : '10px 0'};
+  margin-left: ${({ marginLeft }) => marginLeft && marginLeft};
 
   .checkbox {
     display: table-cell;
@@ -22,8 +23,8 @@ export const FancyCheckLabel = styled.label`
       display: inline-block;
       position: relative;
       background-color: transparent;
-      width: 25px;
-      height: 25px;
+      width: 20px;
+      height: 20px;
       transform-origin: center;
       border: 2px solid ${Colors.Text};
       border-radius: 50%;
@@ -39,8 +40,8 @@ export const FancyCheckLabel = styled.label`
       background: ${Colors.Text};
       position: absolute;
       transform: rotate(45deg);
-      top: 11px;
-      left: 6px;
+      top: 8px;
+      left: 5px;
       transition: width 50ms ease 50ms;
       transform-origin: 0% 0%;
     }
@@ -53,8 +54,8 @@ export const FancyCheckLabel = styled.label`
       background: ${Colors.Text};
       position: absolute;
       transform: rotate(305deg);
-      top: 15px;
-      left: 8px;
+      top: 12px;
+      left: 6px;
       transition: width 50ms ease;
       transform-origin: 0% 0%;
     }

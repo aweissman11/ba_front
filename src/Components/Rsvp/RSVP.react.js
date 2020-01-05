@@ -8,6 +8,7 @@ import SpacerDots from '../Shared/Elements/SpacerDots.react';
 import Attendee from './Attendee.react';
 import ModalContainer from '../Shared/Elements/ModalContainer.react';
 import HelpSignup from './HelpSignup.react';
+import EventSignup from './EventSignup.react';
 
 // TODO: Logout button
 // TODO: delete person btn
@@ -30,6 +31,20 @@ const RSVP = (props) => {
     carpool: {
       driver: false,
       spots: 0
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('keypress', submitOnEnter);
+
+    return (() => {
+      window.removeEventListener('keypress');
+    })
+  }, []);
+
+  const submitOnEnter = (e) => {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+      submitRSVPInfo();
     }
   }
 
@@ -58,6 +73,15 @@ const RSVP = (props) => {
     setPeople(peopleList);
   }
 
+  const inputChangeHandler = (inputName, value) => {
+    rsvpInfo[inputName] = value;
+    changeRsvpInfo(rsvpInfo);
+  }
+
+  const submitRSVPInfo = () => {
+    console.log(JSON.stringify(rsvpInfo, null, 2));
+  }
+
 
   return (
     <div className='events-page'>
@@ -67,10 +91,12 @@ const RSVP = (props) => {
           {!loggedIn ?
             <LoginButton onClick={() => setLogin(true)}>LOGIN</LoginButton>
             :
-            <RsvpForm key={peopleList.length}>
+            <RsvpForm key={peopleList.length} onSubmit={submitRSVPInfo}>
               <FancyInput
                 hint='Your name'
                 inputName='name'
+                inputChangeHandler={inputChangeHandler}
+                inputValue={rsvpInfo.name}
               />
               <FancyInput
                 hint='Email Address'
@@ -151,30 +177,41 @@ const RSVP = (props) => {
               <CenterIt>
                 <FancyButton
                   handleClick={() => makeEventsVisible(true)}
-                  btnLabel='Events Attendance'
+                  btnLabel='RSVP for Events'
                 />
 
                 {eventsVisible ?
                   <ModalContainer
                     isVisible={eventsVisible}
                     modalTitle='Register for Events'
+                    subTitle="Please select all events you'd like to attend"
                     closeModal={() => makeEventsVisible(false)}
+                    modalContent={<EventSignup />}
                   />
                   : null}
 
+                <SpacerDots />
+
                 <FancyButton
                   handleClick={() => makeHelpVisible(true)}
-                  btnLabel='Help Sign Up'
+                  btnLabel='Sign up to help out'
                 />
 
                 {helpVisible ?
                   <ModalContainer
                     isVisible={helpVisible}
                     modalTitle='Sign up to help us out please!'
+                    subTitle="please choose one or two (don't overdo it!)"
                     closeModal={() => makeHelpVisible(false)}
                     modalContent={<HelpSignup />}
                   />
                   : null}
+
+                <SpacerDots />
+                <FancyButton
+                  handleClick={submitRSVPInfo}
+                  btnLabel='Save Info'
+                />
 
               </CenterIt>
             </RsvpForm>

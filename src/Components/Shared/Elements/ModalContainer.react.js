@@ -9,13 +9,14 @@ import {
   ClosingBackground
 } from '../Styles/ModalContainer.styled';
 import { FancyButton } from './FancyButton.react';
-import { CenteredH3 } from '../Styles/Shared.styled';
+import { CenteredH3, BasicText } from '../Styles/Shared.styled';
 
 
 const ModalContainer = ({
   modalContent,
   closeModal,
-  modalTitle
+  modalTitle,
+  subTitle
 }) => {
   const modalRoot = document.getElementById('app-root');
 
@@ -23,12 +24,15 @@ const ModalContainer = ({
     <ModalBackground>
       <ClosingBackground onClick={closeModal} />
       <ModalWrapper>
-        <ModalTitle>
+        <ModalTitle subTitle={subTitle}>
           {modalTitle &&
             <CenteredH3>{modalTitle}</CenteredH3>
           }
+          {subTitle &&
+            <BasicText centerText>{subTitle}</BasicText>
+          }
         </ModalTitle>
-        <ContentWrapper onSubmit={closeModal}>
+        <ContentWrapper onSubmit={closeModal} subTitle={subTitle}>
           {modalContent && modalContent}
         </ContentWrapper>
         <ModalBtnWrapper>

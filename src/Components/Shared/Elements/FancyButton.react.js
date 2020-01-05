@@ -14,6 +14,6 @@ export const FancyButton = ({
       hangLeft={hangLeft}
       centerIt={centerIt}
     >
-      <div class="btn-txt">{btnLabel}</div>
+      <div className="btn-txt">{btnLabel}</div>
     </FancyBtn>
   );

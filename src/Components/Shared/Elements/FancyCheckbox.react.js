@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FancyCheckWrapper, FancyCheckLabel, FancyCheckboxCheck } from '../Styles/FancyCheckbox.styled';
 
 
-const FancyCheckbox = ({ id, label }) => {
+const FancyCheckbox = ({ id, label, marginLeft, noBottom }) => {
   let [loggedIn, setLogin] = useState(false);
   let [peopleList, addPeople] = useState([]);
 
@@ -19,7 +19,11 @@ const FancyCheckbox = ({ id, label }) => {
   }
 
   return (
-    <FancyCheckWrapper className="exp">
+    <FancyCheckWrapper
+      className="exp"
+      marginLeft={marginLeft}
+      noBottom={noBottom}
+    >
       <div className="checkbox">
         <div>
           <div>

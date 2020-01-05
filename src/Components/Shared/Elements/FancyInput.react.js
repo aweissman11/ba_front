@@ -2,24 +2,31 @@ import React, { useState, useEffect } from 'react';
 import { FancyInputWrapper, FancyInputLabel, StyledInput } from '../Styles/FancyInput.styled';
 
 
-const FancyInput = ({ hint, inputName }) => {
-  let [inputValue, setValue] = useState('');
+const FancyInput = ({
+  hint,
+  inputName,
+  inputChangeHandler,
+  inputType,
+  inputValue
+}) => {
+  let [currentValue, setValue] = useState(inputValue);
 
   const changeHandler = (e) => {
     let { value } = e.target;
+    inputChangeHandler(inputName, value);
     setValue(value);
   }
 
   return (
     <FancyInputWrapper>
       <StyledInput
-        type="input"
+        type={inputType || 'text'}
         className="form__field"
         placeholder={hint}
         name={inputName}
         id={inputName}
         required
-        value={inputValue}
+        value={currentValue}
         onChange={changeHandler}
       />
       <FancyInputLabel
