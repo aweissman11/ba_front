@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Data
 import { events } from '../Shared/Data/Events';
@@ -23,7 +24,16 @@ const EventsPage = () => {
                 <p className='info-info'>{thing.time}</p>
                 <p className='info-info'>{thing.location}</p>
                 <p className='info-type'>Dress:</p>
-                <p className='info-info'>{thing.dress}</p>
+                <p className='info-info'>
+                  <Link
+                    to='/clothes'
+                    style={{
+                      color: thing.event === 'Ceremony' && '#0c1b23'
+                    }}
+                  >
+                    {thing.dress}
+                  </Link>
+                </p>
               </div>
             </div>
           ))}

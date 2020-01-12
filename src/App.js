@@ -6,7 +6,8 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-
+// Auth
+import { useAuth0 } from "./react-auth0-spa";
 // components
 import NavButtons from './Components/NavButtons/NavButtons.react';
 import Campground from './Components/Campground/Campground.react';
@@ -22,12 +23,20 @@ import Registry from './Components/Registry/Registry.react';
 import Contact from './Components/Contact/Contact.react';
 import Clothes from './Components/Clothes/Clothes.react';
 import { RSVP } from './Components/Rsvp/RSVP.react';
+import SubHeader from './Components/SubHeader/SubHeader.react';
 
 function App() {
+  const { loading } = useAuth0();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <BrowserRouter>
       <div className="App" id='app-root'>
         <NavButtons />
+        <SubHeader />
         <Switch>
           <Route path='/events'>
             <EventsPage />

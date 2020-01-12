@@ -4,7 +4,7 @@
   min-height: 100vh;
   background: #0c1b23;
   color: #d1e6e6;
-  padding-top: 165px;
+  padding-top: 55px;
   padding-bottom: 200px;
   text-align: center;
 }
@@ -30,7 +30,6 @@
   margin: 0 10px;
 }
 
-
 .awssld {
   width: 80%;
   margin: auto;
@@ -50,7 +49,6 @@
   margin: auto;
   justify-content: space-around;
 }
-
 
 .story {
   margin: 0 20px;
@@ -80,7 +78,6 @@
   }
 }
 
-
 @media (min-width: 970px) {
   .slider-box {
     width: 100vw;
@@ -91,21 +88,18 @@
   .photo-box {
     width: 100vw;
   }
-
   .slider-box {
     height: 600px;
     overflow: hidden;
     margin: auto;
     position: relative;
   }
-
   .slider {
     display: flex;
     height: 100%;
     position: relative;
     transition: .2s;
   }
-
   .slide-btn-box {
     position: absolute;
     top: 0;
@@ -114,41 +108,33 @@
     z-index: 10;
     cursor: pointer;
   }
-
   .slide-btn-box:hover .slide-btn {
     filter: brightness(1.3);
     transform: scale(1.2);
   }
-
   .right-side {
     background: radial-gradient(#404f568c, #ffffff00);
     right: -60px;
   }
-
   .left-side {
     background: radial-gradient(#404f568c, #ffffff00);
     left: -60px;
   }
-
   .slide-btn {
     position: absolute;
     top: 45%;
     width: 60px;
     height: 60px;
   }
-
   .next {
     right: 60px;
   }
-
   .prev {
     left: 60px;
   }
-
   .one-slide {
     height: 100%;
   }
-
   .photo-box {
     padding: 0 60px;
     height: 100%;
@@ -168,20 +154,16 @@
   .stories {
     flex-direction: column;
   }
-
   .story {
     margin-bottom: 60px;
   }
 }
 
-
 @media (max-width: 970px) {
-
   .slider-box {
     width: 300px;
     margin: auto;
   }
-  
   .slider {
     display: flex;
     overflow-x: auto;
@@ -189,45 +171,35 @@
     scroll-snap-points-x: repeat(300px);
     scroll-snap-type: x mandatory;
   }
-  .slider > div {
+  .slider>div {
     /* make sure the width is honored */
     flex-shrink: 0;
     width: 300px;
     height: 300px;
     scroll-snap-align: start;
   }
-  
   .photo-box {
     height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
-
-
-
   .slide-btn {
     display: none;
   }
-
   .story-page {
     padding: 0;
-    padding-top: 50px;
+    padding-top: 55px;
   }
-
   .slides-holder {
     overflow: scroll;
   }
-
   .awssld {
     width: 100%;
   }
-
   .slide-nav-btn {
     display: none;
   }
-
   .stories {
     width: 100%;
   }

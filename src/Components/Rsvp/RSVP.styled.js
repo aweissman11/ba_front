@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { Colors } from '../Shared/Styles/Colors';
 
-export const LoginButton = styled.div`
+export const BigLoginButton = styled.div`
   width: 300px;
   height: 100px;
   background: magenta;
   border-radius: 20px;
   margin: 40px auto;
 `;
-LoginButton.displayName = 'LoginButton';
+BigLoginButton.displayName = 'BigLoginButton';
 
 export const FormWrapper = styled.div`
   max-width: 350px;

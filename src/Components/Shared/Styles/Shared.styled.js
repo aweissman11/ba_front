@@ -1,6 +1,18 @@
 import styled from 'styled-components';
 import { Colors } from './Colors';
 
+export const PageWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: #0c1b23;
+  color: #d1e6e6;
+  padding-top: 55px;
+  padding-bottom: 75px;
+  text-align: center;
+`;
+PageWrapper.displayName = 'PageWrapper';
+
 export const OuterOutline = styled.div`
   border: solid 1px ${Colors.Text};
   padding: 10px;
@@ -17,6 +29,12 @@ export const InnerOutline = styled.div`
   min-height: 300px;
 `;
 InnerOutline.displayName = 'InnerOutline';
+
+export const BlockTextWrapper = styled.div`
+  max-width: 800px;
+  margin: auto;
+`;
+BlockTextWrapper.displayName = 'BlockTextWrapper';
 
 export const CenterIt = styled.div`
   width: 100%;

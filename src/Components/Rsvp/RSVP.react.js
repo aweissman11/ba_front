@@ -3,8 +3,9 @@ import useForceUpdate from 'use-force-update';
 import DatePicker from 'react-datepicker';
 
 import "react-datepicker/dist/react-datepicker.css";
+import { useAuth0 } from "../../react-auth0-spa";
 
-import { LoginButton, RsvpForm, DateHolder, BoxIt } from './RSVP.styled';
+import { BigLoginButton, RsvpForm, DateHolder, BoxIt } from './RSVP.styled';
 import FancyInput from '../Shared/Elements/FancyInput.react';
 import FancyCheckbox from '../Shared/Elements/FancyCheckbox.react';
 import { FancyButton } from '../Shared/Elements/FancyButton.react';
@@ -23,18 +24,20 @@ import Song from './Song.react';
 export const RSVP = (props) => {
   const forceUpdate = useForceUpdate();
 
+  const { loading, user } = useAuth0();
+
   let blankInfo = {
     name: '',
-    email: '',
+    email: user.email || '',
     firstTime: false,
     people: [],
     lodging: 'tent',
-    dogs: '',
+    dogs: '0',
     arrival: new Date('June 26, 2020'),
     events: [],
     chores: [],
     driving: 'full',
-    spots: '',
+    spots: '0',
     songs: []
   }
 
@@ -161,24 +164,37 @@ export const RSVP = (props) => {
 
   const submitRSVPInfo = () => {
     // TODO: save animation
-    console.log(JSON.stringify(rsvpInfo, null, 2));
+
+    console.log('user :', user);
+
+    let fullRsvpInfo = {
+      ...rsvpInfo,
+      user_id: user.sub,
+      user_name: user.nickname
+    }
+    console.log(JSON.stringify(fullRsvpInfo, null, 2));
   }
 
+  if (loading) {
+    return (
+      <div>Loading...</div>
+    )
+  }
 
   return (
     <div className='events-page'>
       <h1 className='invited'>We can't wait to see you!</h1>
       <OuterOutline>
         <InnerOutline>
-          {!loggedIn ?
-            <LoginButton onClick={() => setLogin(true)}>LOGIN</LoginButton>
+          {(!loading && !user) ?
+            <BigLoginButton onClick={() => setLogin(true)}>LOGIN</BigLoginButton>
             :
             <RsvpForm onSubmit={submitRSVPInfo}>
               <FancyInput
                 hint='Your name'
                 inputName='name'
                 inputChangeHandler={inputChangeHandler}
-              // inputValue={rsvpInfo.name}
+                inputValue={rsvpInfo.name}
               />
               <FancyInput
                 hint='Email Address'
