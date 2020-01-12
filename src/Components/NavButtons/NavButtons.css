@@ -59,13 +59,14 @@
 
 .header a, .header span {
   color: #d1e6e6;
-  display: flex;
+  display: inline;
   align-items: center;
   font-weight: bold;
 }
 
 .home-span {
   margin-left: 10px;
+  line-height: 36px;
 }
 
 .header ul {
@@ -86,7 +87,7 @@
 }
 
 .header li {
-  float: left;
+  line-height: 36px;
   position: relative;
 }
 
@@ -99,6 +100,8 @@
   float: right;
   max-height: none;
   margin-right: 15px;
+  display: flex;
+  align-items: center;
 }
 
 .header .menu-btn {
@@ -109,7 +112,7 @@
   width: 25px;
   height: 25px;
   position: relative;
-  top: 2px;
+  top: 7px;
   transition: .2s;
 }
 
@@ -126,11 +129,14 @@
 }
 
 @media (max-width: 1040px) {
+  .chev {
+    top: 0px;
+  }
   .header .menu-icon {
     display: none;
   }
   .logo-link {
-    display: block !important;
+    line-height: 36px;
   }
   .header .menu-icon .navicon {
     background: #d1e6e6;
@@ -321,13 +327,15 @@
     visibility: visible;
     opacity: 1;
     display: block;
-    width: 100%;
+    width: max-content;
     border-bottom: 1px solid #6f6d6d;
     background: #0c1b23;
+    position: absolute;
+    left: 0;
   }
   .dropped-link {
     clear: both;
-    width: 100%;
+    width: max-content;
   }
   .dropped-link>a, .dropped-link>span {
     border-right: none !important;
