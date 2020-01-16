@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './NavButtons.css';
 import { NavChevIcon } from './NavChevIcon.react';
 
+// TODO: add avatar and login/logout to end of navBar
 
 const noScroll = () => {
   window.scrollTo(0, 0);

@@ -7,7 +7,7 @@ export const PageWrapper = styled.div`
   min-height: 100vh;
   background: #0c1b23;
   color: #d1e6e6;
-  padding-top: 55px;
+  padding-top: 200px;
   padding-bottom: 75px;
   text-align: center;
 `;

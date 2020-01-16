@@ -8,7 +8,7 @@ const SubHeader = () => {
 
   const logoutWithRedirect = () =>
     logout({
-      returnTo: window.location.origin
+      returnTo: window.location.origin + '/rsvp'
     });
 
   // TODO: login and don't change the URL

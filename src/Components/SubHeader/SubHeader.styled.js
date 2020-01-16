@@ -3,22 +3,20 @@ import { Colors } from '../Shared/Styles/Colors';
 import { Devices } from '../Shared/Styles/Devices';
 
 export const SubHeaderWrapper = styled.div`
-  height: 30px;
-  width: 100vw;
+  height: 110px;
+  width: 100%;
   background: ${Colors.BG};
   padding-top: 70px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   border: 1px solid ${Colors.BG};
-
-  @media ${Devices.Laptop} {
-    padding-top: 160px;
-  }
+  margin-bottom: 100px;
 `;
 SubHeaderWrapper.displayName = 'SubHeaderWrapper';
 
 export const LoginButton = styled.div`
   margin-right: 20px;
+  margin-top: 20px;
   line-height: 30px;
   font-weight: bold;
   color: ${Colors.Text};
@@ -44,7 +42,7 @@ export const LogoutWrapper = styled.div`
   justify-content: space-between;
   width: 135px;
   padding-top: 45px;
-  margin-right: 20px;
+  margin: 20px;
 
   @media ${Devices.Laptop} {
     margin-right: 6%;

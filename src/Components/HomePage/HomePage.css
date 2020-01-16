@@ -3,7 +3,7 @@
   height: 1000px;
   background: #0c1b23;
   color: #d1e6e6;
-  padding-top: 55px;
+  padding-top: 200px;
   text-align: center;
 }
 
@@ -125,6 +125,6 @@
 
 @media (max-width: 970px) {
   .home-page {
-    padding-top: 55px;
+    padding-top: 200px;
   }
 }

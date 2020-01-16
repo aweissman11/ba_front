@@ -19,7 +19,7 @@
   height: 100%;
   background: #0c1b23;
   color: #d1e6e6;
-  padding-top: 55px;
+  padding-top: 200px;
   padding-bottom: 180px;
   text-align: center;
 }
@@ -119,7 +119,7 @@
 
 @media (max-width: 970px) {
   .other-info {
-    padding-top: 55px;
+    padding-top: 200px;
   }
   .kit-circle {
     padding: 15px 10px 0;

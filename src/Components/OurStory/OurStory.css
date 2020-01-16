@@ -4,7 +4,7 @@
   min-height: 100vh;
   background: #0c1b23;
   color: #d1e6e6;
-  padding-top: 55px;
+  padding-top: 200px;
   padding-bottom: 200px;
   text-align: center;
 }
@@ -189,7 +189,7 @@
   }
   .story-page {
     padding: 0;
-    padding-top: 55px;
+    padding-top: 200px;
   }
   .slides-holder {
     overflow: scroll;

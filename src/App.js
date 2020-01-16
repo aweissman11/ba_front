@@ -23,21 +23,19 @@ import Registry from './Components/Registry/Registry.react';
 import Contact from './Components/Contact/Contact.react';
 import Clothes from './Components/Clothes/Clothes.react';
 import { RSVP } from './Components/Rsvp/RSVP.react';
-import SubHeader from './Components/SubHeader/SubHeader.react';
+import Loading from './Components/Loading/Loading.react';
 
 function App() {
   const { loading } = useAuth0();
 
-  // TODO: build a loading screen
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
     <BrowserRouter>
       <div className="App" id='app-root'>
         <NavButtons />
-        <SubHeader />
         <Switch>
           <Route path='/events'>
             <EventsPage />
