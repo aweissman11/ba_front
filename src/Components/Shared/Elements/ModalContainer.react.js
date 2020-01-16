@@ -19,7 +19,8 @@ const ModalContainer = ({
   subTitle,
   doneText,
   miniModal,
-  extraCloseFunction
+  extraCloseFunction,
+  tallButton
 }) => {
   const modalRoot = document.getElementById('app-root');
 
@@ -38,7 +39,9 @@ const ModalContainer = ({
         <ContentWrapper onSubmit={closeModal} subTitle={subTitle}>
           {modalContent && modalContent}
         </ContentWrapper>
-        <ModalBtnWrapper>
+        <ModalBtnWrapper
+          tallButton={tallButton}
+        >
           <FancyButton
             btnLabel={doneText || 'Done'}
             handleClick={() => {
@@ -46,6 +49,12 @@ const ModalContainer = ({
               extraCloseFunction && extraCloseFunction();
             }}
           />
+          {doneText ?
+            <FancyButton
+              btnLabel={'Cancel'}
+              handleClick={closeModal}
+            />
+            : null}
         </ModalBtnWrapper>
       </ModalWrapper>
     </ModalBackground>

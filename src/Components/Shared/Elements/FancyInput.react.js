@@ -13,7 +13,6 @@ const FancyInput = ({
 
   const changeHandler = (e) => {
     let { value } = e.target;
-    console.log('value :', value);
     inputChangeHandler(inputName, value);
     setValue(value);
   }

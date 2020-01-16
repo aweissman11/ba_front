@@ -55,7 +55,7 @@ export const ModalBtnWrapper = styled.div`
   display: flex;
   justify-content: center;
   background: ${Colors.BG};
-  height: 54%;
+  height: ${({ tallButton }) => tallButton && '54%'};
 
   @media ${Devices.Laptop} {
     height: 70px;
