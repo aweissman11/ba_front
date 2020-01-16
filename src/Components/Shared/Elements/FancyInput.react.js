@@ -13,6 +13,7 @@ const FancyInput = ({
 
   const changeHandler = (e) => {
     let { value } = e.target;
+    console.log('value :', value);
     inputChangeHandler(inputName, value);
     setValue(value);
   }
@@ -25,7 +26,7 @@ const FancyInput = ({
         placeholder={hint}
         // name={inputName}
         id={inputName}
-        required
+        // required
         value={currentValue}
         onChange={changeHandler}
       />

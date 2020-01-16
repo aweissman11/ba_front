@@ -28,6 +28,7 @@ import SubHeader from './Components/SubHeader/SubHeader.react';
 function App() {
   const { loading } = useAuth0();
 
+  // TODO: build a loading screen
   if (loading) {
     return <div>Loading...</div>;
   }

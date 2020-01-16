@@ -19,6 +19,8 @@ import Song from './Song.react';
 
 // TODO: Logout button
 // TODO: hook up backend and handleSubmit
+// TODO: split this into a login page and the actual form
+// TODO: set up loading animations
 
 
 export const RSVP = (props) => {
@@ -28,7 +30,7 @@ export const RSVP = (props) => {
 
   let blankInfo = {
     name: '',
-    email: user.email || '',
+    email: user ? user.email : '',
     firstTime: false,
     people: [],
     lodging: 'tent',
@@ -48,6 +50,31 @@ export const RSVP = (props) => {
       window.removeEventListener('keypress', submitOnEnter);
     }
   }, []);
+
+  useEffect(() => {
+    const getRsvpFromDatabase = async (userInfo) => {
+      let url = `http://bigadventureapi-env.us-west-2.elasticbeanstalk.com/api/rsvp/${userInfo.sub}`;
+      console.log('url :', url);
+
+      const response = await fetch(url);
+
+      let readableResponse = {};
+      if (response.status === 200) {
+        readableResponse = await response.json();
+      }
+
+      await console.log('readableResponse :', readableResponse);
+
+      // changeRsvpInfo(readable[0]);
+    }
+    // look for RSVP
+    if (user) {
+      console.log('user EFFECT HOOK:', user);
+
+      getRsvpFromDatabase(user);
+    }
+
+  }, [user])
 
   const submitOnEnter = (e) => {
     if (e.key === 'Enter' || e.keyCode === 13) {
@@ -112,6 +139,7 @@ export const RSVP = (props) => {
   const updateAttendee = (attendee, index) => {
     rsvpInfo.people[index] = attendee;
 
+    console.log('attendee :', attendee);
     changeRsvpInfo(rsvpInfo);
     forceUpdate();
   }
@@ -150,7 +178,6 @@ export const RSVP = (props) => {
   const removeSong = (index) => {
     rsvpInfo.songs.splice(index, 1);
     rsvpInfo.songs = [...rsvpInfo.songs];
-    console.log('rsvpInfo.songs :', rsvpInfo.songs);
     changeRsvpInfo(rsvpInfo);
     forceUpdate();
   }
@@ -172,7 +199,34 @@ export const RSVP = (props) => {
       user_id: user.sub,
       user_name: user.nickname
     }
-    console.log(JSON.stringify(fullRsvpInfo, null, 2));
+
+    const submitRSVPInfo = async (info) => {
+      let url = `http://localhost:3000/api/rsvp/`;
+
+      let formattedInfo = {
+        Rsvp: {
+          ...fullRsvpInfo
+        }
+      }
+
+      console.log(JSON.stringify(formattedInfo, null, 2));
+
+      const optionsObject = {
+        method: "POST",
+        body: JSON.stringify(formattedInfo),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+
+      const response = await fetch(url, optionsObject);
+      const readableResponse = await response.json();
+
+      console.log('response :', response);
+      console.log('readableResponse :', readableResponse);
+    }
+
+    submitRSVPInfo(rsvpInfo)
   }
 
   if (loading) {
@@ -278,7 +332,7 @@ export const RSVP = (props) => {
                   removePerson={removePerson}
                   updateAttendee={updateAttendee}
                   person={person}
-                  key={person.fullName + '-' + i}
+                  key={i}
                 />
               ))
                 : null}
@@ -381,7 +435,7 @@ export const RSVP = (props) => {
                     removeSong={removeSong}
                     updateSong={updateSong}
                     song={song}
-                    key={song.song + '-' + i}
+                    key={i}
                   />
                 ))}
                 <FancyButton
