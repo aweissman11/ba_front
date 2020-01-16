@@ -7,7 +7,8 @@ const FancyInput = ({
   inputName,
   inputChangeHandler,
   inputType,
-  inputValue
+  inputValue,
+  inputId
 }) => {
   let [currentValue, setValue] = useState(inputValue);
 
@@ -23,9 +24,7 @@ const FancyInput = ({
         type={inputType || 'text'}
         className="form__field"
         placeholder={hint}
-        // name={inputName}
-        id={inputName}
-        // required
+        id={inputId ? inputId : inputName}
         value={currentValue}
         onChange={changeHandler}
       />

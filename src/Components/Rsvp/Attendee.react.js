@@ -27,8 +27,10 @@ const Attendee = ({
       <FancyInput
         hint='Full Name'
         inputName='fullName'
+        inputId={'fullName' + i}
         inputChangeHandler={handleChange}
         inputValue={person.fullName}
+        key={i + 'full-name' + Date.now()}
       />
       <FancyCheckbox
         id={'kid-check-' + i}
@@ -40,8 +42,10 @@ const Attendee = ({
       <FancyInput
         hint='Alergies/dietary restrictions?'
         inputName='allergies'
+        inputId={'allergies' + i}
         inputChangeHandler={handleChange}
         inputValue={person.allergies}
+        key={i + 'allergies' + Date.now()}
       />
       <FancyCheckbox
         id={'hair-check-' + i}

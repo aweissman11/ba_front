@@ -20,14 +20,18 @@ const Song = ({
       <FancyInput
         hint='Song Name'
         inputName='song'
+        inputId={'song' + i}
         inputChangeHandler={handleChange}
         inputValue={song.song}
+        key={i + 'song-name' + Date.now()}
       />
       <FancyInput
         hint='Artist'
         inputName='artist'
+        inputId={'artist' + i}
         inputChangeHandler={handleChange}
         inputValue={song.artist}
+        key={i + 'artist-name' + Date.now()}
       />
       <FancyButton
         handleClick={() => removeSong(i)}
