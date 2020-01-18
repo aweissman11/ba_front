@@ -28,6 +28,7 @@ import { getCarpoolText, addPerson, removePerson, addSong, removeSong, updateSon
 // Only show the rest of the questions if they say yes
 // TODO: Cancel save button (escpecially for mobile)
 // TODO: Handle empty inputs
+// Timeout API call in case it fails.
 
 export const RSVP = (props) => {
   const forceUpdate = useForceUpdate();
@@ -145,25 +146,29 @@ export const RSVP = (props) => {
     }
 
 
-    if (shouldPost) {
-      const saveResponse = await postRSVPInfo(fullRsvpInfo);
-      if (saveResponse.err) {
-        setSaveSuccess(saveResponse);
+    try {
+      if (shouldPost) {
+        const saveResponse = await postRSVPInfo(fullRsvpInfo);
+        if (saveResponse.err) {
+          setSaveSuccess(saveResponse);
+        } else {
+          setSaveSuccess(saveResponse);
+        }
       } else {
-        setSaveSuccess(saveResponse);
+        const saveResponse = await patchRsvpInfo(fullRsvpInfo);
+        if (saveResponse.err) {
+          setSaveSuccess(saveResponse);
+        } else {
+          setSaveSuccess(saveResponse);
+        }
       }
-    } else {
-      const saveResponse = await patchRsvpInfo(fullRsvpInfo);
-      if (saveResponse.err) {
-        setSaveSuccess(saveResponse);
-      } else {
-        setSaveSuccess(saveResponse);
-      }
-    }
 
-    setIsSaving(false);
-    openSaveModal(false);
-    openSaveComplete(true);
+      setIsSaving(false);
+      openSaveModal(false);
+      openSaveComplete(true);
+    } catch (err) {
+      console.log('err :', err);
+    }
   }
 
   if (loading) {

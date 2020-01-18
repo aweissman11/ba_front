@@ -15,8 +15,16 @@ let blankInfo = {
   songs: []
 }
 
+let externalApi = 'bigadventureapi-env.us-west-2.elasticbeanstalk.com';
+
+// Keeping these here for easy development if API needs updates
+// let localApi = 'localhost:3000';
+// let currentApi = localApi;
+
+let currentApi = externalApi;
+
 export const getRsvpFromDatabase = async (userInfo, rsvpInfo, [changeRsvpInfo, forceUpdate, setShouldPost]) => {
-  let url = `http://localhost:3000/api/rsvp/${userInfo.sub}`;
+  let url = `http://${currentApi}/api/rsvp/${userInfo.sub}`;
 
   const response = await fetch(url);
 
@@ -40,7 +48,7 @@ export const getRsvpFromDatabase = async (userInfo, rsvpInfo, [changeRsvpInfo, f
 }
 
 export const postRSVPInfo = async (info) => {
-  let url = `http://localhost:3000/api/rsvp/`;
+  let url = `http://${currentApi}/api/rsvp/`;
 
   let formattedInfo = {
     Rsvp: {
@@ -70,7 +78,7 @@ export const postRSVPInfo = async (info) => {
 
 
 export const patchRsvpInfo = async (info) => {
-  let url = `http://localhost:3000/api/rsvp/`;
+  let url = `http://${currentApi}/api/rsvp/`;
 
   let formattedInfo = {
     Rsvp: {
@@ -82,11 +90,14 @@ export const patchRsvpInfo = async (info) => {
     method: "PATCH",
     body: JSON.stringify(formattedInfo),
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true
     }
   }
 
   const response = await fetch(url, optionsObject);
+
   if (response.ok) {
     const readableResponse = await response.json();
     return await readableResponse;
