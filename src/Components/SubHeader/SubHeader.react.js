@@ -11,7 +11,6 @@ const SubHeader = () => {
       returnTo: window.location.origin + '/rsvp'
     });
 
-  // TODO: login and don't change the URL
   return (
     <SubHeaderWrapper className='sub-header-wrapper'>
       {!isAuthenticated &&
