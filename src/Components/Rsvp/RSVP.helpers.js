@@ -8,7 +8,7 @@ export const addPerson = (rsvpInfo, [changeRsvpInfo, forceUpdate]) => {
     let newPerson = {
       fullName: '',
       isKid: false,
-      allergies: '',
+      allergies: 'None',
       hairApt: false,
       personIndex: rsvpInfo.people.length
     }
@@ -21,8 +21,8 @@ export const addPerson = (rsvpInfo, [changeRsvpInfo, forceUpdate]) => {
 
 export const removePerson = (index, rsvpInfo, [changeRsvpInfo, forceUpdate]) => {
   return () => {
-    rsvpInfo.people.splice(index, 1);
-    rsvpInfo.people = [...rsvpInfo.people];
+    let newPeopleList = rsvpInfo.people.filter((p, i) => i !== index);
+    rsvpInfo.people = newPeopleList;
     changeRsvpInfo(rsvpInfo);
     forceUpdate();
   }
@@ -56,5 +56,16 @@ export const updateSong = (song, index, rsvpInfo, [changeRsvpInfo, forceUpdate])
 
     changeRsvpInfo(rsvpInfo);
     forceUpdate();
+  }
+}
+
+export const getSaveCompleteText = (saveSuccess) => {
+  if (saveSuccess.rsvp_id) {
+    return { saveMessage: 'Save Successful!' };
+  } else {
+    return {
+      saveMessage: 'Failed to save',
+      failMessage: saveSuccess.message
+    };
   }
 }

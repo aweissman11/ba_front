@@ -28,6 +28,7 @@ export const ModalWrapper = styled.div`
   background: ${Colors.BG};
   width: 100vw;
   height: 100vh;
+  transition: .3s ease-in-out;
 
   @media ${Devices.Laptop} {
     max-width: 40%;
@@ -36,7 +37,7 @@ export const ModalWrapper = styled.div`
     top: ${({ miniModal }) => miniModal ? '35vh' : '10vh'};
     left: 30%;
     border: solid 1px ${Colors.Text};
-    height: ${({ miniModal }) => miniModal && '170px'};
+    height: ${({ miniModal, saveModal }) => saveModal ? 'max-content' : miniModal && '170px'};
   }
 `;
 ModalWrapper.displayName = 'ModalWrapper';

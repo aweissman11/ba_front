@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FancyInputWrapper, FancyInputLabel, StyledInput } from '../Styles/FancyInput.styled';
 
 
@@ -8,7 +8,8 @@ const FancyInput = ({
   inputChangeHandler,
   inputType,
   inputValue,
-  inputId
+  inputId,
+  passedKey
 }) => {
   let [currentValue, setValue] = useState(inputValue);
 
@@ -17,6 +18,10 @@ const FancyInput = ({
     inputChangeHandler(inputName, value);
     setValue(value);
   }
+
+  useEffect(() => {
+    currentValue !== inputValue && setValue(inputValue);
+  })
 
   return (
     <FancyInputWrapper>
@@ -27,6 +32,7 @@ const FancyInput = ({
         id={inputId ? inputId : inputName}
         value={currentValue}
         onChange={changeHandler}
+        key={passedKey && passedKey}
       />
       <FancyInputLabel
         htmlFor={inputName}

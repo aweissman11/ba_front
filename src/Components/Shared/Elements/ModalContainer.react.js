@@ -20,14 +20,15 @@ const ModalContainer = ({
   doneText,
   miniModal,
   extraCloseFunction,
-  tallButton
+  tallButton,
+  saveModal
 }) => {
   const modalRoot = document.getElementById('app-root');
 
   const modalComponent = (
     <ModalBackground>
       <ClosingBackground onClick={closeModal} />
-      <ModalWrapper miniModal={miniModal}>
+      <ModalWrapper miniModal={miniModal} saveModal={saveModal}>
         <ModalTitle subTitle={subTitle}>
           {modalTitle &&
             <CenteredH3>{modalTitle}</CenteredH3>
@@ -45,7 +46,7 @@ const ModalContainer = ({
           <FancyButton
             btnLabel={doneText || 'Done'}
             handleClick={() => {
-              closeModal();
+              !saveModal && closeModal();
               extraCloseFunction && extraCloseFunction();
             }}
           />

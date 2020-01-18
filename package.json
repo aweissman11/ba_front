@@ -13,7 +13,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
     "styled-components": "^4.4.1",
-    "use-force-update": "^1.0.7"
+    "use-force-update": "^1.0.7",
+    "uuid": "^3.4.0"
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start",

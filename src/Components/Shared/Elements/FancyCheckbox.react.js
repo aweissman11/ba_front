@@ -32,7 +32,6 @@ const FancyCheckbox = ({
             <FancyCheckboxCheck
               type="checkbox"
               id={id}
-              // name={id}
               checked={isChecked}
               onChange={handleChange}
             />

@@ -19,6 +19,7 @@ import Song from './Song.react';
 import SubHeader from '../SubHeader/SubHeader.react';
 import Loading from '../Loading/Loading.react';
 import { patchRsvpInfo, postRSVPInfo, getRsvpFromDatabase } from '../../utils/apiCalls';
+import { getCarpoolText, addPerson, removePerson, addSong, removeSong, updateSong, getSaveCompleteText } from './RSVP.helpers';
 
 // TODO: Login  button style and  instructions
 // TODO: clear all button
@@ -26,21 +27,12 @@ import { patchRsvpInfo, postRSVPInfo, getRsvpFromDatabase } from '../../utils/ap
 // TODO: Ask if they are actually coming to the wedding
 // Only show the rest of the questions if they say yes
 // TODO: Cancel save button (escpecially for mobile)
+// TODO: Handle empty inputs
 
 export const RSVP = (props) => {
   const forceUpdate = useForceUpdate();
 
   const { user, isAuthenticated, loginWithRedirect, loading } = useAuth0();
-
-  let [rsvpInfo, changeRsvpInfo] = useState({});
-  let [eventsVisible, makeEventsVisible] = useState(false);
-  let [helpVisible, makeHelpVisible] = useState(false);
-  let [saveModalVisible, openSaveModal] = useState(false);
-  let [shouldPost, setShouldPost] = useState(true);
-  // TODO: implement saving/errored states
-  // let [hasErred, setHasErred] = userState(false);
-  // let [isSaving, setIsSaving] = useState(false);
-
 
   let blankInfo = {
     name: '',
@@ -57,6 +49,17 @@ export const RSVP = (props) => {
     spots: '0',
     songs: []
   }
+
+  let [rsvpInfo, changeRsvpInfo] = useState(blankInfo);
+  let [eventsVisible, makeEventsVisible] = useState(false);
+  let [helpVisible, makeHelpVisible] = useState(false);
+  let [saveModalVisible, openSaveModal] = useState(false);
+  let [saveCompleteModal, openSaveComplete] = useState(false);
+  let [saveSuccess, setSaveSuccess] = useState({ ok: true });
+  let [shouldPost, setShouldPost] = useState(true);
+  let [isSaving, setIsSaving] = useState(false);
+
+
 
   useEffect(() => {
     window.addEventListener('keypress', submitOnEnter);
@@ -77,31 +80,6 @@ export const RSVP = (props) => {
     if (e.key === 'Enter' || e.keyCode === 13) {
       openSaveModal(true);
     }
-  }
-
-  const addPerson = () => {
-    let newPerson = {
-      fullName: '',
-      isKid: false,
-      allergies: '',
-      hairApt: false,
-      personIndex: rsvpInfo.people.length
-    }
-
-    rsvpInfo.people = [...rsvpInfo.people, newPerson];
-    changeRsvpInfo(rsvpInfo);
-    forceUpdate();
-  }
-
-  const removePerson = (index) => {
-    rsvpInfo.people.splice(index, 1);
-    rsvpInfo.people = [...rsvpInfo.people];
-    changeRsvpInfo(rsvpInfo);
-    forceUpdate();
-  }
-
-  const getCarpoolText = () => {
-    return rsvpInfo.driving === 'spots' ? 'I have this many spots available' : 'I need this meany seats';
   }
 
   const inputChangeHandler = (inputName, value) => {
@@ -154,29 +132,9 @@ export const RSVP = (props) => {
     forceUpdate();
   }
 
-  const addSong = () => {
-    let newSong = {
-      song: '',
-      artist: ''
-    };
-
-    rsvpInfo.songs = [...rsvpInfo.songs, newSong];
-    changeRsvpInfo(rsvpInfo);
-    forceUpdate();
-  }
-
-  const removeSong = (index) => {
-    rsvpInfo.songs.splice(index, 1);
-    rsvpInfo.songs = [...rsvpInfo.songs];
-    changeRsvpInfo(rsvpInfo);
-    forceUpdate();
-  }
-
-  const updateSong = (song, index) => {
-    rsvpInfo.songs[index] = song;
-
-    changeRsvpInfo(rsvpInfo);
-    forceUpdate();
+  const saveRSVP = () => {
+    setIsSaving(true);
+    window.setTimeout(submitRSVPInfo, 200);
   }
 
   const submitRSVPInfo = async () => {
@@ -188,24 +146,24 @@ export const RSVP = (props) => {
 
 
     if (shouldPost) {
-      const newInfo = await postRSVPInfo(fullRsvpInfo);
-      if (newInfo.err) {
-        //TODO: handle error animation here
-        console.log('err :', newInfo.err);
+      const saveResponse = await postRSVPInfo(fullRsvpInfo);
+      if (saveResponse.err) {
+        setSaveSuccess(saveResponse);
       } else {
-        //TODO: handle save animation here
-        console.log('newInfo :', newInfo);
+        setSaveSuccess(saveResponse);
       }
     } else {
-      const newInfo = await patchRsvpInfo(fullRsvpInfo);
-      if (newInfo.err) {
-        //TODO: handle error animation here
-        console.log('newInfo.err :', newInfo.err);
+      const saveResponse = await patchRsvpInfo(fullRsvpInfo);
+      if (saveResponse.err) {
+        setSaveSuccess(saveResponse);
       } else {
-        //TODO: handle save animation here
-        console.log('newInfo :', newInfo);
+        setSaveSuccess(saveResponse);
       }
     }
+
+    setIsSaving(false);
+    openSaveModal(false);
+    openSaveComplete(true);
   }
 
   if (loading) {
@@ -214,10 +172,9 @@ export const RSVP = (props) => {
 
   return (
     <div className='events-page'>
+      <h1 className='invited'>We can't wait to see you!</h1>
       <OuterOutline>
         <InnerOutline>
-          <h1 className='invited'>We can't wait to see you!</h1>
-          <SpacerDots />
           {(!user || !isAuthenticated) ? <>
             <BasicH3>Please Login/Register</BasicH3>
             <FancyButton
@@ -246,9 +203,10 @@ export const RSVP = (props) => {
                   key={rsvpInfo.user_id + 'email'}
                 />
                 <SpacerDots />
+                {/* //TODO: Make this  a yes or no */}
                 <FancyCheckbox
                   id='are-attending'
-                  label='Will you be coming to our celebration?*'
+                  label='Will you be coming to our celebration?'
                   isChecked={rsvpInfo.attending}
                   propertyValue='attending'
                   checkHandler={standardCheckHandler}
@@ -257,7 +215,7 @@ export const RSVP = (props) => {
                 {rsvpInfo.attending ? <>
                   <FancyCheckbox
                     id='first'
-                    label='Is this any of your first time camping?'
+                    label="Is this you or anyone in your group's first time camping?"
                     isChecked={rsvpInfo.firstTime}
                     propertyValue='firstTime'
                     checkHandler={standardCheckHandler}
@@ -329,7 +287,7 @@ export const RSVP = (props) => {
                   {rsvpInfo && rsvpInfo.people && rsvpInfo.people.length ? rsvpInfo.people.map((person, i) => (
                     <Attendee
                       i={i}
-                      removePerson={removePerson}
+                      removePerson={removePerson(i, rsvpInfo, [changeRsvpInfo, forceUpdate])}
                       updateAttendee={updateAttendee}
                       person={person}
                       key={i}
@@ -338,7 +296,7 @@ export const RSVP = (props) => {
                     : null}
 
                   <FancyButton
-                    handleClick={addPerson}
+                    handleClick={addPerson(rsvpInfo, [changeRsvpInfo, forceUpdate])}
                     btnLabel='Add Attendee'
                     centerIt
                   />
@@ -374,7 +332,7 @@ export const RSVP = (props) => {
 
                     {rsvpInfo.driving === 'spots' || rsvpInfo.driving === 'rider' ?
                       <FancyInput
-                        hint={getCarpoolText()}
+                        hint={getCarpoolText(rsvpInfo.driving)}
                         inputName='spots'
                         inputChangeHandler={inputChangeHandler}
                         inputValue={rsvpInfo.spots}
@@ -387,6 +345,11 @@ export const RSVP = (props) => {
                   <SpacerDots />
 
                   <CenterIt>
+                    <BasicH3
+                      centerIt
+                    >
+                      Everyone's gotta eat! Let us know when you will be joining us.
+                    </BasicH3>
                     <FancyButton
                       handleClick={() => makeEventsVisible(true)}
                       btnLabel='RSVP for Events'
@@ -395,8 +358,8 @@ export const RSVP = (props) => {
                     {eventsVisible ?
                       <ModalContainer
                         isVisible={eventsVisible}
-                        modalTitle='Register for Events'
-                        subTitle="When should we anticipate hosting you?"
+                        modalTitle='When should we anticipate hosting you?'
+                        subTitle='All events will take place at the campground'
                         closeModal={() => makeEventsVisible(false)}
                         modalContent={<EventSignup
                           allEvents={rsvpInfo.events}
@@ -406,10 +369,14 @@ export const RSVP = (props) => {
                       : null}
 
                     <SpacerDots />
-
+                    <BasicH3
+                      centerIt
+                    >
+                      We need you're help! If you can spare it...
+                    </BasicH3>
                     <FancyButton
                       handleClick={() => makeHelpVisible(true)}
-                      btnLabel='Sign up to help out'
+                      btnLabel='Sign up to help us out'
                     />
 
                     {helpVisible ?
@@ -433,14 +400,14 @@ export const RSVP = (props) => {
                     {rsvpInfo.songs && rsvpInfo.songs.map((song, i) => (
                       <Song
                         i={i}
-                        removeSong={removeSong}
-                        updateSong={updateSong}
+                        removeSong={removeSong(i, rsvpInfo, [changeRsvpInfo, forceUpdate])}
+                        updateSong={updateSong(song, i, rsvpInfo, [changeRsvpInfo, forceUpdate])}
                         song={song}
                         key={i}
                       />
                     ))}
                     <FancyButton
-                      handleClick={addSong}
+                      handleClick={addSong(rsvpInfo, [changeRsvpInfo, forceUpdate])}
                       btnLabel='Add Song'
                     />
                     <BasicText>(Unlimited submissions!)</BasicText>
@@ -464,8 +431,35 @@ export const RSVP = (props) => {
                     closeModal={() => openSaveModal(false)}
                     doneText='Save Info'
                     miniModal
-                    modalContent={<></>}
-                    extraCloseFunction={submitRSVPInfo}
+                    saveModal
+                    modalContent={<>
+                      {isSaving ?
+                        <Loading
+                          isModal
+                        />
+                        : null}
+                    </>}
+                    extraCloseFunction={saveRSVP}
+                    tallButton
+                  />
+                  : null}
+
+                {saveCompleteModal ?
+                  <ModalContainer
+                    isVisible={saveCompleteModal}
+                    modalTitle={getSaveCompleteText(saveSuccess).saveMessage}
+                    closeModal={() => openSaveComplete(false)}
+                    miniModal
+                    modalContent={<>
+                      {
+                        getSaveCompleteText(saveSuccess).failMessage &&
+                        <BasicText
+                          centerText
+                        >
+                          {getSaveCompleteText(saveSuccess).failMessage}
+                        </BasicText>
+                      }
+                    </>}
                     tallButton
                   />
                   : null}
