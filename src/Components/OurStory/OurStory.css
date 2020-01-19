@@ -108,6 +108,9 @@
     z-index: 10;
     cursor: pointer;
   }
+  .slide-btn-box:hover {
+    filter: brightness(1.5);
+  }
   .slide-btn-box:hover .slide-btn {
     filter: brightness(1.3);
     transform: scale(1.2);

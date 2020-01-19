@@ -15,8 +15,21 @@ const OurStory = () => {
 
   useEffect(() => {
     window.addEventListener('resize', setSliderWidth);
+    window.addEventListener('keydown', handleArrowKeys);
     setWidth(window.innerWidth);
+
+    return () => {
+      window.removeEventListener('resize', setSliderWidth);
+      window.removeEventListener('keydown', handleArrowKeys);
+    }
   }, []);
+
+  const handleArrowKeys = (e) => {
+    let { keyCode } = e;
+
+    keyCode === 37 && prevPosition();
+    keyCode === 39 && nextPosition();
+  }
 
   const setSliderWidth = () => {
     setWidth(window.innerWidth);
