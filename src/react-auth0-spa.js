@@ -23,8 +23,6 @@ export const Auth0Provider = ({
       const auth0FromHook = await createAuth0Client(initOptions);
       setAuth0(auth0FromHook);
 
-      window.setTimeout(stopTrying, 5000);
-
       if (window.location.search.includes("code=")) {
         const { appState } = await auth0FromHook.handleRedirectCallback();
         onRedirectCallback(appState);
@@ -45,18 +43,14 @@ export const Auth0Provider = ({
     // eslint-disable-next-line
   }, []);
 
-  const stopTrying = () => {
-    if (!isAuthenticated) {
-      setLoading(false);
-    }
-  }
-
   const loginWithPopup = async (params = {}) => {
     setPopupOpen(true);
     try {
       await auth0Client.loginWithPopup(params);
     } catch (error) {
       console.error(error);
+      // just bail if it errors out
+      setLoading(false);
     } finally {
       setPopupOpen(false);
     }
