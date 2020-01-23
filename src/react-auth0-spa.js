@@ -48,6 +48,7 @@ export const Auth0Provider = ({
     try {
       await auth0Client.loginWithPopup(params);
     } catch (error) {
+      console.error('failed to authorize');
       console.error(error);
       // just bail if it errors out
       setLoading(false);
