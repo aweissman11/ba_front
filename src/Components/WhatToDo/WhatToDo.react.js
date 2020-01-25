@@ -2,15 +2,15 @@ import React from 'react';
 
 // STYLE
 import './WhatToDo.css';
-import { LinkIcon } from '../NavButtons/LinkIcon';
+import { LinkIcon } from '../NavButtons/LinkIcon.react';
+import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
 
 const WhatToDo = () => {
   return (
     <div className='events-page'>
       <h1 className='invited'>There's lots to do!</h1>
-      <div className='name-outline'>
-        <div className='inner-outline the-things'>
-
+      <OuterOutline>
+        <InnerOutline className='the-things'>
           <div className='info-section'>
             <div className='small-circle-div'>
               <div className='paddle-boarders circle-pic'></div>
@@ -255,8 +255,8 @@ const WhatToDo = () => {
             </section>
           </div>
 
-        </div>
-      </div>
+        </InnerOutline>
+      </OuterOutline>
     </div>
   );
 }

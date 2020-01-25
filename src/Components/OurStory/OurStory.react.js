@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
 // Imports
-import { photoUrls } from './photoUrls';
-import { hisStory, herStory } from './stories';
+import { photoUrls } from '../Shared/Data/photoUrls';
+import { hisStory, herStory } from '../Shared/Data/stories';
 
 // CSS
 import './OurStory.css';
 import { NextIcon } from './NextIcon';
-import { PrevIcon } from './PrevIcon';
+import { PrevIcon } from './PrevIcon.react';
 
 const OurStory = () => {
   let [currentPosition, setPosition] = useState(0);
@@ -15,8 +15,21 @@ const OurStory = () => {
 
   useEffect(() => {
     window.addEventListener('resize', setSliderWidth);
+    window.addEventListener('keydown', handleArrowKeys);
     setWidth(window.innerWidth);
+
+    return () => {
+      window.removeEventListener('resize', setSliderWidth);
+      window.removeEventListener('keydown', handleArrowKeys);
+    }
   }, []);
+
+  const handleArrowKeys = (e) => {
+    let { keyCode } = e;
+
+    keyCode === 37 && prevPosition();
+    keyCode === 39 && nextPosition();
+  }
 
   const setSliderWidth = () => {
     setWidth(window.innerWidth);

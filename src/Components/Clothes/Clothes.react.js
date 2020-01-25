@@ -2,14 +2,15 @@ import React from 'react';
 
 // CSS
 import './Clothes.css';
-import { LinkIcon } from '../NavButtons/LinkIcon';
+import { LinkIcon } from '../NavButtons/LinkIcon.react';
+import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
 
 const Clothes = () => {
   return (
     <div className='events-page'>
       <h1 className='invited'>You'll almost definitely need to wear some clothes</h1>
-      <div className='name-outline'>
-        <div className='inner-outline'>
+      <OuterOutline>
+        <InnerOutline>
           <h1>More clothes Info Coming Soon...</h1>
           <h3>Average temperatures will be high 60s during the day and in the 30s at night</h3>
           <h3>Please pack warm clothes</h3>
@@ -45,8 +46,8 @@ const Clothes = () => {
               </p>
             </section>
           </div>
-        </div>
-      </div>
+        </InnerOutline>
+      </OuterOutline>
     </div>
   );
 }

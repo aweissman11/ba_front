@@ -3,23 +3,8 @@
   height: 1000px;
   background: #0c1b23;
   color: #d1e6e6;
-  padding-top: 185px;
+  padding-top: 200px;
   text-align: center;
-}
-
-.name-outline {
-  border: solid 1px;
-  padding: 10px;
-  width: 90%;
-  margin: auto;
-  max-width: 1050px;
-}
-
-.inner-outline {
-  border: solid 1px;
-  width: 100%;
-  overflow: hidden;
-  min-height: 300px;
 }
 
 .date {
@@ -33,7 +18,6 @@
   transition: .8s ease-out;
   position: relative;
 }
-
 
 .date-off {
   bottom: 500px;
@@ -116,22 +100,18 @@
   margin-bottom: 30px;
 }
 
-
 @media (max-width: 1050px) {
   .date {
     margin-bottom: 10px;
   }
-
   .names {
     flex-direction: column;
   }
-
   .ampersand {
     font-size: 1em;
     width: 100%;
     margin: auto;
   }
-
   .chels, .aaron {
     text-align: center;
   }
@@ -143,9 +123,8 @@
   }
 }
 
-
 @media (max-width: 970px) {
   .home-page {
-    padding-top: 75px;
+    padding-top: 200px;
   }
 }
