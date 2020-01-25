@@ -6,28 +6,35 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-
+// Auth
+import { useAuth0 } from "./react-auth0-spa";
 // components
-import NavButtons from './Components/NavButtons';
-import Logistics from './Components/Logistics';
-import Campground from './Components/Campground';
-import Transportation from './Components/Transportation';
-import Lodging from './Components/Lodging';
-import OurStory from './Components/OurStory';
-import EventsPage from './Components/EventsPage';
-import HomePage from './Components/HomePage';
-import WhatToBring from './Components/WhatToBring';
-import WhatToDo from './Components/WhatToDo';
+import NavButtons from './Components/NavButtons/NavButtons.react';
+import Campground from './Components/Campground/Campground.react';
+import Transportation from './Components/Transportation/Transportation.react';
+import Lodging from './Components/Lodging/Lodging.react';
+import OurStory from './Components/OurStory/OurStory.react';
+import EventsPage from './Components/EventsPage/EventsPage.react';
+import HomePage from './Components/HomePage/HomePage.react';
+import WhatToBring from './Components/WhatToBring/WhatToBring.react';
+import WhatToDo from './Components/WhatToDo/WhatToDo.react';
+import Dogs from './Components/Dogs/Dogs.react';
+import Registry from './Components/Registry/Registry.react';
+import Contact from './Components/Contact/Contact.react';
 import Clothes from './Components/Clothes/Clothes.react';
-import Dogs from './Components/Dogs';
-import Registry from './Components/Registry';
-import Contact from './Components/Contact';
-import Rsvp from './Components/Rsvp';
+import { RSVP } from './Components/Rsvp/RSVP.react';
+import Loading from './Components/Loading/Loading.react';
 
 function App() {
+  const { loading } = useAuth0();
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App" id='app-root'>
         <NavButtons />
         <Switch>
           <Route path='/events'>
@@ -64,7 +71,7 @@ function App() {
             <Contact />
           </Route>
           <Route path='/rsvp'>
-            <Rsvp />
+            <RSVP />
           </Route>
           <Route path='/'>
             <HomePage />

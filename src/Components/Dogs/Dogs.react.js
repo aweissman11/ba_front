@@ -2,13 +2,14 @@ import React from 'react';
 
 // CSS
 import './Dogs.css';
+import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
 
 const Dogs = () => {
   return (
     <div className='events-page'>
       <h1 className='invited'>Information for the Bridal Party</h1>
-      <div className='name-outline'>
-        <div className='inner-outline'>
+      <OuterOutline>
+        <InnerOutline>
           <h1>All dogs are invited, but these are the ones with jobs</h1>
           <h3>Please pack extra poop bags</h3>
           <br />
@@ -50,10 +51,8 @@ const Dogs = () => {
               <p className='info-block'>Responsibilities include: fetch - all day and night, crumb cleanup</p>
             </section>
           </div>
-
-
-        </div>
-      </div>
+        </InnerOutline>
+      </OuterOutline>
     </div>
   );
 }

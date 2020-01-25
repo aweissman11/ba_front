@@ -1,24 +1,26 @@
 import React from 'react';
 
 // CSS
-import { LinkIcon } from '../NavButtons/LinkIcon';
+import '../Logistics/Logistics.css';
+import { LinkIcon } from '../NavButtons/LinkIcon.react';
+import { OuterOutline, InnerOutline, PageWrapper } from '../Shared/Styles/Shared.styled';
 
 const Lodging = () => {
   return (
-    <div className='other-info'>
+    <PageWrapper className='other-info'>
       <h1 className='ceremony-title'>Lodging</h1>
       <div className='circle-div'>
         <div className='tent-pic tent-out'></div>
       </div>
 
-      <div className='name-outline'>
-        <div className='inner-outline'>
+      <OuterOutline>
+        <InnerOutline>
           <div className='info-section flex-switch'>
             <div className='small-circle-div'>
               <div className='tent-pack-pic circle-pic'></div>
             </div>
             <section className='to-do-event-box'>
-              <h3 className='event-event'>Tent Reservation Block</h3>
+              <h3 className='event-event'>Tent Reservation Block (Recommended)</h3>
               <p className='info-block'>We have reserved 25 two person camping packages from Outdoors Geek.  Two person camping packages include: One 3 person tent, two individual self inflating sleeping pads, and two individual sleeping bags.</p>
               <p className='info-block'>For your convenience, we will pick up camping equipment from Outdoors Geek on Thursday July 2 and return the equipment Monday July 6.  All you have to do is show up to the campground and set up your tent! (Don't worry, we'll help those who need it!)</p>
               <p className='info-block'>Two person camping packages will be $50 per package for the weekend, we have covered the 50% reservation deposit because we love you and would love for you to rough it with us!</p>
@@ -193,10 +195,10 @@ const Lodging = () => {
 
             </section>
           </div>
-        </div>
-      </div>
+        </InnerOutline>
+      </OuterOutline>
 
-    </div>
+    </PageWrapper>
   );
 }
 

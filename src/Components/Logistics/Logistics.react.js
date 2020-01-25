@@ -2,7 +2,8 @@ import React from 'react';
 
 // CSS
 import './Logistics.css';
-import { LinkIcon } from '../NavButtons/LinkIcon';
+import { LinkIcon } from '../NavButtons/LinkIcon.react';
+import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
 
 const Logistics = () => {
   return (
@@ -49,8 +50,8 @@ const Logistics = () => {
       </div>
 
 
-      <div className='name-outline'>
-        <div className='inner-outline'>
+      <OuterOutline>
+        <InnerOutline>
           <div className='info-section'>
             <div className='small-circle-div'>
               <div className='shuttle-pic circle-pic'></div>
@@ -265,8 +266,8 @@ const Logistics = () => {
 
             </section>
           </div>
-        </div>
-      </div>
+        </InnerOutline>
+      </OuterOutline>
 
     </div>
   );
