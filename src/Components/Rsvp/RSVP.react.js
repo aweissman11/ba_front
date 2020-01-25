@@ -184,7 +184,7 @@ export const RSVP = (props) => {
             <BasicH3>Please Login/Register</BasicH3>
             <FancyButton
               handleClick={() => loginWithRedirect({
-                redirect_uri: 'http://localhost:3001/rsvp'
+                redirect_uri: `${window.location.origin}/rsvp`
               })}
               btnLabel='Login/Register'
               centerIt
