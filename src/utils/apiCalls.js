@@ -15,16 +15,16 @@ let blankInfo = {
   songs: []
 }
 
-let externalApi = 'bigadventureapi-env.us-west-2.elasticbeanstalk.com';
+let externalApi = 'https://api.chelseyandaaronsbigadventure.com';
 
 // Keeping these here for easy development if API needs updates
-// let localApi = 'localhost:3000';
+// let localApi = 'http://localhost:3000';
 // let currentApi = localApi;
 
 let currentApi = externalApi;
 
 export const getRsvpFromDatabase = async (userInfo, rsvpInfo, [changeRsvpInfo, forceUpdate, setShouldPost]) => {
-  let url = `http://${currentApi}/api/rsvp/${userInfo.sub}`;
+  let url = `${currentApi}/api/rsvp/${userInfo.sub}`;
 
   const response = await fetch(url);
 
@@ -48,7 +48,7 @@ export const getRsvpFromDatabase = async (userInfo, rsvpInfo, [changeRsvpInfo, f
 }
 
 export const postRSVPInfo = async (info) => {
-  let url = `http://${currentApi}/api/rsvp/`;
+  let url = `${currentApi}/api/rsvp/`;
 
   let formattedInfo = {
     Rsvp: {
@@ -78,7 +78,7 @@ export const postRSVPInfo = async (info) => {
 
 
 export const patchRsvpInfo = async (info) => {
-  let url = `http://${currentApi}/api/rsvp/`;
+  let url = `${currentApi}/api/rsvp/`;
 
   let formattedInfo = {
     Rsvp: {
