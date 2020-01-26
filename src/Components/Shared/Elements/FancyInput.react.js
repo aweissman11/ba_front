@@ -21,7 +21,7 @@ const FancyInput = ({
 
   useEffect(() => {
     currentValue !== inputValue && setValue(inputValue);
-  })
+  }, [inputValue])
 
   return (
     <FancyInputWrapper>

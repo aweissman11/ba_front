@@ -198,14 +198,16 @@ export const RSVP = (props) => {
                   inputName='name'
                   inputChangeHandler={inputChangeHandler}
                   inputValue={rsvpInfo.name}
-                  key={rsvpInfo.user_id + 'name'}
+                  key={'name'}
+                  passedKey={'name'}
                 />
                 <FancyInput
                   hint='Email Address*'
                   inputName='email'
                   inputChangeHandler={inputChangeHandler}
                   inputValue={rsvpInfo.email}
-                  key={rsvpInfo.user_id + 'email'}
+                  key={'email'}
+                  passedKey={'email'}
                 />
                 <SpacerDots />
                 {/* //TODO: Make this  a yes or no */}
@@ -278,7 +280,8 @@ export const RSVP = (props) => {
                     inputChangeHandler={inputChangeHandler}
                     inputValue={rsvpInfo.dogs}
                     inputType='number'
-                    key={rsvpInfo.user_id + 'dogs'}
+                    key={'dogs'}
+                    passedKey={'dogs'}
                   />
 
                   <SpacerDots />
@@ -342,7 +345,8 @@ export const RSVP = (props) => {
                         inputChangeHandler={inputChangeHandler}
                         inputValue={rsvpInfo.spots}
                         inputType='number'
-                        key={rsvpInfo.user_id + 'spots'}
+                        key={'spots'}
+                        passedKey={'spots'}
                       />
                       : null}
                   </BoxIt>
