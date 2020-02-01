@@ -55,5 +55,5 @@ FancyCheckbox.propTypes = {
   isChecked: PropTypes.bool.isRequired,
   checkHandler: PropTypes.func.isRequired,
   propertyName: PropTypes.string,
-  propertyValue: PropTypes.string
+  propertyValue: PropTypes.any
 }

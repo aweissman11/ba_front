@@ -48,6 +48,7 @@ export const CenterIt = styled.div`
 CenterIt.displayName = 'CenterIt';
 
 export const BasicH3 = styled.h3`
+  font-size: 1.4em;
   margin: 10px auto;
 `;
 BasicH3.displayName = 'BasicH3';
@@ -62,7 +63,7 @@ CenteredH3.displayName = 'CenteredH3';
 
 export const BasicText = styled.h3`
   margin: ${({ leftText }) => leftText ? '0px 0 10px 50px' : '10px auto'};
-  font-size: .8em;
+  font-size: 1em;
   color: ${Colors.Text};
   text-align: ${({ centerText }) => centerText && 'center'};
 `;
