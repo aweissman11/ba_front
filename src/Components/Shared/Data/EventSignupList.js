@@ -15,14 +15,14 @@ export const EventSignupList = [
     when: 'Saturday, July 4th from 8a - 11a'
   },
   {
-    id: 'ceremony-signup',
-    label: 'Wedding Ceremony',
-    when: 'Saturday, July 4th at 330p'
-  },
-  {
     id: 'pb-j',
     label: 'Make your own PB&J',
     when: 'Saturday, July 4th from 12p - 2p'
+  },
+  {
+    id: 'ceremony-signup',
+    label: 'Wedding Ceremony and Festive Meal',
+    when: 'Saturday, July 4th at 330p'
   },
   {
     id: 'burrito-breakfast',

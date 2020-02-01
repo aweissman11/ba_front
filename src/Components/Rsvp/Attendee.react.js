@@ -61,13 +61,14 @@ const Attendee = ({
       />
       <FancyCheckbox
         id={'hair-check-' + i}
-        label={<>Do you want yo hair did? <a href='hair' target='_blank'>Details <LinkIcon /></a></>}
+        label={<>Would you like to get your hair done? <a href='hair' target='_blank'>Details <LinkIcon /></a></>}
         propertyValue='hairApt'
         checkHandler={handleCheck}
         isChecked={person.hairApt}
         noBottom
       />
-      <BasicText>(No showers means you may want a shampoo and blowout!)</BasicText>
+      <BasicText>(We have a service coming to the campground the day of the ceremony)</BasicText>
+      <BasicText>(No showers onsite means you may want a shampoo and blowout!)</BasicText>
       <FancyButton
         handleClick={() => removePerson(i)}
         btnLabel='Remove Attendee'

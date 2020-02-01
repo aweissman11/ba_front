@@ -16,6 +16,7 @@ export const FancyBtn = styled.div`
   margin: ${({ centerIt }) => centerIt ? '10px auto' : '10px'};
   color: ${Colors.BG};
   margin-left: ${({ hangLeft }) => hangLeft && 'auto'};
+  margin-bottom: ${({ extraBottomMargin }) => extraBottomMargin && extraBottomMargin};
   height: 45px;
 
   &:hover {
