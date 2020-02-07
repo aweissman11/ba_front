@@ -5,9 +5,6 @@ import { NewPerson } from './RSVP.styled';
 import FancyInput from '../Shared/Elements/FancyInput.react';
 import FancyCheckbox from '../Shared/Elements/FancyCheckbox.react';
 import { FancyButton } from '../Shared/Elements/FancyButton.react';
-import { BasicText } from '../Shared/Styles/Shared.styled';
-import { LinkIcon } from '../NavButtons/LinkIcon.react';
-
 
 const Attendee = ({
   i,
@@ -44,13 +41,6 @@ const Attendee = ({
         key={i + 'full-name-' + uniqueId}
         passedKey={i + 'full-name-' + uniqueId}
       />
-      <FancyCheckbox
-        id={'kid-check-' + i}
-        label='Is this a kid under 10?'
-        propertyValue='isKid'
-        checkHandler={handleCheck}
-        isChecked={person.isKid}
-      />
       <FancyInput
         hint='Alergies/dietary restrictions?'
         inputName='allergies'
@@ -60,15 +50,12 @@ const Attendee = ({
         key={'allergies-' + i}
       />
       <FancyCheckbox
-        id={'hair-check-' + i}
-        label={<>Would you like to get your hair done? <a href='hair' target='_blank'>Details <LinkIcon /></a></>}
-        propertyValue='hairApt'
+        id={'kid-check-' + i}
+        label='Is this a kid under 10?'
+        propertyValue='isKid'
         checkHandler={handleCheck}
-        isChecked={person.hairApt}
-        noBottom
+        isChecked={person.isKid}
       />
-      <BasicText>(We have a service coming to the campground the day of the ceremony)</BasicText>
-      <BasicText>(No showers onsite means you may want a shampoo and blowout!)</BasicText>
       <FancyButton
         handleClick={() => removePerson(i)}
         btnLabel='Remove Attendee'

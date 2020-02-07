@@ -19,7 +19,6 @@ import {
 import SpacerDots from '../Shared/Elements/SpacerDots.react';
 import Attendee from './Attendee.react';
 import ModalContainer from '../Shared/Elements/ModalContainer.react';
-import HelpSignup from './HelpSignup.react';
 import EventSignup from './EventSignup.react';
 import Song from './Song.react';
 import SubHeader from '../SubHeader/SubHeader.react';
@@ -30,7 +29,6 @@ import {
   getRsvpFromDatabase
 } from '../../utils/apiCalls';
 import {
-  getCarpoolText,
   addPerson,
   removePerson,
   addSong,
@@ -49,7 +47,7 @@ import { LinkIcon } from '../NavButtons/LinkIcon.react';
 // TODO: Handle empty inputs
 // Timeout API call in case it fails.
 
-export const RSVP = (props) => {
+export const RSVP = () => {
   const forceUpdate = useForceUpdate();
 
   const { user, isAuthenticated, loginWithRedirect, loading } = useAuth0();
@@ -72,7 +70,6 @@ export const RSVP = (props) => {
 
   let [rsvpInfo, changeRsvpInfo] = useState(blankInfo);
   let [eventsVisible, makeEventsVisible] = useState(false);
-  let [helpVisible, makeHelpVisible] = useState(false);
   let [saveModalVisible, openSaveModal] = useState(false);
   let [saveCompleteModal, openSaveComplete] = useState(false);
   let [saveSuccess, setSaveSuccess] = useState({ ok: true });
