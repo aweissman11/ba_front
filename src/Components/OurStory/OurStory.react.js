@@ -22,6 +22,7 @@ const OurStory = () => {
       window.removeEventListener('resize', setSliderWidth);
       window.removeEventListener('keydown', handleArrowKeys);
     }
+       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleArrowKeys = (e) => {

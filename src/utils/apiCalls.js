@@ -16,12 +16,12 @@ let blankInfo = {
 }
 
 let externalApi = 'https://api.chelseyandaaronsbigadventure.com';
+let currentApi = externalApi;
 
 // Keeping these here for easy development if API needs updates
 // let localApi = 'http://localhost:3000';
 // let currentApi = localApi;
 
-let currentApi = externalApi;
 
 export const getRsvpFromDatabase = async (userInfo, rsvpInfo, [changeRsvpInfo, forceUpdate, setShouldPost]) => {
   let url = `${currentApi}/api/rsvp/${userInfo.sub}`;

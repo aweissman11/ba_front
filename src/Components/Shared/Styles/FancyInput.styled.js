@@ -22,6 +22,16 @@ export const StyledInput = styled.input`
   transition: border-color 0.2s;
   font-size: 1em;
 
+  &:invalid {
+    color: #e67e7e;
+    border-bottom: 2px solid #e67e7e;
+  }
+
+  &.is-empty {
+    color: #e67e7e;
+    border-bottom: 2px solid #e67e7e;
+  }
+
   &::placeholder {
     color: transparent;
   }

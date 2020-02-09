@@ -12,22 +12,30 @@ const FancyInput = ({
   passedKey
 }) => {
   let [currentValue, setValue] = useState(inputValue);
+  let [emptyClass, setEmptyClass] = useState('');
 
   const changeHandler = (e) => {
     let { value } = e.target;
     inputChangeHandler(inputName, value);
     setValue(value);
+
+    if (value.length) {
+      setEmptyClass('');
+    } else {
+      setEmptyClass('is-empty');
+    }
   }
 
   useEffect(() => {
     currentValue !== inputValue && setValue(inputValue);
+       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputValue])
 
   return (
     <FancyInputWrapper>
       <StyledInput
         type={inputType || 'text'}
-        className="form__field"
+        className={"form__field " + emptyClass}
         placeholder={hint}
         id={inputId ? inputId : inputName}
         value={currentValue}

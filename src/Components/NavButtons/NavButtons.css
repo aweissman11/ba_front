@@ -294,6 +294,7 @@
   }
   .dropper-link {
     z-index: 9;
+    cursor: pointer;
   }
   .dropped-link {
     width: 100%;
