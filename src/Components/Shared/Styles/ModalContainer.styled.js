@@ -37,7 +37,7 @@ export const ModalWrapper = styled.div`
     top: ${({ miniModal }) => miniModal ? '35vh' : '10vh'};
     left: 30%;
     border: solid 1px ${Colors.Text};
-    height: ${({ miniModal, saveModal }) => saveModal ? 'max-content' : miniModal && '170px'};
+    height: ${({ miniModal, saveModal }) => saveModal ? 'max-content' : miniModal && 'min-content'};
   }
 `;
 ModalWrapper.displayName = 'ModalWrapper';

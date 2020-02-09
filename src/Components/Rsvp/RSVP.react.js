@@ -38,12 +38,7 @@ import {
 } from './RSVP.helpers';
 import { LinkIcon } from '../NavButtons/LinkIcon.react';
 
-// TODO: Login  button style and  instructions
 // TODO: clear all button
-// TODO: cancel save and clear changes
-// TODO: Ask if they are actually coming to the wedding
-// Only show the rest of the questions if they say yes
-// TODO: Cancel save button (escpecially for mobile)
 // TODO: Handle empty inputs
 // Timeout API call in case it fails.
 
@@ -84,13 +79,14 @@ export const RSVP = () => {
     return () => {
       window.removeEventListener('keypress', submitOnEnter);
     }
+       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (user) {
       getRsvpFromDatabase(user, rsvpInfo, [changeRsvpInfo, forceUpdate, setShouldPost]);
     }
-
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user])
 
   const submitOnEnter = (e) => {
@@ -135,16 +131,6 @@ export const RSVP = () => {
     } else {
       let updatedEvents = rsvpInfo.events.filter((event) => event !== eventName);
       rsvpInfo.events = updatedEvents;
-    }
-    forceUpdate();
-  }
-
-  const updateChores = (checked, eventName) => {
-    if (checked) {
-      rsvpInfo.chores = [...rsvpInfo.chores, eventName]
-    } else {
-      let updatedChores = rsvpInfo.chores.filter((event) => event !== eventName);
-      rsvpInfo.chores = updatedChores;
     }
     forceUpdate();
   }
@@ -228,15 +214,15 @@ export const RSVP = () => {
                   passedKey={'name'}
                 />
                 <FancyInput
-                  hint="What's your email address?"
+                  hint="What's your email address?*"
                   inputName='email'
                   inputChangeHandler={inputChangeHandler}
                   inputValue={rsvpInfo.email}
                   key={'email'}
                   passedKey={'email'}
+                  inputType='email'
                 />
                 <SpacerDots />
-                {/* //TODO: Make this  a yes or no */}
                 <BasicH3>Will you be attending our wedding?</BasicH3>
                 <FancyCheckbox
                   id='are-not-attending'
@@ -335,7 +321,6 @@ export const RSVP = () => {
                       />
                     </BoxIt>
                     {rsvpInfo.lodging === 'tent' ? <>
-                      <SpacerDots />
                       <FancyCheckbox
                         id='first'
                         label="Is this you or anyone in your group's first time camping?"
