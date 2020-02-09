@@ -51,7 +51,7 @@ export const events = [
   },
   {
     event: 'Reception',
-    food: 'Eat beer',
+    food: 'Drinks',
     time: 'Saturday, July 4th from 3p - Sunday',
     location: 'Windy Point Campground',
     dress: 'campground formal'

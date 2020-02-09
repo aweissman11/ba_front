@@ -24,6 +24,7 @@ import Contact from './Components/Contact/Contact.react';
 import Clothes from './Components/Clothes/Clothes.react';
 import { RSVP } from './Components/Rsvp/RSVP.react';
 import Loading from './Components/Loading/Loading.react';
+import Everyone from './Components/Everyone/Everyone.react';
 
 function App() {
   const { loading } = useAuth0();
@@ -72,6 +73,9 @@ function App() {
           </Route>
           <Route path='/rsvp'>
             <RSVP />
+          </Route>
+          <Route path='/everyone'>
+            <Everyone />
           </Route>
           <Route path='/'>
             <HomePage />

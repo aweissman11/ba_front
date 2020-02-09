@@ -7,6 +7,19 @@ export const FancyInputWrapper = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   width: 100%;
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: ${Colors.Text};
+    transition: background-color 5000s ease-in-out 0s;
+  }
 `;
 FancyInputWrapper.displayName = 'FancyInputWrapper';
 

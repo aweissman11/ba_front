@@ -9,7 +9,6 @@ export const addPerson = (rsvpInfo, [changeRsvpInfo, forceUpdate]) => {
       fullName: '',
       isKid: false,
       allergies: 'None',
-      hairApt: false,
       personIndex: rsvpInfo.people.length
     }
 

@@ -57,9 +57,6 @@ export const RSVP = () => {
     dogs: '0',
     arrival: new Date('June 26, 2020'),
     events: [],
-    chores: [],
-    driving: 'full',
-    spots: '0',
     songs: []
   }
 
