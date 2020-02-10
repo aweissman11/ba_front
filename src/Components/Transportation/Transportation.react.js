@@ -18,7 +18,6 @@ const Transportation = () => {
           <br />
           <h3>We have a limited number of parking spaces onsite with more a mile away from the campground.</h3>
           <h3>If at all possible, please try to either use the Airport Shuttle or Carpool.</h3>
-          <h3>We will collect a car count at a later date.</h3>
 
           <hr className='event-break' />
 
@@ -53,7 +52,7 @@ const Transportation = () => {
               <article className='info-article'>
                 <p className='info-detail'>Rental Cars</p>
                 <p className='info-block'>We reccomend you rent your car from the Denver Airport</p>
-                <p className='info-block'>If you have extra seats in your car and are willing to give someone a ride, please let us know</p>
+                <p className='info-block'>If you have extra seats in your car and are willing to give someone a ride, please try to coordinate with someone or let us know.</p>
                 <p className='to-do-info'>
                   <a target='_blank' rel="noopener noreferrer" href='https://www.flydenver.com/'>Denver International <LinkIcon /></a>
                 </p>

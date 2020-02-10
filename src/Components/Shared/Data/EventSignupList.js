@@ -22,7 +22,7 @@ export const EventSignupList = [
   {
     id: 'ceremony-signup',
     label: 'Wedding Ceremony and Festive Meal',
-    when: 'Saturday, July 4th at 330p'
+    when: 'Saturday, July 4th at 3p'
   },
   {
     id: 'burrito-breakfast',

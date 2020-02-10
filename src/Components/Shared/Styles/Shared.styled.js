@@ -66,6 +66,7 @@ export const BasicText = styled.h3`
   font-size: 1em;
   color: ${Colors.Text};
   text-align: ${({ centerText }) => centerText && 'center'};
+  max-width: ${({ maxWidth }) => maxWidth && maxWidth};
 `;
 BasicText.displayName = 'BasicText';
 
