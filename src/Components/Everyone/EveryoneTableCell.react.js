@@ -1,14 +1,13 @@
 import React from 'react';
 import { Person } from './Everyone.styled';
 
-const TableCell = ({ cell }) => {
-  console.log(cell)
+const EveryoneTableCell = ({ cell }) => {
   if (typeof cell.value === 'object') {
     if (cell.column.Header === 'People') {
       return (
         <td>
-          {cell.value.map((entry) => (
-            <Person>
+          {cell.value.map((entry, i) => (
+            <Person key={i}>
               <p>Name: {entry.fullName}</p>
               <p>Allergies: {entry.allergies}</p>
               <p>IsKid: {JSON.stringify(entry.isKid)}</p>
@@ -20,8 +19,8 @@ const TableCell = ({ cell }) => {
     if (cell.column.Header === 'Events') {
       return (
         <td>
-          {cell.value.map((entry) => (
-            <Person>
+          {cell.value.map((entry, i) => (
+            <Person key={i}>
               <p>{entry}</p>
             </Person>
           ))}
@@ -31,8 +30,8 @@ const TableCell = ({ cell }) => {
     if (cell.column.Header === 'Songs') {
       return (
         <td>
-          {cell.value.map((entry) => (
-            <Person>
+          {cell.value.map((entry, i) => (
+            <Person key={i}>
               <p>Song: {entry.song}</p>
               <p>Artist: {entry.artist}</p>
             </Person>
@@ -44,8 +43,8 @@ const TableCell = ({ cell }) => {
 
     return (
       <td>
-        {cell.value.map((entry) => (
-          <p>{JSON.stringify(entry)}</p>
+        {cell.value.map((entry, i) => (
+          <p key={i}>{JSON.stringify(entry)}</p>
         ))}
       </td>
     )
@@ -71,4 +70,4 @@ const TableCell = ({ cell }) => {
   )
 }
 
-export default TableCell;
+export default EveryoneTableCell;

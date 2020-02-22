@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Colors } from './Colors';
+import { Devices } from './Devices';
 
 export const PageWrapper = styled.div`
   width: 100%;
@@ -27,6 +28,10 @@ export const InnerOutline = styled.div`
   width: 100%;
   overflow: hidden;
   min-height: 300px;
+
+  @media ${Devices.Laptop} {
+    padding: ${({ extraPadding }) => extraPadding && extraPadding};
+  }
 `;
 InnerOutline.displayName = 'InnerOutline';
 

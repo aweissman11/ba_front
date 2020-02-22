@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useTable, useSortBy } from 'react-table'
 
-import EveryoneTableCell from './EveryoneTableCell.react';
+import EventsTableCell from './EventsTableCell.react';
 
 const Styles = styled.div`
   padding: 1rem;
@@ -10,6 +10,7 @@ const Styles = styled.div`
   table {
     border-spacing: 0;
     border: 1px solid white;
+    margin: auto;
 
     tr {
       :last-child {
@@ -79,7 +80,7 @@ function Table({ columns, data }) {
               return (
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell, i) => (
-                    <EveryoneTableCell
+                    <EventsTableCell
                       key={cell.value + i}
                       cell={cell}
                     />
@@ -93,7 +94,7 @@ function Table({ columns, data }) {
   )
 }
 
-function EveryoneTable(props) {
+function EveryoneEvents(props) {
   const columns = React.useMemo(
     () => [
       {
@@ -101,43 +102,19 @@ function EveryoneTable(props) {
         columns: [
           {
             Header: 'Name',
-            accessor: 'name',
+            accessor: 'id',
           },
           {
-            Header: 'Attending',
-            accessor: 'attending',
+            Header: 'Attendees',
+            accessor: 'attendees',
           },
           {
-            Header: 'Email',
-            accessor: 'email',
+            Header: 'Number',
+            accessor: 'number',
           },
           {
-            Header: 'People',
-            accessor: 'people'
-          },
-          {
-            Header: 'lodging',
-            accessor: 'lodging',
-          },
-          {
-            Header: 'dogs',
-            accessor: 'dogs',
-          },
-          {
-            Header: 'arrival',
-            accessor: 'arrival',
-          },
-          {
-            Header: 'Events',
-            accessor: 'events',
-          },
-          {
-            Header: 'Songs',
-            accessor: 'songs',
-          },
-          {
-            Header: 'First timer',
-            accessor: 'firstTime',
+            Header: 'When',
+            accessor: 'when',
           },
         ],
       },
@@ -152,4 +129,4 @@ function EveryoneTable(props) {
   )
 }
 
-export default EveryoneTable
+export default EveryoneEvents
