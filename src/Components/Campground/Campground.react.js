@@ -3,17 +3,21 @@ import React from 'react';
 // CSS
 import { LinkIcon } from '../NavButtons/LinkIcon.react';
 import { PageWrapper, InnerOutline, OuterOutline, BlockTextWrapper } from '../Shared/Styles/Shared.styled';
+import CaawLogo from '../Shared/Elements/CaawLogo.react';
+import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
 const Campground = () => {
   return (
     <PageWrapper className='other-info'>
+      <CaawLogo />
+      <SpacerDots />
+      <h1 className='ceremony-title'>Campground</h1>
+      <div className='circle-div'>
+        <div className='tent-pic'></div>
+      </div>
       <OuterOutline>
         <InnerOutline>
           <BlockTextWrapper>
-            <h1 className='ceremony-title'>Campground</h1>
-            <div className='circle-div'>
-              <div className='tent-pic'></div>
-            </div>
             <div className='ceremony-container'>
               <h1 className='ceremony-title'>The Campground</h1>
               <p className='ceremony-info'>We have reserved the campground from June 26th to July 6th and would love for you to stay longer if you can.</p>

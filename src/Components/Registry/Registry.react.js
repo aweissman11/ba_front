@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 // Styles
 import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
 import { RegistryWrapper } from './Registry.styled';
+import CaawLogo from '../Shared/Elements/CaawLogo.react';
+import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
 const Registry = () => {
   useEffect(() => {
@@ -16,6 +18,8 @@ const Registry = () => {
 
   return (
     <div className='events-page'>
+      <CaawLogo />
+      <SpacerDots />
       <OuterOutline>
         <InnerOutline extraPadding='40px' >
           <a class="zola-registry-embed" href="https://www.zola.com/registry/chelseyandaaronsbigadventure" data-registry-key="chelseyandaaronsbigadventure">Our Zola Wedding Registry</a>

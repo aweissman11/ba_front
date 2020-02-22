@@ -4,4 +4,4 @@ export const Devices = {
   Laptop: '(min-width: 1000px)',
   LaptopL: '(min-width: 1400px)',
   Desktop: '(min-width: 2500px)'
-}
+};

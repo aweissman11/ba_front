@@ -4,10 +4,14 @@ import React from 'react';
 import './WhatToDo.css';
 import { LinkIcon } from '../NavButtons/LinkIcon.react';
 import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
+import CaawLogo from '../Shared/Elements/CaawLogo.react';
+import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
 const WhatToDo = () => {
   return (
     <div className='events-page'>
+      <CaawLogo />
+      <SpacerDots />
       <h1 className='invited'>There's lots to do!</h1>
       <OuterOutline>
         <InnerOutline className='the-things'>

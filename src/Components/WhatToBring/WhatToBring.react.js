@@ -4,10 +4,14 @@ import React from 'react';
 import './WhatToBring.css';
 import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
 import { lists } from '../Shared/Data/Lists';
+import CaawLogo from '../Shared/Elements/CaawLogo.react';
+import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
 const WhatToBring = () => {
   return (
     <div className='events-page'>
+      <CaawLogo />
+      <SpacerDots />
       <h1 className='invited'>Please come prepared with the following</h1>
       <OuterOutline>
         <InnerOutline>

@@ -4,10 +4,14 @@ import React from 'react';
 import './Clothes.css';
 import { LinkIcon } from '../NavButtons/LinkIcon.react';
 import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
+import CaawLogo from '../Shared/Elements/CaawLogo.react';
+import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
 const Clothes = () => {
   return (
     <div className='events-page'>
+      <CaawLogo />
+      <SpacerDots />
       <h1 className='invited'>You'll almost definitely need to wear some clothes</h1>
       <OuterOutline>
         <InnerOutline>

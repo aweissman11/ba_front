@@ -8,7 +8,7 @@ export const events = [
     dress: 'camping casual'
   },
   {
-    event: 'Rehearsal BBQ',
+    event: 'Rehearsal Barbecue',
     food: 'Burgers and dogs provided',
     time: 'Friday, July 3rd from 5p - 730p',
     location: 'Windy Point Campground',
@@ -36,6 +36,13 @@ export const events = [
     dress: 'camping casual'
   },
   {
+    event: 'Reception',
+    food: 'Drinks',
+    time: 'Saturday, July 4th from 2p and on',
+    location: 'Windy Point Campground',
+    dress: 'campground formal'
+  },
+  {
     event: 'Ceremony',
     food: '',
     time: 'Saturday, July 4th 3p',
@@ -48,13 +55,6 @@ export const events = [
     time: 'Saturday, July 4th from 5p - 730p',
     location: 'Windy Point Campground',
     dress: 'Campground formal + warm clothes'
-  },
-  {
-    event: 'Reception',
-    food: 'Drinks',
-    time: 'Saturday, July 4th from 3p - Sunday',
-    location: 'Windy Point Campground',
-    dress: 'campground formal'
   },
   {
     event: 'Fire',

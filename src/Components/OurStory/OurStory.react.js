@@ -8,6 +8,8 @@ import { hisStory, herStory } from '../Shared/Data/stories';
 import './OurStory.css';
 import { NextIcon } from './NextIcon';
 import { PrevIcon } from './PrevIcon.react';
+import CaawLogo from '../Shared/Elements/CaawLogo.react';
+import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
 const OurStory = () => {
   let [currentPosition, setPosition] = useState(0);
@@ -54,6 +56,8 @@ const OurStory = () => {
 
   return (
     <div className='story-page'>
+      <CaawLogo />
+      <SpacerDots />
       <h1 className='our-story'>This is Our Story</h1>
       <div className='slider-box'>
         <div className='slide-btn-box right-side' onClick={nextPosition} >
