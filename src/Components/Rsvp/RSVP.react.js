@@ -57,9 +57,6 @@ export const RSVP = () => {
     dogs: '0',
     arrival: new Date('June 26, 2020'),
     events: [],
-    chores: [],
-    driving: 'full',
-    spots: '0',
     songs: []
   }
 
@@ -79,14 +76,14 @@ export const RSVP = () => {
     return () => {
       window.removeEventListener('keypress', submitOnEnter);
     }
-       // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (user) {
       getRsvpFromDatabase(user, rsvpInfo, [changeRsvpInfo, forceUpdate, setShouldPost]);
     }
-   // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user])
 
   const submitOnEnter = (e) => {
@@ -185,10 +182,11 @@ export const RSVP = () => {
           {(!user || !isAuthenticated) ? <>
             <BasicH3>Please login or create an account</BasicH3>
             <SpacerDots />
-            <BasicText>Our wedding has a lot of logistics and plans can change.</BasicText>
-            <BasicText>We're asking that you make an account so that you can </BasicText>
-            <BasicText>update your plans in case you decide to tack on a few </BasicText>
-            <BasicText>extra days or anything else comes up.</BasicText>
+            <BasicText
+              maxWidth='290px'
+            >
+              Our wedding has a lot of logistics and plans can change. We're asking that you make an account so that you can update your plans in case you decide to tack on a few extra days or anything else comes up.
+            </BasicText>
             <SpacerDots />
             <FancyButton
               handleClick={() => loginWithRedirect({
@@ -245,8 +243,7 @@ export const RSVP = () => {
                   <CenterIt
                     noBottom
                   >
-                    <BasicH3>Who all is coming to the wedding?</BasicH3>
-                    <BasicText>(Please add an entry for everyone in your party, you included)</BasicText>
+                    <BasicH3>Who all is coming to the wedding? - Please add an entry for everyone in your party, you included</BasicH3>
                   </CenterIt>
                   {rsvpInfo && rsvpInfo.people && rsvpInfo.people.length ? rsvpInfo.people.map((person, i) => (
                     <Attendee
@@ -264,8 +261,6 @@ export const RSVP = () => {
                     btnLabel='Add Attendee'
                     centerIt
                   />
-
-
                   <SpacerDots />
                   <CenterIt>
                     <BasicH3

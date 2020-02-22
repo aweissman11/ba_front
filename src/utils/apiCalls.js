@@ -108,3 +108,17 @@ export const patchRsvpInfo = async (info) => {
     }
   }
 }
+
+
+export const returnRsvps = async () => {
+  let url = `${currentApi}/api/rsvps`;
+
+  const response = await fetch(url);
+
+  let readableResponse = [];
+  if (response.status === 200) {
+    readableResponse = await response.json();
+  }
+
+  return readableResponse.Items;
+}

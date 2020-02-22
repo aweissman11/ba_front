@@ -51,7 +51,7 @@ const Attendee = ({
       />
       <FancyCheckbox
         id={'kid-check-' + i}
-        label='Is this a kid under 10?'
+        label='Check this for kids under 10'
         propertyValue='isKid'
         checkHandler={handleCheck}
         isChecked={person.isKid}
