@@ -6,10 +6,14 @@ import { events } from '../Shared/Data/Events';
 // Styles
 import './EventsPage.css';
 import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
+import CaawLogo from '../Shared/Elements/CaawLogo.react';
+import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
 const EventsPage = () => {
   return (
     <div className='events-page'>
+      <CaawLogo />
+      <SpacerDots />
       <h1 className='invited'>Everyone and their dogs are welcome to all events</h1>
       <h2 className='events-invite'>The campground is reserved from June 26th to July 6th</h2>
       <h2 className='events-invite'>You and the pups are invited to stay for as long as you'd like!</h2>

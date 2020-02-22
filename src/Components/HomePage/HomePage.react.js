@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 // CSS
 import './HomePage.css';
 import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
+import CaawLogo from '../Shared/Elements/CaawLogo.react';
+import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
 const HomePage = () => {
   let [aaronClass, setAaronClass] = useState('aaron-off');
@@ -51,6 +53,8 @@ const HomePage = () => {
           </div>
         </InnerOutline>
       </OuterOutline>
+      <SpacerDots />
+      <CaawLogo />
     </div>
   );
 }

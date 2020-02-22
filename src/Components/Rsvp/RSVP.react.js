@@ -37,6 +37,7 @@ import {
   getSaveCompleteText
 } from './RSVP.helpers';
 import { LinkIcon } from '../NavButtons/LinkIcon.react';
+import CaawLogo from '../Shared/Elements/CaawLogo.react';
 
 // TODO: clear all button
 // TODO: Handle empty inputs
@@ -176,6 +177,8 @@ export const RSVP = () => {
 
   return (
     <div className='events-page'>
+      <CaawLogo />
+      <SpacerDots />
       <h1 className='invited'>We can't wait to see you!</h1>
       <OuterOutline>
         <InnerOutline>
@@ -185,7 +188,7 @@ export const RSVP = () => {
             <BasicText
               maxWidth='290px'
             >
-              Our wedding has a lot of logistics and plans can change. We're asking that you make an account so that you can update your plans in case you decide to tack on a few extra days or anything else comes up.
+              Our wedding has a lot of logistics. We're asking that you make an account so that you can update your plans in case you decide to tack on a few extra days or anything else comes up.
             </BasicText>
             <SpacerDots />
             <FancyButton

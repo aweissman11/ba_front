@@ -3,10 +3,14 @@ import React from 'react';
 // CSS
 import { LinkIcon } from '../NavButtons/LinkIcon.react';
 import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
+import CaawLogo from '../Shared/Elements/CaawLogo.react';
+import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
 const Transportation = () => {
   return (
     <div className='other-info'>
+      <CaawLogo />
+      <SpacerDots />
       <h1 className='ceremony-title'>Transportation</h1>
       <div className='circle-div'>
         <div className='tent-pic hitchhiker'></div>

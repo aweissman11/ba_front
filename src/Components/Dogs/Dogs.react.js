@@ -3,10 +3,14 @@ import React from 'react';
 // CSS
 import './Dogs.css';
 import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
+import CaawLogo from '../Shared/Elements/CaawLogo.react';
+import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
 const Dogs = () => {
   return (
     <div className='events-page'>
+      <CaawLogo />
+      <SpacerDots />
       <h1 className='invited'>Information for the Bridal Party</h1>
       <OuterOutline>
         <InnerOutline>

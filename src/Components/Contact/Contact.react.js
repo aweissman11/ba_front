@@ -3,10 +3,14 @@ import React from 'react';
 // Styles
 import './Contact.css';
 import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
+import CaawLogo from '../Shared/Elements/CaawLogo.react';
+import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
 const Contact = () => {
   return (
     <div className='events-page'>
+      <CaawLogo />
+      <SpacerDots />
       <h1 className='invited'>Please let us know if you have any questions</h1>
       <OuterOutline>
         <InnerOutline>

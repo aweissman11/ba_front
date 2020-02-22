@@ -4,10 +4,14 @@ import React from 'react';
 import '../Logistics/Logistics.css';
 import { LinkIcon } from '../NavButtons/LinkIcon.react';
 import { OuterOutline, InnerOutline, PageWrapper } from '../Shared/Styles/Shared.styled';
+import CaawLogo from '../Shared/Elements/CaawLogo.react';
+import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
 const Lodging = () => {
   return (
     <PageWrapper className='other-info'>
+      <CaawLogo />
+      <SpacerDots />
       <h1 className='ceremony-title'>Lodging</h1>
       <div className='circle-div'>
         <div className='tent-pic tent-out'></div>
