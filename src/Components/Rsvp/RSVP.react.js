@@ -73,7 +73,7 @@ export const RSVP = () => {
     if (user) {
       getRsvpFromDatabase(user, rsvpInfo, [changeRsvpInfo, forceUpdate, setShouldPost]);
     }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user])
 
   const inputChangeHandler = (inputName, value) => {
@@ -268,10 +268,14 @@ export const RSVP = () => {
                         modalTitle='When should we anticipate hosting you?'
                         subTitle='All events will take place at the campground'
                         closeModal={() => makeEventsVisible(false)}
-                        modalContent={<EventSignup
-                          allEvents={rsvpInfo.events}
-                          updateEvents={updateEvents}
-                        />}
+                        modalContent={
+                          <EventSignup
+                            allEvents={rsvpInfo.events}
+                            updateEvents={updateEvents}
+                            doneFunc={() => makeEventsVisible(false)}
+                          />
+                        }
+                        noDoneBtn
                       />
                       : null}
 
