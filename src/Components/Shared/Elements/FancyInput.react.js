@@ -9,7 +9,9 @@ const FancyInput = ({
   inputType,
   inputValue,
   inputId,
-  passedKey
+  passedKey,
+  blurFunc,
+  blurVal
 }) => {
   let [currentValue, setValue] = useState(inputValue);
   let [emptyClass, setEmptyClass] = useState('');
@@ -19,10 +21,20 @@ const FancyInput = ({
     inputChangeHandler(inputName, value);
     setValue(value);
 
-    if (value.length) {
-      setEmptyClass('');
-    } else {
-      setEmptyClass('is-empty');
+    if (!blurFunc) {
+      if (value.length) {
+        setEmptyClass('');
+      } else {
+        setEmptyClass('is-empty');
+      }
+    }
+  }
+
+  const handleBlur = (e) => {
+    let { value } = e.target;
+    if (blurFunc && !value.length) {
+      inputChangeHandler(inputName, blurVal);
+      setValue(blurVal);
     }
   }
 
@@ -41,6 +53,7 @@ const FancyInput = ({
         value={currentValue}
         onChange={changeHandler}
         key={passedKey && passedKey}
+        onBlur={handleBlur}
       />
       <FancyInputLabel
         htmlFor={inputName}

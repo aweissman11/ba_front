@@ -48,6 +48,8 @@ const Attendee = ({
         inputChangeHandler={handleChange}
         inputValue={person.allergies}
         key={'allergies-' + i}
+        blurFunc={true}
+        blurVal={'None'}
       />
       <FancyCheckbox
         id={'kid-check-' + i}
@@ -57,6 +59,7 @@ const Attendee = ({
         isChecked={person.isKid}
       />
       <FancyButton
+        id='remove-attendee-btn'
         handleClick={() => removePerson(i)}
         btnLabel='Remove Attendee'
         centerIt
