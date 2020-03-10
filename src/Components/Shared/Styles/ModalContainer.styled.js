@@ -42,7 +42,9 @@ export const ModalWrapper = styled.div`
 `;
 ModalWrapper.displayName = 'ModalWrapper';
 
-export const ContentWrapper = styled.form`
+export const ContentWrapper = styled.form.attrs({
+  id: 'modal-container-form'
+})`
   padding: ${({ subTitle }) => subTitle ? '80px 0 80px' : '60px 0 80px'};
   overflow: scroll;
   height: 100%;

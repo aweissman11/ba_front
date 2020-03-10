@@ -75,3 +75,42 @@ export const BasicText = styled.h3`
 `;
 BasicText.displayName = 'BasicText';
 
+export const ScrollListWrapper = styled.div.attrs({
+  id: 'scroll-list-wrapper'
+})`
+  overflow: scroll;
+`;
+ScrollListWrapper.displayName = 'ScrollListWrapper';
+
+export const BlockButtonWrapper = styled.div.attrs({
+  className: 'block-btn-wrapper'
+})`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  paddinng: 25px;
+`;
+BlockButtonWrapper.displayName = 'BlockButtonWrapper';
+
+export const DownArrowWrapper = styled.div.attrs({
+  className: 'down-arrow-wrapper'
+})`
+  position: absolute;
+  bottom: 35px;
+  right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  paddinng: 25px;
+  color: ${Colors.Text};
+  cursor: pointer;
+  transition: .2s;
+  border-radius: 100%;
+
+  &:hover {
+    background: ${Colors.Text};
+    color: ${Colors.BG};
+  }
+`;
+DownArrowWrapper.displayName = 'DownArrowWrapper';
+
