@@ -27,7 +27,8 @@ const FancyCheckbox = ({
 
   const handleEnterKey = (e) => {
     if (e.target.id === ('span-' + id)) {
-      if (e.key === 'Enter' || e.keyCode === 13) {
+      if (e.key === 'Enter' || e.keyCode === 13 || e.keyCode === 32) {
+        e.preventDefault();
         e.stopPropagation();
         checkHandler(!isChecked, propertyValue, propertyName);
         e.stopImmediatePropagation();
