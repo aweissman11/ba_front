@@ -44,6 +44,7 @@ const ModalContainer = ({
           tallButton={tallButton}
         >
           <FancyButton
+            id='done-btn'
             btnLabel={doneText || 'Done'}
             handleClick={() => {
               !saveModal && closeModal();
@@ -52,6 +53,7 @@ const ModalContainer = ({
           />
           {doneText ?
             <FancyButton
+              id='cancel-btn'
               btnLabel={'Cancel'}
               handleClick={closeModal}
             />

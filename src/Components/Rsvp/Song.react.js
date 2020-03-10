@@ -45,6 +45,7 @@ const Song = ({
         passedKey={i + '-artist-name-' + uniqueId}
       />
       <FancyButton
+        id='remove-song-btn'
         handleClick={() => removeSong(i)}
         btnLabel='Remove Song'
         centerIt

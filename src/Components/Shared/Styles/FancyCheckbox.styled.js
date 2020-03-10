@@ -61,7 +61,7 @@ export const FancyCheckLabel = styled.label`
     }
   }
 
-  &:hover {
+  &:hover, &:focus {
     span {
       &:before {
         width: 5px;

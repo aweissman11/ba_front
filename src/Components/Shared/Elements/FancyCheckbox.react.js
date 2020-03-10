@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { FancyCheckWrapper, FancyCheckLabel, FancyCheckboxCheck } from '../Styles/FancyCheckbox.styled';
@@ -14,6 +14,26 @@ const FancyCheckbox = ({
   propertyName,
   propertyValue
 }) => {
+
+  useEffect(() => {
+    window.addEventListener('keypress', handleEnterKey);
+
+    return () => {
+      window.removeEventListener('keypress', handleEnterKey);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+
+  const handleEnterKey = (e) => {
+    if (e.target.id === ('span-' + id)) {
+      if (e.key === 'Enter' || e.keyCode === 13) {
+        e.stopPropagation();
+        checkHandler(!isChecked, propertyValue, propertyName);
+        e.stopImmediatePropagation();
+      }
+    }
+  }
 
   const handleChange = (e) => {
     let { checked } = e.target;
@@ -36,7 +56,7 @@ const FancyCheckbox = ({
               onChange={handleChange}
             />
             <FancyCheckLabel htmlFor={id}>
-              <span></span>{label}
+              <span tabIndex={0} id={'span-' + id}></span>{label}
             </FancyCheckLabel>
           </div>
         </div>

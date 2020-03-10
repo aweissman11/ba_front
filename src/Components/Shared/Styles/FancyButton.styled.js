@@ -19,7 +19,7 @@ export const FancyBtn = styled.div`
   margin-bottom: ${({ extraBottomMargin }) => extraBottomMargin && extraBottomMargin};
   height: 45px;
 
-  &:hover {
+  &:hover, &:focus {
     background: ${Colors.BG};
     color: ${Colors.Text};
     border: solid 1px ${Colors.Text};

@@ -69,29 +69,12 @@ export const RSVP = () => {
   let [shouldPost, setShouldPost] = useState(true);
   let [isSaving, setIsSaving] = useState(false);
 
-
-
-  useEffect(() => {
-    window.addEventListener('keypress', submitOnEnter);
-
-    return () => {
-      window.removeEventListener('keypress', submitOnEnter);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   useEffect(() => {
     if (user) {
       getRsvpFromDatabase(user, rsvpInfo, [changeRsvpInfo, forceUpdate, setShouldPost]);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user])
-
-  const submitOnEnter = (e) => {
-    if (e.key === 'Enter' || e.keyCode === 13) {
-      openSaveModal(true);
-    }
-  }
 
   const inputChangeHandler = (inputName, value) => {
     rsvpInfo[inputName] = value;
@@ -192,6 +175,7 @@ export const RSVP = () => {
             </BasicText>
             <SpacerDots />
             <FancyButton
+              id='login-btn'
               handleClick={() => loginWithRedirect({
                 redirect_uri: `${window.location.origin}/rsvp`
               })}
@@ -260,6 +244,7 @@ export const RSVP = () => {
                     : null}
 
                   <FancyButton
+                    id='add-attendee-btn'
                     handleClick={addPerson(rsvpInfo, [changeRsvpInfo, forceUpdate])}
                     btnLabel='Add Attendee'
                     centerIt
@@ -272,6 +257,7 @@ export const RSVP = () => {
                       Please let us know which events you will be attending
                     </BasicH3>
                     <FancyButton
+                      id='event-rsvp-btn'
                       handleClick={() => makeEventsVisible(true)}
                       btnLabel='RSVP for Events'
                     />
@@ -358,6 +344,8 @@ export const RSVP = () => {
                       inputType='number'
                       key={'dogs'}
                       passedKey={'dogs'}
+                      blurFunc={true}
+                      blurVal='0'
                     />
 
                     <SpacerDots />
@@ -375,6 +363,7 @@ export const RSVP = () => {
                       />
                     ))}
                     <FancyButton
+                      id='add-song-btn'
                       handleClick={addSong(rsvpInfo, [changeRsvpInfo, forceUpdate])}
                       btnLabel='Add Song'
                     />
@@ -386,6 +375,7 @@ export const RSVP = () => {
                 </>
                   : null}
                 <FancyButton
+                  id='save-info-btn'
                   handleClick={() => openSaveModal(true)}
                   btnLabel='Save Info'
                   centerIt
