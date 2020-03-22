@@ -114,3 +114,26 @@ export const DownArrowWrapper = styled.div.attrs({
 `;
 DownArrowWrapper.displayName = 'DownArrowWrapper';
 
+
+
+export const TextAreaLabel = styled.label.attrs({
+  className: 'fancy-textarea'
+})`
+  color: ${Colors.Text};
+  font-size: 1.2em;
+`;
+TextAreaLabel.displayName = 'TextAreaLabel';
+
+
+export const FancyTextArea = styled.textarea.attrs({
+  className: 'fancy-textarea'
+})`
+  background: ${Colors.BG};
+  margin: 0px;
+  width: 100%;
+  height: 150px;
+  color: ${Colors.Text};
+  font-size: 1.1em;
+  outline: none;
+`;
+FancyTextArea.displayName = 'FancyTextArea';
