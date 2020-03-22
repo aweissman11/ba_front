@@ -12,7 +12,8 @@ let blankInfo = {
   chores: [],
   driving: 'full',
   spots: '0',
-  songs: []
+  songs: [],
+  comment: ''
 }
 
 let externalApi = 'https://api.chelseyandaaronsbigadventure.com';

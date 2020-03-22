@@ -14,7 +14,9 @@ import {
   BasicH3,
   BasicText,
   InnerOutline,
-  OuterOutline
+  OuterOutline,
+  FancyTextArea,
+  TextAreaLabel
 } from '../Shared/Styles/Shared.styled';
 import SpacerDots from '../Shared/Elements/SpacerDots.react';
 import Attendee from './Attendee.react';
@@ -58,7 +60,8 @@ export const RSVP = () => {
     dogs: '0',
     arrival: new Date('June 26, 2020'),
     events: [],
-    songs: []
+    songs: [],
+    comment: ''
   }
 
   let [rsvpInfo, changeRsvpInfo] = useState(blankInfo);
@@ -113,6 +116,13 @@ export const RSVP = () => {
       let updatedEvents = rsvpInfo.events.filter((event) => event !== eventName);
       rsvpInfo.events = updatedEvents;
     }
+    forceUpdate();
+  }
+
+  const handleCommentChange = (e) => {
+    const { value } = e.target;
+    rsvpInfo.comment = value;
+    changeRsvpInfo(rsvpInfo);
     forceUpdate();
   }
 
@@ -378,6 +388,20 @@ export const RSVP = () => {
                   <SpacerDots />
                 </>
                   : null}
+
+                <TextAreaLabel
+                  htmlFor='comments'
+                >
+                  Leave us a comment:
+                </TextAreaLabel>
+                <FancyTextArea
+                  id='comments'
+                  type='text'
+                  value={rsvpInfo.comment}
+                  onChange={handleCommentChange}
+                />
+                <SpacerDots />
+
                 <FancyButton
                   id='save-info-btn'
                   handleClick={() => openSaveModal(true)}

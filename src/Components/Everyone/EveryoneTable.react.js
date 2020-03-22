@@ -85,7 +85,8 @@ function Table({ columns, data }) {
                     />
                   ))}
                 </tr>
-              )}
+              )
+            }
           )}
         </tbody>
       </table>
@@ -138,6 +139,10 @@ function EveryoneTable(props) {
           {
             Header: 'First timer',
             accessor: 'firstTime',
+          },
+          {
+            Header: 'Comment',
+            accessor: 'comment',
           },
         ],
       },
