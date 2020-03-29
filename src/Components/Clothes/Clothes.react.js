@@ -3,7 +3,7 @@ import React from 'react';
 // CSS
 import './Clothes.css';
 import { LinkIcon } from '../NavButtons/LinkIcon.react';
-import { OuterOutline, InnerOutline } from '../Shared/Styles/Shared.styled';
+import { OuterOutline, InnerOutline, BasicH3 } from '../Shared/Styles/Shared.styled';
 import CaawLogo from '../Shared/Elements/CaawLogo.react';
 import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
@@ -15,9 +15,8 @@ const Clothes = () => {
       <h1 className='invited'>You'll almost definitely need to wear some clothes</h1>
       <OuterOutline>
         <InnerOutline>
-          <h1>More clothes Info Coming Soon...</h1>
-          <h3>Average temperatures will be high 60s during the day and in the 30s at night</h3>
-          <h3>Please pack warm clothes</h3>
+          <BasicH3>Average temperatures will be high <b>60s</b> during the day and in the <b>30s</b> at night</BasicH3>
+          <BasicH3>Please pack warm clothes</BasicH3>
           <br />
           <br />
 

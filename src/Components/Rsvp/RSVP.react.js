@@ -173,6 +173,9 @@ export const RSVP = () => {
       <CaawLogo />
       <SpacerDots />
       <h1 className='invited'>We can't wait to see you!</h1>
+      <BasicH3>... but, we understand that Covid-19 may affect your travel plans.</BasicH3>
+      <BasicH3>We will do everything we can to maintain a clean and safe environment.</BasicH3>
+      <BasicH3>Please only travel if you feel safe doing so.</BasicH3>
       <OuterOutline>
         <InnerOutline>
           {(!user || !isAuthenticated) ? <>
