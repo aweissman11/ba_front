@@ -16,7 +16,8 @@ import {
   InnerOutline,
   OuterOutline,
   FancyTextArea,
-  TextAreaLabel
+  TextAreaLabel,
+  CenteredH3
 } from '../Shared/Styles/Shared.styled';
 import SpacerDots from '../Shared/Elements/SpacerDots.react';
 import Attendee from './Attendee.react';
@@ -63,6 +64,13 @@ export const RSVP = () => {
     songs: [],
     comment: ''
   }
+
+  let [covidContainerOpen, toggleCovidContainer] = useState(false);
+
+  useEffect(() => {
+    toggleCovidContainer(true);
+  }, [])
+
 
   let [rsvpInfo, changeRsvpInfo] = useState(blankInfo);
   let [eventsVisible, makeEventsVisible] = useState(false);
@@ -173,9 +181,34 @@ export const RSVP = () => {
       <CaawLogo />
       <SpacerDots />
       <h1 className='invited'>We can't wait to see you!</h1>
-      <BasicH3>... but, we understand that Covid-19 may affect your travel plans.</BasicH3>
-      <BasicH3>We will do everything we can to maintain a clean and safe environment.</BasicH3>
-      <BasicH3>Please only travel if you feel safe doing so.</BasicH3>
+
+
+      {covidContainerOpen ?
+        <ModalContainer
+          isVisible={covidContainerOpen}
+          closeModal={() => toggleCovidContainer(false)}
+          miniModal
+          modalContent={
+            <>
+              <CenteredH3
+                addPadding='0 20px'
+              >
+                We understand that Covid-19 could impact plans.</CenteredH3>
+              <SpacerDots />
+              <CenteredH3
+                addPadding='0 20px'
+              >
+                As of now we are planning/hoping to throw this party as it is currently panned. If and whenn thigns change, we will update you.</CenteredH3>
+            </>
+          }
+          tallButton
+          noCancelBtn
+          doneText='OK'
+        />
+        : null}
+
+
+
       <OuterOutline>
         <InnerOutline>
           {(!user || !isAuthenticated) ? <>

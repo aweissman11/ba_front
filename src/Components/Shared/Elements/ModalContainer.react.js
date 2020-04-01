@@ -22,7 +22,8 @@ const ModalContainer = ({
   extraCloseFunction,
   tallButton,
   saveModal,
-  noDoneBtn
+  noDoneBtn,
+  noCancelBtn
 }) => {
   const modalRoot = document.getElementById('app-root');
 
@@ -53,7 +54,7 @@ const ModalContainer = ({
                 extraCloseFunction && extraCloseFunction();
               }}
             />
-            {doneText ?
+            {doneText && !noCancelBtn ?
               <FancyButton
                 id='cancel-btn'
                 btnLabel={'Cancel'}

@@ -63,6 +63,7 @@ export const CenteredH3 = styled.h3`
   text-align: center;
   width: 100%;
   color: ${Colors.Text};
+  padding: ${({ addPadding }) => addPadding && addPadding};
 `;
 CenteredH3.displayName = 'CenteredH3';
 
