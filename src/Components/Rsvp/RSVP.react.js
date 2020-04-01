@@ -198,7 +198,7 @@ export const RSVP = () => {
               <CenteredH3
                 addPadding='0 20px'
               >
-                As of now we are planning/hoping to throw this party as it is currently panned. If and whenn thigns change, we will update you.</CenteredH3>
+                As of now we are planning/hoping to throw this party as it is currently planned. If and when things change, we will update you.</CenteredH3>
             </>
           }
           tallButton
