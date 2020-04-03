@@ -26,8 +26,9 @@ const Clothes = () => {
             </div>
             <section className='to-do-event-box'>
               <h3 className='event-event'>Campground Formal</h3>
-              <p className='info-block'>Anything you'd wear to a regular wedding except with hiking boots</p>
+              <p className='info-block'>Anything you'd wear to a regular wedding except with boots</p>
               <p className='info-block'>Our colors are navy blues, grays, and shades of white if you need inspiration</p>
+              <p className='info-block'>Please make sure to bring extra warm clothes along</p>
               <p className='to-do-info'>
                 <a target='_blank' rel="noopener noreferrer" href='https://pin.it/nl2s3kiskkn7nn'>Explore <LinkIcon /></a>
               </p>
