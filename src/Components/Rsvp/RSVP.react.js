@@ -276,7 +276,7 @@ export const RSVP = () => {
                   <CenterIt
                     noBottom
                   >
-                    <BasicH3>Who all is coming to the wedding? - Please add an entry for everyone in your party, you included</BasicH3>
+                    <BasicH3>Who all is coming to the wedding? - Please add an entry for everyone in your party, YOU INCLUDED</BasicH3>
                   </CenterIt>
                   {rsvpInfo && rsvpInfo.people && rsvpInfo.people.length ? rsvpInfo.people.map((person, i) => (
                     <Attendee
@@ -295,6 +295,7 @@ export const RSVP = () => {
                     btnLabel='Add Attendee'
                     centerIt
                   />
+                  <BasicText>Please make an entry for every member of your party, even the person that is filling this out.</BasicText>
                   <SpacerDots />
                   <CenterIt>
                     <BasicH3
