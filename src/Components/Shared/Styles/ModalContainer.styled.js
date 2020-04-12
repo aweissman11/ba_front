@@ -63,6 +63,10 @@ export const ModalBtnWrapper = styled.div`
   @media ${Devices.Laptop} {
     height: 70px;
   }
+
+  @media (max-height: 600px) {
+    height: ${({ tallButton }) => tallButton && '30%'};
+  }
 `;
 ModalBtnWrapper.displayName = 'ModalBtnWrapper';
 
