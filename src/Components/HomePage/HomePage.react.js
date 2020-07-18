@@ -25,31 +25,40 @@ const HomePage = () => {
     window.setTimeout(() => {
       setCoordsClass('coords-move');
     }, 1000);
-
-  }, [])
+  }, []);
 
   return (
-    <div className='home-page'>
+    <div className="home-page">
       <OuterOutline>
         <InnerOutline>
           <div className={'date ' + dateClass}>
             <p>07</p>
             <p>04</p>
-            <p>20</p>
+            <p>
+              <span className="strike-it">20</span>21
+            </p>
           </div>
-          <div className='names'>
+          <div className="names">
             <div className={'name-block chels ' + chelsClass}>
-              CHELSEY<br />ANDERSON
-          </div>
-            <div className='ampersand'>&</div>
+              CHELSEY
+              <br />
+              ANDERSON
+            </div>
+            <div className="ampersand">&</div>
             <div className={'name-block aaron ' + aaronClass}>
-              AARON<br />WEISSMAN
-          </div>
+              AARON
+              <br />
+              WEISSMAN
+            </div>
           </div>
           <div className={'location-info ' + coordsClass}>
-            <div className='coordinates' >39°36'31.4"N, &nbsp; &nbsp; 106°02'43.7"W</div>
-            <div className='windy'>DILLON, CO</div>
-            <div className='windy'>We're getting married and you're invited!</div>
+            <div className="coordinates">
+              39°36'31.4"N, &nbsp; &nbsp; 106°02'43.7"W
+            </div>
+            <div className="windy">DILLON, CO</div>
+            <div className="windy">
+              We're getting married and you're invited!
+            </div>
           </div>
         </InnerOutline>
       </OuterOutline>
@@ -57,6 +66,6 @@ const HomePage = () => {
       <CaawLogo />
     </div>
   );
-}
+};
 
 export default HomePage;

@@ -11,28 +11,39 @@ import SpacerDots from '../Shared/Elements/SpacerDots.react';
 
 const EventsPage = () => {
   return (
-    <div className='events-page'>
+    <div className="events-page">
       <CaawLogo />
       <SpacerDots />
-      <h1 className='invited'>Everyone and their dogs are welcome to all events</h1>
-      <h2 className='events-invite'>The campground is reserved from June 26th to July 6th</h2>
-      <h2 className='events-invite'>You and the pups are invited to stay for as long as you'd like!</h2>
+      <h1 className="invited">
+        Everyone and their dogs are welcome to all events
+      </h1>
+      <h2 className="events-invite">
+        The campground is reserved from Wednesday, June 30th to Wednesday, July
+        7th, 2021
+      </h2>
+      <h2 className="events-invite">
+        You and your pups are invited to stay for as long as you'd like!
+      </h2>
 
       <OuterOutline>
         <InnerOutline>
           {events.map((thing, i) => (
             <div className={'event-box'} key={i}>
-              <div className={'event-circle ' + (thing.event === 'Ceremony' && 'stand-out')}>
-                <h3 className='event-event'>{thing.event}</h3>
-                <h3 className='info-type'>{thing.food}</h3>
-                <p className='info-info'>{thing.time}</p>
-                <p className='info-info'>{thing.location}</p>
-                <p className='info-type'>Dress:</p>
-                <p className='info-info'>
+              <div
+                className={
+                  'event-circle ' + (thing.event === 'Ceremony' && 'stand-out')
+                }
+              >
+                <h3 className="event-event">{thing.event}</h3>
+                <h3 className="info-type">{thing.food}</h3>
+                <p className="info-info">{thing.time}</p>
+                <p className="info-info">{thing.location}</p>
+                <p className="info-type">Dress:</p>
+                <p className="info-info">
                   <Link
-                    to='/clothes'
+                    to="/clothes"
                     style={{
-                      color: thing.event === 'Ceremony' && '#0c1b23'
+                      color: thing.event === 'Ceremony' && '#0c1b23',
                     }}
                   >
                     {thing.dress}
@@ -45,6 +56,6 @@ const EventsPage = () => {
       </OuterOutline>
     </div>
   );
-}
+};
 
 export default EventsPage;

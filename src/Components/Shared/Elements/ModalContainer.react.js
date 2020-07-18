@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import {
   ModalWrapper,
@@ -9,7 +9,8 @@ import {
   ClosingBackground
 } from '../Styles/ModalContainer.styled';
 import { FancyButton } from './FancyButton.react';
-import { CenteredH3, BasicText } from '../Styles/Shared.styled';
+import { CenteredH3, BasicText, DownArrowWrapper } from '../Styles/Shared.styled';
+import { DownArrow } from '../../Rsvp/DownArrow.react';
 
 
 const ModalContainer = ({
@@ -23,8 +24,38 @@ const ModalContainer = ({
   tallButton,
   saveModal,
   noDoneBtn,
-  noCancelBtn
+  noCancelBtn,
+  needsArrow
 }) => {
+  const [showArrow, setShowArrow] = useState(true);
+
+  useEffect(() => {
+    let containerEl = document.getElementById('modal-container-form');
+    containerEl.addEventListener('scroll', handleScrollTop);
+
+
+    return (() => {
+      containerEl.removeEventListener('scroll', handleScrollTop);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const handleScrollTop = () => {
+    let containerEl = document.getElementById('modal-container-form');
+    const { scrollTop, scrollTopMax } = containerEl;
+    if (scrollTop === scrollTopMax) {
+      setShowArrow(false);
+    } else {
+      setShowArrow(true);
+    }
+  }
+
+  const scrollToEnd = () => {
+    let containerEl = document.getElementById('modal-container-form');
+    containerEl.scrollTo({ behavior: "smooth", top: containerEl.scrollHeight });
+  }
+
+
   const modalRoot = document.getElementById('app-root');
 
   const modalComponent = (
@@ -62,6 +93,11 @@ const ModalContainer = ({
               />
               : null}
           </ModalBtnWrapper>
+          : null}
+        {showArrow && needsArrow ?
+          <DownArrowWrapper onClick={scrollToEnd}>
+            <DownArrow />
+          </DownArrowWrapper>
           : null}
       </ModalWrapper>
     </ModalBackground>

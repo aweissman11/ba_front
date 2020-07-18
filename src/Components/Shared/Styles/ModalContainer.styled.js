@@ -13,6 +13,10 @@ export const ModalBackground = styled.div`
   align-items: center;
   top: 0;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 `;
 ModalBackground.displayName = 'ModalBackground';
 
@@ -29,15 +33,17 @@ export const ModalWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   transition: .3s ease-in-out;
+  position: relative;
 
   @media ${Devices.Laptop} {
     max-width: 40%;
     max-height: 80vh;
-    position: absolute;
-    top: ${({ miniModal }) => miniModal ? '35vh' : '10vh'};
-    left: 30%;
+    ${'' /* position: absolute; */}
+    ${'' /* top: ${({ miniModal }) => miniModal ? '35vh' : '10vh'}; */}
+    ${'' /* left: 30%; */}
     border: solid 1px ${Colors.Text};
     height: ${({ miniModal, saveModal }) => saveModal ? 'max-content' : miniModal && 'min-content'};
+    overflow: hidden;
   }
 `;
 ModalWrapper.displayName = 'ModalWrapper';
@@ -52,8 +58,8 @@ export const ContentWrapper = styled.form.attrs({
 ContentWrapper.displayName = 'ContentWrapper';
 
 export const ModalBtnWrapper = styled.div`
-  position: absolute;
-  bottom: 0;
+  ${'' /* position: absolute; */}
+  ${'' /* bottom: 0; */}
   width: 100%;
   display: flex;
   justify-content: center;
@@ -71,8 +77,8 @@ export const ModalBtnWrapper = styled.div`
 ModalBtnWrapper.displayName = 'ModalBtnWrapper';
 
 export const ModalTitle = styled.div`
-  position: absolute;
-  top: 0;
+  ${'' /* position: absolute; */}
+  ${'' /* top: 0; */}
   width: 100%;
   display: flex;
   justify-content: center;

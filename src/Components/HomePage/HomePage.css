@@ -102,6 +102,10 @@
   margin-bottom: 30px;
 }
 
+.strike-it {
+  text-decoration: line-through;
+}
+
 @media (max-width: 1050px) {
   .date {
     margin-bottom: 10px;

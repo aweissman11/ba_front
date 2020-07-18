@@ -41,6 +41,7 @@ import {
 } from './RSVP.helpers';
 import { LinkIcon } from '../NavButtons/LinkIcon.react';
 import CaawLogo from '../Shared/Elements/CaawLogo.react';
+import InfoForSave from './InfoForSave.react';
 
 // TODO: clear all button
 // TODO: Handle empty inputs
@@ -68,7 +69,7 @@ export const RSVP = () => {
   let [covidContainerOpen, toggleCovidContainer] = useState(false);
 
   useEffect(() => {
-    toggleCovidContainer(true);
+    // toggleCovidContainer(true);
   }, [])
 
 
@@ -323,6 +324,7 @@ export const RSVP = () => {
                           />
                         }
                         noDoneBtn
+                        needsArrow
                       />
                       : null}
 
@@ -413,10 +415,13 @@ export const RSVP = () => {
                         key={i}
                       />
                     ))}
+
+
+
                     <FancyButton
                       id='add-song-btn'
                       handleClick={addSong(rsvpInfo, [changeRsvpInfo, forceUpdate])}
-                      btnLabel='Add Song'
+                      btnLabel={rsvpInfo.songs && rsvpInfo.songs.length ? 'Add Another Song' : 'Add Song'}
                     />
                     <BasicText>(Unlimited submissions!)</BasicText>
 
@@ -450,7 +455,7 @@ export const RSVP = () => {
                 {saveModalVisible ?
                   <ModalContainer
                     isVisible={saveModalVisible}
-                    modalTitle='Save RSVP Info'
+                    modalTitle='Save RSVP'
                     closeModal={() => openSaveModal(false)}
                     doneText='Save Info'
                     miniModal
@@ -460,7 +465,9 @@ export const RSVP = () => {
                         <Loading
                           isModal
                         />
-                        : null}
+                        : rsvpInfo.attending ?
+                          <InfoForSave rsvpInfo={rsvpInfo} />
+                          : null}
                     </>}
                     extraCloseFunction={saveRSVP}
                     tallButton

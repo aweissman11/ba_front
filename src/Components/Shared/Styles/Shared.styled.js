@@ -55,6 +55,7 @@ CenterIt.displayName = 'CenterIt';
 export const BasicH3 = styled.h3`
   font-size: 1.4em;
   margin: 10px auto;
+  color: ${({ whiteText }) => whiteText && Colors.Text};
 `;
 BasicH3.displayName = 'BasicH3';
 
